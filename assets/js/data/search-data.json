@@ -1,0 +1,265 @@
+{
+  "games": [
+    {
+      "id": "monster-survivors",
+      "href": "templates/action/monster-survivors.html",
+      "category": "action",
+      "names": {
+        "en": "Monster Survivors",
+        "cn": "怪物幸存者"
+      }
+    },
+    {
+      "id": "crazy-shooters",
+      "href": "templates/action/crazy-shooters.html",
+      "category": "action",
+      "names": {
+        "en": "Crazy Shooters",
+        "cn": "疯狂射手"
+      }
+    },
+    {
+      "id": "stickman-gta-city",
+      "href": "templates/action/stickman-gta-city.html",
+      "category": "action",
+      "names": {
+        "en": "Stickman GTA City",
+        "cn": "火柴人GTA城市"
+      }
+    },
+    {
+      "id": "rainbow-survival",
+      "href": "templates/action/rainbow-survival.html",
+      "category": "action",
+      "names": {
+        "en": "Rainbow Survival",
+        "cn": "彩虹生存"
+      }
+    },
+    {
+      "id": "pixel-survival",
+      "href": "templates/action/pixel-survival.html",
+      "category": "action",
+      "names": {
+        "en": "Pixel Survival",
+        "cn": "像素生存"
+      }
+    },
+    {
+      "id": "tank-arena",
+      "href": "templates/action/tank-arena.html",
+      "category": "action",
+      "names": {
+        "en": "Tank Arena",
+        "cn": "坦克竞技场"
+      }
+    },
+    {
+      "id": "crazy-cattle-3d",
+      "href": "templates/action/crazy-cattle-3d.html",
+      "category": "action",
+      "names": {
+        "en": "Crazy Cattle 3D",
+        "cn": "疯狂牛3D"
+      }
+    },
+    {
+      "id": "tank-war-simulator",
+      "href": "templates/action/tank-war-simulator.html",
+      "category": "action",
+      "names": {
+        "en": "Tank War Simulator",
+        "cn": "坦克战争模拟器"
+      }
+    },
+    {
+      "id": "five-nights-at-freddys-4",
+      "href": "templates/action/five-nights-at-freddys-4.html",
+      "category": "action",
+      "names": {
+        "en": "Five Nights at Freddy's 4",
+        "cn": "玩具熊的五夜后宫4"
+      }
+    },
+    {
+      "id": "war-of-tanks-paper-note",
+      "href": "templates/action/war-of-tanks-paper-note.html",
+      "category": "action",
+      "names": {
+        "en": "War of Tanks Paper Note",
+        "cn": "纸片坦克战争"
+      }
+    },
+    {
+      "id": "squad-shooter",
+      "href": "templates/action/squad-shooter.html",
+      "category": "action",
+      "names": {
+        "en": "Squad Shooter",
+        "cn": "小队射手"
+      }
+    },
+    {
+      "id": "five-nights-at-freddys-3",
+      "href": "templates/action/five-nights-at-freddys-3.html",
+      "category": "action",
+      "names": {
+        "en": "Five Nights at Freddy's 3",
+        "cn": "玩具熊的五夜后宫3"
+      }
+    },
+    {
+      "id": "stick-fighter-3d",
+      "href": "templates/action/stick-fighter-3d.html",
+      "category": "action",
+      "names": {
+        "en": "Stick Fighter 3D",
+        "cn": "火柴人格斗3D"
+      }
+    },
+    {
+      "id": "kingdom-battle-3d",
+      "href": "templates/action/kingdom-battle-3d.html",
+      "category": "action",
+      "names": {
+        "en": "Kingdom Battle 3D",
+        "cn": "王国战争3D"
+      }
+    },
+    {
+      "id": "warstrike",
+      "href": "templates/action/warstrike.html",
+      "category": "action",
+      "names": {
+        "en": "Warstrike",
+        "cn": "战争打击"
+      }
+    },
+    {
+      "id": "masked-special-forces",
+      "href": "templates/action/masked-special-forces.html",
+      "category": "action",
+      "names": {
+        "en": "Masked Special Forces",
+        "cn": "特种部队"
+      }
+    },
+    {
+      "id": "stickman-parkour",
+      "href": "templates/adventure/stickman-parkour.html",
+      "category": "adventure",
+      "names": {
+        "en": "Stickman Parkour",
+        "cn": "火柴人跑酷"
+      }
+    },
+    {
+      "id": "vex-7",
+      "href": "templates/adventure/vex-7.html",
+      "category": "adventure",
+      "names": {
+        "en": "Vex 7",
+        "cn": "维克斯7"
+      }
+    },
+    {
+      "id": "run-3d",
+      "href": "templates/arcade/run-3d.html",
+      "category": "arcade",
+      "names": {
+        "en": "Run 3D",
+        "cn": "跑酷3D"
+      }
+    },
+    {
+      "id": "geometry-dash",
+      "href": "templates/arcade/geometry-dash.html",
+      "category": "arcade",
+      "names": {
+        "en": "Geometry Dash",
+        "cn": "几何冲刺"
+      }
+    },
+    {
+      "id": "burnout-city",
+      "href": "templates/car/burnout-city.html",
+      "category": "car",
+      "names": {
+        "en": "Burnout City",
+        "cn": "燃烧城市"
+      }
+    },
+    {
+      "id": "fun-party-makeup",
+      "href": "templates/girl/fun-party-makeup.html",
+      "category": "girl",
+      "names": {
+        "en": "Fun Party Makeup",
+        "cn": "趣味派对化妆"
+      }
+    },
+    {
+      "id": "poptropica",
+      "href": "templates/kids/poptropica.html",
+      "category": "kids",
+      "names": {
+        "en": "Poptropica",
+        "cn": "流行热带"
+      }
+    },
+    {
+      "id": "world-guesser",
+      "href": "templates/multiplayer/world-guesser.html",
+      "category": "multiplayer",
+      "names": {
+        "en": "World Guesser",
+        "cn": "世界猜测者"
+      }
+    },
+    {
+      "id": "google-feud",
+      "href": "templates/puzzle/google-feud.html",
+      "category": "puzzle",
+      "names": {
+        "en": "Google Feud",
+        "cn": "谷歌争霸"
+      }
+    },
+    {
+      "id": "duck-life-adventure",
+      "href": "templates/racing/duck-life-adventure.html",
+      "category": "racing",
+      "names": {
+        "en": "Duck Life Adventure",
+        "cn": "鸭子生活冒险"
+      }
+    },
+    {
+      "id": "alien-sky-invasion",
+      "href": "templates/shooting/alien-sky-invasion.html",
+      "category": "shooting",
+      "names": {
+        "en": "Alien Sky Invasion",
+        "cn": "外星人天空入侵"
+      }
+    },
+    {
+      "id": "hoop-world-3d",
+      "href": "templates/sports/hoop-world-3d.html",
+      "category": "sports",
+      "names": {
+        "en": "Hoop World 3D",
+        "cn": "篮球世界3D"
+      }
+    },
+    {
+      "id": "hero-tower",
+      "href": "templates/strategy/hero-tower.html",
+      "category": "strategy",
+      "names": {
+        "en": "Hero Tower",
+        "cn": "英雄塔"
+      }
+    }
+  ]
+} 

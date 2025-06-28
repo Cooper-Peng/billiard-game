@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billiard - Play Free Online 8 Ball Pool Game | xgame.best</title>
+    <meta name="description" content="Play the ultimate billiard experience online! Enjoy 8-ball pool with realistic physics, stunning graphics, and smooth gameplay. Perfect your shots and master the table.">
+    <meta name="keywords" content="billiard, 8 ball pool, online billiard game, pool game, snooker, cue sports, free games">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://xgame.best/billiard">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xgame.best/billiard">
+    <meta property="og:title" content="Billiard - Play Free Online 8 Ball Pool Game">
+    <meta property="og:description" content="Experience the ultimate billiard game online with realistic physics and stunning graphics.">
+    <meta property="og:image" content="https://xgame.best/images/billiard-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xgame.best/billiard">
+    <meta property="twitter:title" content="Billiard - Play Free Online 8 Ball Pool Game">
+    <meta property="twitter:description" content="Experience the ultimate billiard game online with realistic physics and stunning graphics.">
+    <meta property="twitter:image" content="https://xgame.best/images/billiard-preview.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(45deg, #007aff, #5856d6);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        main {
+            padding: 2rem 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: #1d1d1f;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #007aff, #5856d6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #86868b;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .game-iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #007aff, #5856d6);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: #424245;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1d1d1f;
+        }
+
+        .feature-description {
+            color: #424245;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .play-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #007aff, #5856d6);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
+        }
+
+        footer {
+            background: #1d1d1f;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #86868b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .game-iframe {
+                height: 400px;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-iframe {
+                height: 350px;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 122, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #007aff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">xGame.best</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/games">Games</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <h1>Billiard</h1>
+                <p class="subtitle">Experience the ultimate 8-ball pool game with realistic physics and stunning graphics that bring the authentic billiard hall experience to your screen.</p>
+                <a href="#game" class="play-button">Play Now</a>
+            </section>
+
+            <section id="game" class="game-container">
+                <iframe 
+                    src="https://www.onlinegames.io/games/2022/unity3/8-ball-pool-billiard/index.html" 
+                    class="game-iframe"
+                    title="Billiard 8 Ball Pool Game"
+                    loading="lazy">
+                </iframe>
+            </section>
+
+            <section class="content-section">
+                <h2>About This Billiard Game</h2>
+                <p>Step into the world of professional billiards with our premium 8-ball pool game. This isn't just another online game – it's a meticulously crafted simulation that captures every nuance of real billiards, from the satisfying click of the cue ball to the strategic depth that makes pool a timeless classic.</p>
+                <p>Whether you're a seasoned player looking to practice your skills or a newcomer eager to learn the ropes, our billiard game offers an authentic experience that rivals real-world play. The advanced physics engine ensures that every shot behaves exactly as it would on a real table, making this the perfect platform to develop your technique and strategy.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Game Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🎱</span>
+                        <h3 class="feature-title">Realistic Physics</h3>
+                        <p class="feature-description">Advanced ball physics simulation that accurately recreates real billiard table dynamics and ball interactions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🎯</span>
+                        <h3 class="feature-title">Precision Controls</h3>
+                        <p class="feature-description">Intuitive aiming system with adjustable power and spin controls for perfect shot execution.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🏆</span>
+                        <h3 class="feature-title">Multiple Game Modes</h3>
+                        <p class="feature-description">Enjoy classic 8-ball, 9-ball, and other popular billiard variants with authentic rules.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📱</span>
+                        <h3 class="feature-title">Cross-Platform Play</h3>
+                        <p class="feature-description">Seamlessly play on desktop, tablet, or mobile devices with responsive touch controls.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>How to Play Billiard</h2>
+                <p>The objective in 8-ball pool is simple yet challenging: be the first player to legally pocket all of your designated balls (either stripes or solids) and then sink the 8-ball to win. The game begins with a break shot, where you'll aim to scatter the balls and ideally pocket one to continue your turn.</p>
+                <p>Use your mouse to aim the cue stick, adjusting both direction and power to execute the perfect shot. Advanced players can apply spin to the cue ball for more complex positioning and trick shots. Remember, strategy is just as important as skill – think several shots ahead and position the cue ball for your next move.</p>
+                <p>Master the fundamentals: control your power, plan your position, and always keep the 8-ball in mind for your final winning shot. With practice, you'll develop the skills to run the table like a pro!</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Why Choose Our Billiard Game</h2>
+                <p>Our billiard game stands out from the competition through its commitment to authenticity and quality. We've partnered with professional pool players and billiard hall owners to ensure every aspect of the game reflects real-world play. The result is an online experience that serves as both entertainment and genuine practice for serious players.</p>
+                <p>The game features tournament-standard table dimensions, regulation ball weights and sizes, and physics calculations based on real-world friction and momentum. This attention to detail means that skills developed in our game translate directly to physical billiard tables, making it an invaluable training tool for players of all levels.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 xGame.best. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/support">Support</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading state for iframe
+        const iframe = document.querySelector('.game-iframe');
+        iframe.addEventListener('load', function() {
+            console.log('Game loaded successfully');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+{
+    "nav": {
+        "home": "Home",
+        "newGames": "New Games",
+        "popular": "Popular",
+        "categories": "Categories"
+    },
+    "sidebar": {
+        "fixedMode": "Fixed",
+        "action": "Action",
+        "adventure": "Adventure",
+        "arcade": "Arcade",
+        "board": "Board",
+        "card": "Card",
+        "casino": "Casino",
+        "educational": "Educational",
+        "girl": "Girl",
+        "kids": "Kids",
+        "multiplayer": "Multiplayer",
+        "puzzle": "Puzzle",
+        "racing": "Racing",
+        "shooting": "Shooting",
+        "sports": "Sports",
+        "strategy": "Strategy",
+        "car": "Car"
+    },
+    "common": {
+        "search": "Search games...",
+        "login": "Login",
+        "register": "Register",
+        "popularCategories": "Popular Categories",
+        "newGames": "New Games",
+        "popularGames": "Popular Games",
+        "viewAll": "View All",
+        "playFreeGames": "Play Free Online Games",
+        "relatedGames": "Related Games",
+        "recommendedGames": "Recommended Games",
+        "playNow": "Play Now",
+        "refreshRecommendations": "Refresh",
+        "viewAllGames": "View All Games"
+    },
+    "search": {
+        "noResults": "No games found",
+        "searching": "Searching...",
+        "placeholder": "Search games..."
+    },
+    "footer": {
+        "about": "About GameSpace",
+        "aboutText": "Your ultimate destination for free online games. Play the best games across multiple categories!",
+        "quickLinks": "Quick Links",
+        "aboutUs": "About Us",
+        "contact": "Contact",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "connect": "Connect With Us",
+        "copyright": "© 2024 GameSpace. All rights reserved."
+    },
+    "games": {
+        "worldGuesser": {
+            "title": "World Guesser",
+            "subtitle": "Play World Guesser Online",
+            "description": "Test your knowledge and travel the world virtually with World Guesser. Play now and discover new countries, pinpoint random streets, and have fun!",
+            "gameDescription": "Test your knowledge and travel the world virtually with World Guesser. Use landmarks, road signs, architectural styles and other clues to determine the location.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use mouse to select location on map, scroll wheel to zoom map.",
+            "developer": "Developer",
+            "updateDate": "Updated",
+            "relatedGames": "Related Games",
+            "tags": {
+                "multiplayer": "Multiplayer",
+                "geography": "Geography",
+                "guessing": "Guessing"
+            }
+        },
+        "monsterSurvivors": {
+            "title": "Monster Survivors",
+            "subtitle": "Play Monster Survivors Online",
+            "description": "Survive endless waves of monsters, upgrade your character, unlock powerful skills!",
+            "gameDescription": "Monster Survivors is a challenging survival game. You need to survive against endless waves of monsters, upgrade your character by collecting experience points, and unlock new skills and weapons. The game features roguelike elements, making each playthrough unique.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD or arrow keys to move, mouse click to attack enemies.",
+            "developer": "Developer: Survival Games Studio",
+            "updateDate": "Updated: January 15, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "survival": "Survival",
+                "roguelike": "Roguelike"
+            }
+        },
+        "crazyShooters": {
+            "title": "Crazy Shooters",
+            "subtitle": "Play Crazy Shooters Online",
+            "description": "Crazy shooting game, eliminate all enemies, become the strongest shooter!",
+            "gameDescription": "Crazy Shooters is a fast-paced shooting game. You need quick reflexes and accurate shooting to eliminate all enemies. The game includes various weapons and items, and you can obtain more powerful equipment through upgrades.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use mouse to aim and shoot, WASD to move character.",
+            "developer": "Developer: Shooter Games Studio",
+            "updateDate": "Updated: January 10, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "shooting": "Shooting",
+                "fastPaced": "Fast-paced"
+            }
+        },
+        "stickmanGtaCity": {
+            "title": "Stickman GTA City",
+            "subtitle": "Play Stickman GTA City Online",
+            "description": "Freely explore the city in stickman style, complete various missions!",
+            "gameDescription": "Stickman GTA City is an open-world game. You can freely explore the city, drive various vehicles, and complete various missions. The game features stickman style with simple and fun graphics.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, spacebar to jump, E key to enter vehicles.",
+            "developer": "Developer: Stickman Games",
+            "updateDate": "Updated: January 8, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "openWorld": "Open World",
+                "stickman": "Stickman"
+            }
+        },
+        "rainbowSurvival": {
+            "title": "Rainbow Survival",
+            "subtitle": "Play Rainbow Survival Online",
+            "description": "Survive in the rainbow world, collect rainbow energy, unlock special abilities!",
+            "gameDescription": "Rainbow Survival is a colorful survival game. You need to survive in a world full of rainbows, collecting rainbow energy to unlock special abilities. The game features beautiful graphics and fun gameplay.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, collect rainbow energy.",
+            "developer": "Developer: Rainbow Games",
+            "updateDate": "Updated: January 12, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "survival": "Survival",
+                "colorful": "Colorful"
+            }
+        },
+        "pixelSurvival": {
+            "title": "Pixel Survival",
+            "subtitle": "Play Pixel Survival Online",
+            "description": "Pixel-style survival game, adventure in a retro world!",
+            "gameDescription": "Pixel Survival is a retro pixel-style survival game. You need to collect resources, build shelters, and fight enemies in the pixel world. The game features classic pixel art style.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, mouse click to collect and build.",
+            "developer": "Developer: Pixel Games Studio",
+            "updateDate": "Updated: January 5, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "survival": "Survival",
+                "pixel": "Pixel"
+            }
+        },
+        "tankArena": {
+            "title": "Tank Arena",
+            "subtitle": "Play Tank Arena Online",
+            "description": "Drive tanks in the arena, engage in fierce battles with other players!",
+            "gameDescription": "Tank Arena is a multiplayer online tank battle game. You need to drive tanks in the arena and engage in fierce battles with other players. The game includes various tank types and weapon systems.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move tank, mouse to aim and shoot.",
+            "developer": "Developer: Tank Games Studio",
+            "updateDate": "Updated: January 3, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "tank": "Tank",
+                "multiplayer": "Multiplayer"
+            }
+        },
+        "crazyCattle3d": {
+            "title": "Crazy Cattle 3D",
+            "subtitle": "Play Crazy Cattle 3D Online",
+            "description": "3D crazy cattle game, control the herd to complete various challenges!",
+            "gameDescription": "Crazy Cattle 3D is a 3D physics game. You need to control a herd of crazy cattle to complete various challenges and missions. The game features 3D graphics with realistic physics effects.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to control herd movement, spacebar to jump.",
+            "developer": "Developer: 3D Games Studio",
+            "updateDate": "Updated: January 7, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "3d": "3D",
+                "physics": "Physics"
+            }
+        },
+        "tankWarSimulator": {
+            "title": "Tank War Simulator",
+            "subtitle": "Play Tank War Simulator Online",
+            "description": "Realistic tank war simulation, experience intense battlefield combat!",
+            "gameDescription": "Tank War Simulator is a realistic tank war simulation game. You need to drive tanks on the battlefield and engage in intense battles with enemies. The game simulates realistic war environments.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move tank, mouse to aim and shoot.",
+            "developer": "Developer: War Games Studio",
+            "updateDate": "Updated: January 9, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "tank": "Tank",
+                "simulation": "Simulation"
+            }
+        },
+        "fiveNightsAtFreddys4": {
+            "title": "Five Nights at Freddy's 4",
+            "subtitle": "Play Five Nights at Freddy's 4 Online",
+            "description": "Horror survival game, survive five nights in the darkness!",
+            "gameDescription": "Five Nights at Freddy's 4 is a horror survival game. You need to survive five nights in the darkness, avoiding terrifying animatronics. The game features a horror atmosphere and requires strategic thinking.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use mouse to click surveillance cameras, close doors and lights.",
+            "developer": "Developer: Horror Games Studio",
+            "updateDate": "Updated: January 11, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "horror": "Horror",
+                "survival": "Survival"
+            }
+        },
+        "warOfTanksPaperNote": {
+            "title": "War of Tanks Paper Note",
+            "subtitle": "Play War of Tanks Paper Note Online",
+            "description": "Paper-style tank war game with unique artistic style!",
+            "gameDescription": "War of Tanks Paper Note is a paper-style tank war game. The game features a unique paper art style with simple and fun graphics. You need to drive paper tanks in battle.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move tank, mouse to aim and shoot.",
+            "developer": "Developer: Paper Games Studio",
+            "updateDate": "Updated: January 6, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "tank": "Tank",
+                "paper": "Paper"
+            }
+        },
+        "squadShooter": {
+            "title": "Squad Shooter",
+            "subtitle": "Play Squad Shooter Online",
+            "description": "Squad shooting game, cooperate with teammates to eliminate enemies!",
+            "gameDescription": "Squad Shooter is a team-based shooting game. You need to cooperate with teammates, develop tactics, and eliminate enemies. The game emphasizes teamwork and tactical coordination.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, mouse to aim and shoot, coordinate with teammates.",
+            "developer": "Developer: Squad Games Studio",
+            "updateDate": "Updated: January 4, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "shooting": "Shooting",
+                "teamwork": "Teamwork"
+            }
+        },
+        "fiveNightsAtFreddys3": {
+            "title": "Five Nights at Freddy's 3",
+            "subtitle": "Play Five Nights at Freddy's 3 Online",
+            "description": "Classic horror game, survive in an abandoned pizzeria!",
+            "gameDescription": "Five Nights at Freddy's 3 is a classic horror game. You need to survive in an abandoned pizzeria, avoiding terrifying animatronics. The game features a tense and exciting atmosphere.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use mouse to click surveillance cameras, manage power systems.",
+            "developer": "Developer: Horror Games Studio",
+            "updateDate": "Updated: January 2, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "horror": "Horror",
+                "survival": "Survival"
+            }
+        },
+        "stickFighter3d": {
+            "title": "Stick Fighter 3D",
+            "subtitle": "Play Stick Fighter 3D Online",
+            "description": "3D stickman fighting game, showcase your fighting skills!",
+            "gameDescription": "Stick Fighter 3D is a 3D fighting game. You can control stickmen in 3D environments to fight, using various fighting techniques to defeat opponents.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, mouse click to attack, key combinations for special skills.",
+            "developer": "Developer: 3D Fighter Games",
+            "updateDate": "Updated: January 13, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "fighting": "Fighting",
+                "3d": "3D"
+            }
+        },
+        "kingdomBattle3d": {
+            "title": "Kingdom Battle 3D",
+            "subtitle": "Play Kingdom Battle 3D Online",
+            "description": "3D kingdom war game, build your kingdom, conquer the world!",
+            "gameDescription": "Kingdom Battle 3D is a 3D strategy war game. You need to build your own kingdom, train armies, and conquer other kingdoms. The game features 3D graphics with strong strategic elements.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use mouse to click for building and management, WASD to move camera.",
+            "developer": "Developer: Kingdom Games Studio",
+            "updateDate": "Updated: January 14, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "strategy": "Strategy",
+                "3d": "3D"
+            }
+        },
+        "warstrike": {
+            "title": "Warstrike",
+            "subtitle": "Play Warstrike Online",
+            "description": "Intense war shooting game, eliminate all enemies!",
+            "gameDescription": "Warstrike is an intense war shooting game. You need to eliminate all enemies on the battlefield and complete various missions. The game features fast-paced action and intense combat.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, mouse to aim and shoot.",
+            "developer": "Developer: War Games Studio",
+            "updateDate": "Updated: January 16, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "shooting": "Shooting",
+                "war": "War"
+            }
+        },
+        "maskedSpecialForces": {
+            "title": "Masked Special Forces",
+            "subtitle": "Play Masked Special Forces Online",
+            "description": "Special forces shooting game, execute secret missions!",
+            "gameDescription": "Masked Special Forces is a special forces shooting game. You need to execute various secret missions, eliminate enemies, and complete mission objectives. The game emphasizes tactics and strategy.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, mouse to aim and shoot, develop tactics.",
+            "developer": "Developer: Special Forces Games",
+            "updateDate": "Updated: January 17, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "action": "Action",
+                "shooting": "Shooting",
+                "tactical": "Tactical"
+            }
+        },
+        "stickmanParkour": {
+            "title": "Stickman Parkour",
+            "subtitle": "Play Stickman Parkour Online",
+            "description": "Stickman parkour game, showcase your parkour skills!",
+            "gameDescription": "Stickman Parkour is a parkour game. You control stickmen to perform parkour through various obstacles, showcasing your skills and reflexes.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, spacebar to jump, Shift to accelerate.",
+            "developer": "Developer: Parkour Games Studio",
+            "updateDate": "Updated: January 18, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "adventure": "Adventure",
+                "parkour": "Parkour",
+                "stickman": "Stickman"
+            }
+        },
+        "run3d": {
+            "title": "Run 3D",
+            "subtitle": "Play Run 3D Online",
+            "description": "3D parkour adventure game, run in space!",
+            "gameDescription": "Run 3D is a 3D parkour game. You need to run in 3D space, avoid obstacles, and collect energy. The game features 3D graphics with unique perspectives.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to move, spacebar to jump, collect energy.",
+            "developer": "Developer: 3D Runner Games",
+            "updateDate": "Updated: January 19, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "arcade": "Arcade",
+                "parkour": "Parkour",
+                "3d": "3D"
+            }
+        },
+        "burnoutCity": {
+            "title": "Burnout City",
+            "subtitle": "Play Burnout City Online",
+            "description": "City street extreme drifting, experience speed and passion!",
+            "gameDescription": "Burnout City is a racing drift game. You need to perform extreme drifting on city streets, experiencing speed and passion. The game features beautiful graphics and smooth controls.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use WASD to control vehicle, spacebar for handbrake drift.",
+            "developer": "Developer: Racing Games Studio",
+            "updateDate": "Updated: January 20, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "car": "Car",
+                "drift": "Drift",
+                "racing": "Racing"
+            }
+        },
+        "funPartyMakeup": {
+            "title": "Fun Party Makeup - Party Makeup Game",
+            "subtitle": "Play Fun Party Makeup Online",
+            "description": "Create perfect party makeup looks and showcase your makeup skills!",
+            "gameDescription": "In Fun Party Makeup, you play as a professional makeup artist, creating perfect looks for girls attending parties. The game offers a rich variety of cosmetics and tools, including foundation, eyeshadow, blush, lipstick, mascara, and more.",
+            "howToPlay": "How to Play",
+            "controls": "Controls",
+            "controlsText": "Use mouse to select cosmetics, left click to use, drag to apply.",
+            "developer": "Developer: Girl Games Studio",
+            "updateDate": "Updated: January 15, 2025",
+            "relatedGames": "Related Games",
+            "tags": {
+                "girl": "Girl",
+                "makeup": "Makeup",
+                "fashion": "Fashion"
+            }
+        }
+    }
+} 

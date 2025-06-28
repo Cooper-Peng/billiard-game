@@ -3,439 +3,651 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billiard - Play Free Online 8 Ball Pool Game | xgame.best</title>
-    <meta name="description" content="Play the ultimate billiard experience online! Enjoy 8-ball pool with realistic physics, stunning graphics, and smooth gameplay. Perfect your shots and master the table.">
-    <meta name="keywords" content="billiard, 8 ball pool, online billiard game, pool game, snooker, cue sports, free games">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://xgame.best/billiard">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://xgame.best/billiard">
-    <meta property="og:title" content="Billiard - Play Free Online 8 Ball Pool Game">
-    <meta property="og:description" content="Experience the ultimate billiard game online with realistic physics and stunning graphics.">
-    <meta property="og:image" content="https://xgame.best/images/billiard-preview.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://xgame.best/billiard">
-    <meta property="twitter:title" content="Billiard - Play Free Online 8 Ball Pool Game">
-    <meta property="twitter:description" content="Experience the ultimate billiard game online with realistic physics and stunning graphics.">
-    <meta property="twitter:image" content="https://xgame.best/images/billiard-preview.jpg">
-
+    <title>xGame.best | Play Free Online Games</title>
+    <meta name="description" content="xGame.best offers thousands of free online games. No downloads required, instant playback in your browser. Enjoy free online games!">
+    <link rel="canonical" href="https://xGame.best" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-teal': '#14B8A6',
+                        'primary-purple': '#8B5CF6',
+                        'accent-cyan': '#06B6D4',
+                        'accent-violet': '#7C3AED',
+                        'gradient-start': '#14B8A6',
+                        'gradient-end': '#8B5CF6',
+                        'dark': '#1F2937',
+                        'light': '#F8FAFC'
+                    },
+                    backgroundImage: {
+                        'gradient-main': 'linear-gradient(135deg, #14B8A6 0%, #06B6D4 25%, #8B5CF6 75%, #7C3AED 100%)',
+                        'gradient-reverse': 'linear-gradient(315deg, #14B8A6 0%, #06B6D4 25%, #8B5CF6 75%, #7C3AED 100%)',
+                        'gradient-soft': 'linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(6, 182, 212, 0.1) 25%, rgba(139, 92, 246, 0.1) 75%, rgba(124, 58, 237, 0.1) 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/main.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Search Component Styles */
+        .search-container {
+            position: relative;
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #1d1d1f;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: linear-gradient(45deg, #007aff, #5856d6);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 0;
-        }
-
-        .header-content {
+        
+        .search-result-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin: 2px 4px;
         }
-
-        .logo {
-            font-size: 1.5rem;
+        
+        .search-result-item:hover {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(139, 92, 246, 0.1));
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.15);
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .search-result-item.highlighted {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(139, 92, 246, 0.15));
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+        }
+        
+        .game-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            margin-right: 14px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 2px solid rgba(20, 184, 166, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .search-result-item:hover .game-icon {
+            border-color: #14B8A6;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+        }
+        
+        .game-info {
+            flex: 1;
+        }
+        
+        .game-title {
             font-weight: 700;
-            color: white;
-            text-decoration: none;
+            color: #1f2937;
+            font-size: 15px;
+            line-height: 1.4;
+            margin-bottom: 2px;
+            transition: color 0.3s ease;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
+        
+        .search-result-item:hover .game-title {
+            color: #14B8A6;
         }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
+        
+        .game-category {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: capitalize;
             font-weight: 500;
             transition: color 0.3s ease;
         }
-
-        .nav-links a:hover {
-            color: rgba(255, 255, 255, 0.7);
+        
+        .search-result-item:hover .game-category {
+            color: #059669;
         }
-
-        main {
-            padding: 2rem 0;
-        }
-
-        .hero-section {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            color: #1d1d1f;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #007aff, #5856d6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: #86868b;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .game-container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 3rem;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .game-iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            display: block;
-        }
-
-        .content-section {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1d1d1f;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        h2::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(45deg, #007aff, #5856d6);
-            border-radius: 2px;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            color: #424245;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .feature-title {
-            font-size: 1.25rem;
+        
+        .search-highlight {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            color: #92400e;
+            padding: 2px 4px;
+            border-radius: 4px;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #1d1d1f;
+            box-shadow: 0 1px 3px rgba(146, 64, 14, 0.2);
         }
-
-        .feature-description {
-            color: #424245;
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        .play-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #007aff, #5856d6);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-
-        .play-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
-        }
-
-        footer {
-            background: #1d1d1f;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: #86868b;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .game-iframe {
-                height: 400px;
-            }
-
-            .content-section {
-                padding: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-links {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .game-iframe {
-                height: 350px;
-            }
-            
-            .feature-card {
-                padding: 1.5rem;
-            }
-        }
-
+        
         /* Loading animation */
-        .loading {
+        .search-loading {
+            padding: 20px;
+            text-align: center;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .loading-spinner {
             display: inline-block;
             width: 20px;
             height: 20px;
-            border: 3px solid rgba(0, 122, 255, 0.3);
+            border: 3px solid rgba(20, 184, 166, 0.2);
             border-radius: 50%;
-            border-top-color: #007aff;
+            border-top-color: #14B8A6;
             animation: spin 1s ease-in-out infinite;
         }
-
+        
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        
+        /* Keyboard navigation highlight */
+        .search-result-item.keyboard-selected {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(139, 92, 246, 0.2));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.25);
+            border-color: #14B8A6;
+        }
+        
+        /* Sidebar link active state */
+        .sidebar-link {
+            transition: all 0.2s ease;
+            border-radius: 8px;
+        }
+        
+        .sidebar-link:hover {
+            background-color: rgba(20, 184, 166, 0.1);
+            color: #14B8A6;
+        }
+        
+        .sidebar-link.bg-primary {
+            background: linear-gradient(135deg, #14B8A6, #8B5CF6) !important;
+            color: white !important;
+        }
+        
+        .sidebar-link.bg-primary:hover {
+            background: linear-gradient(135deg, #059669, #7C3AED) !important;
+        }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">xGame.best</a>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/games">Games</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </nav>
+<body class="bg-gradient-main min-h-screen text-white">
+    <!-- Top Bar -->
+    <div class="bg-black bg-opacity-20 backdrop-blur-sm text-white py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-5">
+                    <a href="/" class="text-white font-bold text-2xl drop-shadow-lg">xGame.best</a>
+                    <span class="text-base text-white opacity-70">|</span>
+                    <span class="text-base text-white opacity-90" data-i18n="common.playFreeGames">Play Free Online Games</span>
+                </div>
+                <div class="flex items-center space-x-5">
+                    <select id="languageSelect" class="bg-white bg-opacity-20 text-white border border-white border-opacity-30 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 text-base backdrop-blur-sm">
+                        <option value="en" class="text-gray-800">English</option>
+                        <option value="cn" class="text-gray-800">中文</option>
+                    </select>
+                    <a href="index.html" class="text-base text-white hover:text-yellow-300 transition-colors duration-200" data-i18n="common.login" title="功能开发中，暂时跳转到首页">Login</a>
+                    <a href="index.html" class="text-base text-white hover:text-yellow-300 transition-colors duration-200" data-i18n="common.register" title="功能开发中，暂时跳转到首页">Register</a>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <main>
-        <div class="container">
-            <section class="hero-section">
-                <h1>Billiard</h1>
-                <p class="subtitle">Experience the ultimate 8-ball pool game with realistic physics and stunning graphics that bring the authentic billiard hall experience to your screen.</p>
-                <a href="#game" class="play-button">Play Now</a>
-            </section>
-
-            <section id="game" class="game-container">
-                <iframe 
-                    src="https://www.onlinegames.io/games/2022/unity3/8-ball-pool-billiard/index.html" 
-                    class="game-iframe"
-                    title="Billiard 8 Ball Pool Game"
-                    loading="lazy">
-                </iframe>
-            </section>
-
-            <section class="content-section">
-                <h2>About This Billiard Game</h2>
-                <p>Step into the world of professional billiards with our premium 8-ball pool game. This isn't just another online game – it's a meticulously crafted simulation that captures every nuance of real billiards, from the satisfying click of the cue ball to the strategic depth that makes pool a timeless classic.</p>
-                <p>Whether you're a seasoned player looking to practice your skills or a newcomer eager to learn the ropes, our billiard game offers an authentic experience that rivals real-world play. The advanced physics engine ensures that every shot behaves exactly as it would on a real table, making this the perfect platform to develop your technique and strategy.</p>
-            </section>
-
-            <section class="content-section">
-                <h2>Game Features</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <span class="feature-icon">🎱</span>
-                        <h3 class="feature-title">Realistic Physics</h3>
-                        <p class="feature-description">Advanced ball physics simulation that accurately recreates real billiard table dynamics and ball interactions.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">🎯</span>
-                        <h3 class="feature-title">Precision Controls</h3>
-                        <p class="feature-description">Intuitive aiming system with adjustable power and spin controls for perfect shot execution.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">🏆</span>
-                        <h3 class="feature-title">Multiple Game Modes</h3>
-                        <p class="feature-description">Enjoy classic 8-ball, 9-ball, and other popular billiard variants with authentic rules.</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">📱</span>
-                        <h3 class="feature-title">Cross-Platform Play</h3>
-                        <p class="feature-description">Seamlessly play on desktop, tablet, or mobile devices with responsive touch controls.</p>
+    <!-- 主导航栏 -->
+    <nav class="bg-white bg-opacity-10 backdrop-blur-md shadow-xl border-b border-white border-opacity-20 sticky top-0 z-50">
+        <div class="max-w-full mx-auto pr-4 sm:pr-6 lg:pr-8">
+            <div class="grid grid-cols-3 items-center h-16">
+                <!-- 左列：伸缩Icon + Logo，与侧边栏菜单左对齐 -->
+                <div class="flex items-center" style="padding-left: 32px;">
+                    <!-- 侧边栏切换按钮 -->
+                    <button aria-label="Open/Close sidebar" class="toggle_button mr-5" type="button" id="sidebarFixedToggle" >
+                        <!-- 汉堡菜单图标 -->
+                        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" class="menu_icon">
+                            <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M2 5C2 4.44772 2.44772 4 3 4H15C15.5523 4 16 4.44772 16 5C16 5.55228 15.5523 6 15 6H3C2.44772 6 2 5.55228 2 5ZM2 12C2 11.4477 2.44772 11 3 11L21 11C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13L3 13C2.44772 13 2 12.5523 2 12ZM2 19C2 18.4477 2.44772 18 3 18L21 18C21.5523 18 22 18.4477 22 19C22 19.5523 21.5523 20 21 20L3 20C2.44772 20 2 19.5523 2 19Z"></path>
+                        </svg>
+                        <!-- 右箭头 - 菜单展开时显示 -->
+                        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" class="arrow_right">
+                            <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M8.29289 4.29289C8.68342 3.90237 9.31658 3.90237 9.70711 4.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L9.70711 19.7071C9.31658 20.0976 8.68342 20.0976 8.29289 19.7071C7.90237 19.3166 7.90237 18.6834 8.29289 18.2929L14.5858 12L8.29289 5.70711C7.90237 5.31658 7.90237 4.68342 8.29289 4.29289Z"></path>
+                        </svg>
+                        <!-- 左箭头 - 菜单收起时显示 -->
+                        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true" class="arrow_left">
+                            <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L9.41421 12L15.7071 18.2929C16.0976 18.6834 16.0976 19.3166 15.7071 19.7071C15.3166 20.0976 14.6834 20.0976 14.2929 19.7071L7.29289 12.7071C6.90237 12.3166 6.90237 11.6834 7.29289 11.2929L14.2929 4.29289C14.6834 3.90237 15.3166 3.90237 15.7071 4.29289Z"></path>
+                        </svg>
+                    </button>
+                    <a href="/" class="inline-flex items-center">
+                        <img src="assets/images/logos/2-xGame.best.jpeg" alt="xGame.best logo" class="h-10 w-auto rounded-lg ring-2 ring-white ring-opacity-30">
+                    </a>
+                </div>
+                
+                <!-- 中列：导航菜单，居中显示 -->
+                <div class="flex items-center justify-center space-x-10">
+                    <a href="index.html" class="inline-flex items-center px-1 pt-1 text-white border-b-2 border-white text-lg font-medium drop-shadow-sm" data-i18n="nav.home">Home</a>
+                    <a href="index.html" class="inline-flex items-center px-1 pt-1 text-white hover:text-yellow-300 text-lg font-medium transition-colors duration-200 drop-shadow-sm" data-i18n="nav.newGames">New Games</a>
+                    <a href="index.html" class="inline-flex items-center px-1 pt-1 text-white hover:text-yellow-300 text-lg font-medium transition-colors duration-200 drop-shadow-sm" data-i18n="nav.popular">Popular</a>
+                    <a href="index.html" class="inline-flex items-center px-1 pt-1 text-white hover:text-yellow-300 text-lg font-medium transition-colors duration-200 drop-shadow-sm" data-i18n="nav.categories">Categories</a>
+                </div>
+                
+                <!-- 右列：搜索框，与顶部栏右侧区域对齐 -->
+                <div class="flex items-center justify-end">
+                    <div class="relative search-container">
+                        <input 
+                            type="search" 
+                            id="searchInput"
+                            placeholder="Search games..." 
+                            class="w-80 px-5 py-2.5 text-base rounded-full bg-white bg-opacity-90 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 focus:bg-white text-gray-800 placeholder-gray-500 backdrop-blur-sm" 
+                            data-i18n-placeholder="common.search"
+                            autocomplete="off">
+                        <button class="absolute right-4 top-3 search-btn" id="searchBtn">
+                            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </button>
+                        <!-- Search Results Dropdown -->
+                        <div id="searchResults" class="absolute top-full left-0 w-full bg-white bg-opacity-98 backdrop-blur-lg rounded-xl shadow-2xl border border-gray-200 mt-2 max-h-80 overflow-y-auto z-50 hidden">
+                            <div id="searchResultsList" class="p-2">
+                                <!-- Search results will be populated here -->
+                            </div>
+                            <div id="noResults" class="px-6 py-4 text-center text-gray-500 text-sm hidden">
+                                <div class="flex flex-col items-center gap-2">
+                                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m-9 8h12M3 12h.01M3 8h.01M3 16h.01"></path>
+                                    </svg>
+                                    <span data-i18n="search.noResults" class="font-medium">No games found</span>
+                                    <span class="text-xs text-gray-400">Try searching with different keywords</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="content-section">
-                <h2>How to Play Billiard</h2>
-                <p>The objective in 8-ball pool is simple yet challenging: be the first player to legally pocket all of your designated balls (either stripes or solids) and then sink the 8-ball to win. The game begins with a break shot, where you'll aim to scatter the balls and ideally pocket one to continue your turn.</p>
-                <p>Use your mouse to aim the cue stick, adjusting both direction and power to execute the perfect shot. Advanced players can apply spin to the cue ball for more complex positioning and trick shots. Remember, strategy is just as important as skill – think several shots ahead and position the cue ball for your next move.</p>
-                <p>Master the fundamentals: control your power, plan your position, and always keep the 8-ball in mind for your final winning shot. With practice, you'll develop the skills to run the table like a pro!</p>
-            </section>
-
-            <section class="content-section">
-                <h2>Why Choose Our Billiard Game</h2>
-                <p>Our billiard game stands out from the competition through its commitment to authenticity and quality. We've partnered with professional pool players and billiard hall owners to ensure every aspect of the game reflects real-world play. The result is an online experience that serves as both entertainment and genuine practice for serious players.</p>
-                <p>The game features tournament-standard table dimensions, regulation ball weights and sizes, and physics calculations based on real-world friction and momentum. This attention to detail means that skills developed in our game translate directly to physical billiard tables, making it an invaluable training tool for players of all levels.</p>
-            </section>
+            </div>
         </div>
-    </main>
+    </nav>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 xGame.best. All rights reserved.</p>
-                <ul class="footer-links">
-                    <li><a href="/privacy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Service</a></li>
-                    <li><a href="/support">Support</a></li>
-                </ul>
+    <!-- 主体布局区域 -->
+    <div class="flex min-h-screen">
+        <!-- 左侧边栏区域 -->
+        <aside class="sidebar h-screen sticky top-16 overflow-y-auto" id="sidebar">
+            <div class="p-4">
+                <nav class="space-y-1">
+                    <a href="#action" class="sidebar-link" onclick="navigateToSection('action');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12l7-7 7 7"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 5-7 7-7-7"/>
+                            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 15l6-6"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15L9 9"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.action">Action</span>
+                    </a>
+                    <a href="#adventure" class="sidebar-link" onclick="navigateToSection('adventure');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21l1.9-5.7a8.5 8.5 0 113.8 3.8z"/>
+                            <circle cx="12" cy="10" r="3" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13.5V7"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 8.5h3"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.adventure">Adventure</span>
+                    </a>
+                    <a href="#arcade" class="sidebar-link" onclick="navigateToSection('arcade');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="4" y="8" width="16" height="10" rx="2" stroke-width="2"/>
+                            <circle cx="8" cy="13" r="1.5" stroke-width="2"/>
+                            <circle cx="16" cy="11" r="1" stroke-width="2"/>
+                            <circle cx="18" cy="13" r="1" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v4"/>
+                            <circle cx="12" cy="6" r="1" stroke-width="2"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.arcade">Arcade</span>
+                    </a>
+                    <a href="#car" class="sidebar-link" onclick="navigateToSection('car');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17l-2-2V9l2-2h10l2 2v6l-2 2"/>
+                            <circle cx="8.5" cy="17" r="1.5" stroke-width="2"/>
+                            <circle cx="15.5" cy="17" r="1.5" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13h3m8 0h3"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h8l1 2H7l1-2z"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.car">Car</span>
+                    </a>
+                    <a href="#girl" class="sidebar-link" onclick="navigateToSection('girl');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="8" r="3" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21v-3a5 5 0 0110 0v3"/>
+                            <circle cx="12" cy="8" r="1" fill="currentColor"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 5c1.5-1.5 2.5-2 3-2s1.5.5 3 2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 4c0-1 .5-1.5 1-1.5s1 .5 1 1.5"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5c1.5-1.5 2.5-2 3-2s1.5.5 3 2"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.girl">Girl</span>
+                    </a>
+                    <a href="#kids" class="sidebar-link" onclick="navigateToSection('kids');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="4" y="4" width="4" height="4" rx="1" stroke-width="2"/>
+                            <rect x="10" y="4" width="4" height="4" rx="1" stroke-width="2"/>
+                            <rect x="16" y="4" width="4" height="4" rx="1" stroke-width="2"/>
+                            <rect x="4" y="10" width="4" height="4" rx="1" stroke-width="2"/>
+                            <rect x="10" y="10" width="4" height="4" rx="1" stroke-width="2"/>
+                            <rect x="4" y="16" width="4" height="4" rx="1" stroke-width="2"/>
+                            <circle cx="18" cy="18" r="2" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18h4"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.kids">Kids</span>
+                    </a>
+                    <a href="#multiplayer" class="sidebar-link" onclick="navigateToSection('multiplayer');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.multiplayer">Multiplayer</span>
+                    </a>
+                    <a href="#puzzle" class="sidebar-link" onclick="navigateToSection('puzzle');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.puzzle">Puzzle</span>
+                    </a>
+                    <a href="#racing" class="sidebar-link" onclick="navigateToSection('racing');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="6" y="6" width="12" height="8" stroke-width="2"/>
+                            <rect x="6" y="6" width="3" height="2" fill="currentColor"/>
+                            <rect x="12" y="6" width="3" height="2" fill="currentColor"/>
+                            <rect x="9" y="8" width="3" height="2" fill="currentColor"/>
+                            <rect x="15" y="8" width="3" height="2" fill="currentColor"/>
+                            <rect x="6" y="10" width="3" height="2" fill="currentColor"/>
+                            <rect x="12" y="10" width="3" height="2" fill="currentColor"/>
+                            <rect x="9" y="12" width="3" height="2" fill="currentColor"/>
+                            <rect x="15" y="12" width="3" height="2" fill="currentColor"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.racing">Racing</span>
+                    </a>
+                    <a href="#shooting" class="sidebar-link" onclick="navigateToSection('shooting');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="9" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="5" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v3m0 12v3m9-9h-3m-12 0H3"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.shooting">Shooting</span>
+                    </a>
+                    <a href="#sports" class="sidebar-link" onclick="navigateToSection('sports');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="8" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.93 4.93c4.24-4.24 11.11-4.24 15.35 0"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.93 19.07c4.24 4.24 11.11 4.24 15.35 0"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.sports">Sports</span>
+                    </a>
+                    <a href="#strategy" class="sidebar-link" onclick="navigateToSection('strategy');return false;">
+                        <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8V6a2 2 0 012-2h8a2 2 0 012 2v2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16v12a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"/>
+                            <circle cx="8" cy="12" r="1" fill="currentColor"/>
+                            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                            <circle cx="16" cy="12" r="1" fill="currentColor"/>
+                            <circle cx="10" cy="16" r="1" fill="currentColor"/>
+                            <circle cx="14" cy="16" r="1" fill="currentColor"/>
+                        </svg>
+                        <span class="sidebar-text" data-i18n="sidebar.strategy">Strategy</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- 右侧主内容区域 -->
+        <main class="flex-1 bg-white bg-opacity-5 backdrop-blur-sm">
+            <div class="p-4">
+                <div class="bg-white bg-opacity-95 backdrop-blur-md rounded-2xl shadow-xl border border-white border-opacity-20 overflow-hidden">
+                    <iframe id="mainFrame" src="main.html" class="w-full h-screen border-none block rounded-2xl"></iframe>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 底部区域 -->
+    <footer class="bg-black bg-opacity-30 backdrop-blur-md text-white border-t border-white border-opacity-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="footer.about">About xGame.best</h3>
+                    <p class="text-gray-400" data-i18n="footer.aboutText">Your ultimate destination for free online games. Play the best games across multiple categories!</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-yellow-300 transition-colors duration-200" data-i18n="footer.aboutUs" title="功能开发中，暂时跳转到首页">About Us</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300 transition-colors duration-200" data-i18n="footer.contact" title="功能开发中，暂时跳转到首页">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300 transition-colors duration-200" data-i18n="footer.privacy" title="功能开发中，暂时跳转到首页">Privacy Policy</a></li>
+                        <li><a href="index.html" class="hover:text-yellow-300 transition-colors duration-200" data-i18n="footer.terms" title="功能开发中，暂时跳转到首页">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="nav.categories">Categories</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#action" class="hover:text-yellow-300 transition-colors duration-200 footer-category-link" onclick="navigateToSection('action');return false;" data-i18n="sidebar.action">Action Games</a></li>
+                        <li><a href="#adventure" class="hover:text-yellow-300 transition-colors duration-200 footer-category-link" onclick="navigateToSection('adventure');return false;" data-i18n="sidebar.adventure">Adventure Games</a></li>
+                        <li><a href="#arcade" class="hover:text-yellow-300 transition-colors duration-200 footer-category-link" onclick="navigateToSection('arcade');return false;" data-i18n="sidebar.arcade">Arcade Games</a></li>
+                        <li><a href="#car" class="hover:text-yellow-300 transition-colors duration-200 footer-category-link" onclick="navigateToSection('car');return false;" data-i18n="sidebar.car">Car Games</a></li>
+                        <li><a href="#racing" class="hover:text-yellow-300 transition-colors duration-200 footer-category-link" onclick="navigateToSection('racing');return false;" data-i18n="sidebar.racing">Racing Games</a></li>
+                        <li><a href="#shooting" class="hover:text-yellow-300 transition-colors duration-200 footer-category-link" onclick="navigateToSection('shooting');return false;" data-i18n="sidebar.shooting">Shooting Games</a></li>
+                        <li><a href="#puzzle" class="hover:text-yellow-300 transition-colors duration-200 footer-category-link" onclick="navigateToSection('puzzle');return false;" data-i18n="sidebar.puzzle">Puzzle Games</a></li>
+                        <li><a href="#strategy" class="hover:text-yellow-300 transition-colors duration-200 footer-category-link" onclick="navigateToSection('strategy');return false;" data-i18n="sidebar.strategy">Strategy Games</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="footer.connect">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-yellow-300 transition-colors duration-200">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 xGame.best. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="assets/js/core/language.js"></script>
+    <script src="assets/js/core/sidebar.js"></script>
+    <script src="assets/js/core/search.js"></script>
     <script>
-        // Add smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+    // 为未实现功能的链接添加点击提示
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取所有带有title属性且内容包含"功能开发中"的链接
+        const developmentLinks = document.querySelectorAll('a[title*="功能开发中"]');
+        
+        developmentLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 阻止默认跳转行为
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                
+                // 显示友好的提示信息
+                const currentLang = getCurrentLanguage();
+                const message = currentLang === 'cn' 
+                    ? '🚧 此功能正在开发中，敬请期待！\n\n即将推出的功能：\n• 用户登录注册系统\n• 个人游戏记录\n• 收藏夹功能\n• 联系我们页面\n• 完整的条款政策'
+                    : '🚧 This feature is under development, stay tuned!\n\nComing soon:\n• User login/registration system\n• Personal game records\n• Favorites feature\n• Contact us page\n• Complete terms and policies';
+                
+                alert(message);
+                
+                // 可选：跳转到首页
+                // window.location.href = 'index.html';
             });
         });
+    });
+    </script>
+    <script>
+    /**
+     * 获取当前语言设置
+     * @returns {string} 'en' 或 'cn'
+     */
+    function getCurrentLanguage() {
+        return localStorage.getItem('xgame_lang') || 'en';
+    }
 
-        // Add loading state for iframe
-        const iframe = document.querySelector('.game-iframe');
-        iframe.addEventListener('load', function() {
-            console.log('Game loaded successfully');
+    /**
+     * 导航到指定分类区域
+     * @param {string} sectionId - 分类ID (如 'action', 'car' 等)
+     */
+    function navigateToSection(sectionId) {
+        console.log('🎯 导航到分类:', sectionId);
+        
+        const iframe = document.getElementById('mainFrame');
+        if (!iframe) {
+            console.error('❌ 未找到主iframe');
+            return;
+        }
+        
+        const currentLang = getCurrentLanguage();
+        console.log('🌐 当前语言:', currentLang);
+        
+        // 首先尝试通过postMessage发送滚动指令
+        // 如果当前在main.html页面，这会直接工作
+        console.log('🔄 尝试发送滚动消息到当前页面');
+        
+        let messageSuccessfullySent = false;
+        
+        try {
+            iframe.contentWindow.postMessage({ 
+                type: 'scrollToSection', 
+                sectionId: sectionId 
+            }, '*');
+            messageSuccessfullySent = true;
+            console.log('✅ 消息发送成功');
+        } catch (e) {
+            console.log('⚠️ 消息发送失败，可能不在main.html页面:', e.message);
+        }
+        
+        // 设置一个短暂的超时，如果滚动没有发生，就重新加载页面
+        let hasScrolled = false;
+        
+        // 监听来自iframe的确认消息
+        function handleScrollResponse(event) {
+            if (event.data && event.data.type === 'scrollCompleted') {
+                hasScrolled = true;
+                console.log('✅ 收到滚动完成确认');
+                window.removeEventListener('message', handleScrollResponse);
+            }
+        }
+        
+        window.addEventListener('message', handleScrollResponse);
+        
+        // 如果200ms内没有收到滚动确认，则重新加载页面
+        setTimeout(() => {
+            window.removeEventListener('message', handleScrollResponse);
+            
+            if (!hasScrolled) {
+                console.log('🔄 未收到滚动确认，重新加载main.html并跳转');
+                iframe.src = 'main.html?section=' + sectionId + '&ts=' + Date.now();
+                
+                iframe.onload = function() {
+                    console.log('📄 main.html重新加载完成');
+                    
+                    // 发送语言设置
+                    try {
+                        iframe.contentWindow.postMessage({ 
+                            type: 'languageChange', 
+                            lang: currentLang 
+                        }, '*');
+                    } catch (e) {
+                        console.error('❌ 发送语言设置失败:', e);
+                    }
+                    
+                    iframe.onload = null;
+                };
+            }
+        }, 200);
+    }
+
+    // 页面首次加载时的初始化
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('🚀 页面初始化完成');
+        
+        const iframe = document.getElementById('mainFrame');
+        if (iframe) {
+            // 确保iframe在加载时设置正确的语言
+            iframe.onload = function() {
+                const currentLang = getCurrentLanguage();
+                console.log('📄 iframe首次加载完成，设置语言:', currentLang);
+                
+                iframe.contentWindow.postMessage({ 
+                    type: 'languageChange', 
+                    lang: currentLang 
+                }, '*');
+                
+                // 只在首次加载时设置这个处理器
+                iframe.onload = null; 
+            };
+        }
+        
+        // 添加分类链接点击的视觉反馈
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 移除其他链接的激活状态
+                sidebarLinks.forEach(l => l.classList.remove('bg-primary', 'text-white'));
+                // 为当前点击的链接添加激活状态
+                this.classList.add('bg-primary', 'text-white');
+            });
         });
+        
+        // 为底部分类链接添加点击视觉反馈
+        const footerCategoryLinks = document.querySelectorAll('.footer-category-link');
+        footerCategoryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 为底部分类链接添加短暂的高亮效果
+                this.style.color = '#FF6B6B';
+                this.style.fontWeight = 'bold';
+                
+                // 1秒后恢复原样
+                setTimeout(() => {
+                    this.style.color = '';
+                    this.style.fontWeight = '';
+                }, 1000);
+                
+                // 同时更新左侧菜单的状态
+                const sectionId = this.getAttribute('onclick').match(/navigateToSection\('(.+?)'\)/)?.[1];
+                if (sectionId) {
+                    // 移除所有左侧菜单的激活状态
+                    sidebarLinks.forEach(l => l.classList.remove('bg-primary', 'text-white'));
+                    
+                    // 激活对应的左侧菜单项
+                    const correspondingSidebarLink = document.querySelector(`.sidebar-link[onclick*="'${sectionId}'"]`);
+                    if (correspondingSidebarLink) {
+                        correspondingSidebarLink.classList.add('bg-primary', 'text-white');
+                    }
+                }
+            });
+        });
+    });
+
+    // 监听语言变更，同步到iframe
+    window.addEventListener('storage', (event) => {
+        if (event.key === 'xgame_lang' && event.newValue) {
+            const iframe = document.getElementById('mainFrame');
+            if (iframe && iframe.contentWindow) {
+                console.log('🌐 检测到语言变更，同步到iframe:', event.newValue);
+                iframe.contentWindow.postMessage({ 
+                    type: 'languageChange', 
+                    lang: event.newValue 
+                }, '*');
+            }
+        }
+    });
     </script>
 </body>
 </html>

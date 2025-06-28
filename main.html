@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-teal': '#14B8A6',
+                        'primary-purple': '#8B5CF6',
+                        'accent-cyan': '#06B6D4',
+                        'accent-violet': '#7C3AED',
+                        'gradient-start': '#14B8A6',
+                        'gradient-end': '#8B5CF6',
+                        'dark': '#1F2937',
+                        'light': '#F8FAFC'
+                    },
+                    backgroundImage: {
+                        'gradient-main': 'linear-gradient(135deg, #14B8A6 0%, #06B6D4 25%, #8B5CF6 75%, #7C3AED 100%)',
+                        'gradient-reverse': 'linear-gradient(315deg, #14B8A6 0%, #06B6D4 25%, #8B5CF6 75%, #7C3AED 100%)',
+                        'gradient-soft': 'linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(6, 182, 212, 0.1) 25%, rgba(139, 92, 246, 0.1) 75%, rgba(124, 58, 237, 0.1) 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 游戏分类区域容器样式 */
+        .category-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 为每个分类添加独特的渐变装饰 */
+        .category-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #14B8A6, #06B6D4, #8B5CF6, #7C3AED);
+            border-radius: 20px 20px 0 0;
+        }
+
+        /* 分类标题样式 */
+        .category-header {
+            border-bottom: 2px solid rgba(20, 184, 166, 0.2);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.05), rgba(139, 92, 246, 0.05));
+            margin: -2rem -2rem 2rem -2rem;
+            padding: 1.5rem 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .category-header h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #14B8A6, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-header a {
+            color: #14B8A6;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(20, 184, 166, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .category-header a:hover {
+            background: linear-gradient(135deg, #14B8A6, #8B5CF6);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+        }
+
+        .game-card {
+            transition: all 0.3s cubic-bezier(.4,2,.3,1);
+            width: 190px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        .game-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.2);
+            border-color: #14B8A6;
+        }
+        .game-card img {
+            width: 190px;
+            height: 170px;
+            object-fit: contain;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            margin: 0 auto;
+            display: block;
+            border-radius: 16px 16px 0 0;
+            transition: transform 0.35s cubic-bezier(.4,2,.3,1);
+        }
+        .game-card:hover img {
+            transform: scale(1.05);
+        }
+        .game-card .p-4 {
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+        }
+        .game-card h3 {
+            font-size: 1rem;
+            line-height: 1.35rem;
+            margin-bottom: 0.25rem;
+            color: #22223b;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+        .game-card p {
+            font-size: 0.8rem;
+            line-height: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        .game-card .flex {
+            gap: 0.25rem;
+        }
+        .game-card .text-sm {
+            font-size: 0.8rem;
+        }
+        .category-pill {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(139, 92, 246, 0.1));
+            color: #14B8A6;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        .category-pill:hover {
+            background: linear-gradient(135deg, #14B8A6, #8B5CF6);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+        }
+        .game-card .score-divider {
+            height: 1px;
+            background: linear-gradient(90deg, #e3e9f7 0%, #FF6B6B 100%);
+            margin: 0.5rem 0 0.5rem 0;
+            border: none;
+        }
+        .game-card .score-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+        .game-card .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+        body {
+            background: linear-gradient(135deg, #14B8A6 0%, #06B6D4 25%, #8B5CF6 75%, #7C3AED 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .main-content {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        /* 评分和标签样式 */
+        .rating-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            background: rgba(20, 184, 166, 0.05);
+            border-radius: 8px;
+        }
+
+        .stars {
+            color: #fbbf24;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+
+        .rating-score {
+            font-weight: 600;
+            color: #14B8A6;
+            font-size: 0.875rem;
+        }
+
+        .game-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .scroll-anchor {
+            position: relative;
+            top: -100px; /* 调整这个值来精确控制滚动位置 */
+            visibility: hidden;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
+            gap: 1.5rem;
+            margin: 0 auto;
+            max-width: 1600px;
+            justify-content: start;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .category-section {
+                margin: 1rem;
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+            
+            .category-header {
+                margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+                padding: 1rem 1.5rem;
+            }
+            
+            .game-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
+                gap: 1rem;
+                justify-content: start;
+            }
+            
+            .game-card {
+                width: 160px;
+            }
+        }
+    </style>
+</head>
+<body class="text-dark">
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+        <!-- Action Games Section -->
+        <div id="action-anchor" class="scroll-anchor"></div>
+        <section id="action" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.action">动作游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('action'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Monster Survivors -->
+                <div class="game-card">
+                    <a href="games/categories/action/monster-survivors.html">
+                        <img src="assets/images/games/action/monster-survivors.jpg" alt="Monster Survivors" onerror="this.src='https://via.placeholder.com/190x170'">
+                        <div class="p-4">
+                            <h3 data-i18n="games.monsterSurvivors.title">Monster Survivors</h3>
+                            <p data-i18n="games.monsterSurvivors.description">在无尽的怪物浪潮中生存下来</p>
+                            <div class="rating-container">
+                                <div class="stars">★★★★★</div>
+                                <span class="rating-score">4.5</span>
+                            </div>
+                            <div class="game-tags">
+                                <span class="category-pill" data-i18n="games.monsterSurvivors.tag1">动作</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Crazy Shooters -->
+                <div class="game-card">
+                    <a href="games/categories/action/crazy-shooters.html">
+                        <img src="assets/images/games/action/crazy-shooters.jpg" alt="Crazy Shooters" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.crazyShooters.title">Crazy Shooters</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.crazyShooters.description">疯狂射击游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.3</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.crazyShooters.tag1">动作</span>
+                                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded" data-i18n="games.crazyShooters.tag2">射击</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Stickman GTA City -->
+                <div class="game-card">
+                    <a href="games/categories/action/stickman-gta-city.html">
+                        <img src="assets/images/games/action/stickman-gta-city.jpg" alt="Stickman GTA City" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.stickmanGtaCity.title">Stickman GTA City</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.stickmanGtaCity.description">火柴人版GTA游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.2</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.stickmanGtaCity.tag1">动作</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.stickmanGtaCity.tag2">开放世界</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Rainbow Survival -->
+                <div class="game-card">
+                    <a href="games/categories/action/rainbow-survival.html">
+                        <img src="assets/images/games/action/rainbow-survival.jpg" alt="Rainbow Survival" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.rainbowSurvival.title">Rainbow Survival</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.rainbowSurvival.description">彩虹生存冒险</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.4</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.rainbowSurvival.tag1">动作</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded" data-i18n="games.rainbowSurvival.tag2">生存</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Pixel Survival -->
+                <div class="game-card">
+                    <a href="games/categories/action/pixel-survival.html">
+                        <img src="assets/images/games/action/pixel-survival.jpg" alt="Pixel Survival" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.pixelSurvival.title">Pixel Survival</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.pixelSurvival.description">像素风格生存游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.1</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.pixelSurvival.tag1">动作</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded" data-i18n="games.pixelSurvival.tag2">生存</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Tank Arena -->
+                <div class="game-card">
+                    <a href="games/categories/action/tank-arena.html">
+                        <img src="assets/images/games/action/tank-arena.jpg" alt="Tank Arena" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.tankArena.title">Tank Arena</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.tankArena.description">坦克竞技场</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.3</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.tankArena.tag1">动作</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded" data-i18n="games.tankArena.tag2">坦克</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Crazy Cattle 3D -->
+                <div class="game-card">
+                    <a href="games/categories/action/crazy-cattle-3d.html">
+                        <img src="assets/images/games/action/crazy-cattle-3d.jpg" alt="Crazy Cattle 3D" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.crazyCattle3d.title">Crazy Cattle 3D</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.crazyCattle3d.description">3D疯狂牛群</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.2</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.crazyCattle3d.tag1">动作</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.crazyCattle3d.tag2">3D</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Tank War Simulator -->
+                <div class="game-card">
+                    <a href="games/categories/action/tank-war-simulator.html">
+                        <img src="assets/images/games/action/tank-war-simulator.jpg" alt="Tank War Simulator" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.tankWarSimulator.title">Tank War Simulator</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.tankWarSimulator.description">坦克战争模拟器</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.4</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.tankWarSimulator.tag1">动作</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded" data-i18n="games.tankWarSimulator.tag2">坦克</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Five Nights at Freddy's 4 -->
+                <div class="game-card">
+                    <a href="games/categories/action/five-nights-at-freddys-4.html">
+                        <img src="assets/images/games/action/five-nights-at-freddys-4.jpg" alt="Five Nights at Freddy's 4" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.fiveNightsAtFreddys4.title">Five Nights at Freddy's 4</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.fiveNightsAtFreddys4.description">玩具熊的五夜后宫4</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.5</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.fiveNightsAtFreddys4.tag1">动作</span>
+                                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded" data-i18n="games.fiveNightsAtFreddys4.tag2">恐怖</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- War of Tanks Paper Note -->
+                <div class="game-card">
+                    <a href="games/categories/action/war-of-tanks-paper-note.html">
+                        <img src="assets/images/games/action/war-of-tanks-paper-note.jpg" alt="War of Tanks Paper Note" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.warOfTanksPaperNote.title">War of Tanks Paper Note</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.warOfTanksPaperNote.description">纸片坦克战争</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.2</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.warOfTanksPaperNote.tag1">动作</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded" data-i18n="games.warOfTanksPaperNote.tag2">坦克</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Squad Shooter -->
+                <div class="game-card">
+                    <a href="games/categories/action/squad-shooter.html">
+                        <img src="assets/images/games/action/squad-shooter.jpg" alt="Squad Shooter" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.squadShooter.title">Squad Shooter</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.squadShooter.description">小队射击游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.4</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.squadShooter.tag1">动作</span>
+                                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded" data-i18n="games.squadShooter.tag2">射击</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Five Nights at Freddy's 3 -->
+                <div class="game-card">
+                    <a href="games/categories/action/five-nights-at-freddys-3.html">
+                        <img src="assets/images/games/action/five-nights-at-freddys-3.jpg" alt="Five Nights at Freddy's 3" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.fiveNightsAtFreddys3.title">Five Nights at Freddy's 3</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.fiveNightsAtFreddys3.description">玩具熊的五夜后宫3</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.4</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.fiveNightsAtFreddys3.tag1">动作</span>
+                                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded" data-i18n="games.fiveNightsAtFreddys3.tag2">恐怖</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Stick Fighter 3D -->
+                <div class="game-card">
+                    <a href="games/categories/action/stick-fighter-3d.html">
+                        <img src="assets/images/games/action/stick-fighter-3d.jpg" alt="Stick Fighter 3D" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.stickFighter3d.title">Stick Fighter 3D</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.stickFighter3d.description">3D火柴人格斗</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.1</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.stickFighter3d.tag1">动作</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.stickFighter3d.tag2">3D</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Kingdom Battle 3D -->
+                <div class="game-card">
+                    <a href="games/categories/action/kingdom-battle-3d.html">
+                        <img src="assets/images/games/action/kingdom-battle-3d.jpg" alt="Kingdom Battle 3D" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.kingdomBattle3d.title">Kingdom Battle 3D</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.kingdomBattle3d.description">3D王国战争</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.3</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.kingdomBattle3d.tag1">动作</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.kingdomBattle3d.tag2">3D</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Warstrike -->
+                <div class="game-card">
+                    <a href="games/categories/action/warstrike.html">
+                        <img src="assets/images/games/action/warstrike.jpg" alt="Warstrike" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.warstrike.title">Warstrike</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.warstrike.description">战争打击</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.2</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.warstrike.tag1">动作</span>
+                                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded" data-i18n="games.warstrike.tag2">射击</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Masked Special Forces -->
+                <div class="game-card">
+                    <a href="games/categories/action/masked-special-forces.html">
+                        <img src="assets/images/games/action/masked-special-forces.jpg" alt="Masked Special Forces" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.maskedSpecialForces.title">Masked Special Forces</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.maskedSpecialForces.description">特种部队游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.4</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.maskedSpecialForces.tag1">动作</span>
+                                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded" data-i18n="games.maskedSpecialForces.tag2">射击</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventure Games Section -->
+        <div id="adventure-anchor" class="scroll-anchor"></div>
+        <section id="adventure" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.adventure">冒险游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('adventure'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Stickman Parkour -->
+                <div class="game-card">
+                    <a href="games/categories/adventure/stickman-parkour.html">
+                        <img src="assets/images/games/adventure/stickman-parkour.jpg" alt="Stickman Parkour" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.stickmanParkour.title">Stickman Parkour</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.stickmanParkour.description">火柴人跑酷游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.6</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.stickmanParkour.tag1">动作</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded" data-i18n="games.stickmanParkour.tag2">跑酷</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Vex 7 -->
+                <div class="game-card">
+                    <a href="games/categories/adventure/vex-7.html">
+                        <img src="assets/images/games/adventure/vex-7.jpg" alt="Vex 7" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.vex7.title">Vex 7</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.vex7.description">挑战重重的平台冒险</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.5</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded" data-i18n="games.vex7.tag1">冒险</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.vex7.tag2">平台</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arcade Games Section -->
+        <div id="arcade-anchor" class="scroll-anchor"></div>
+        <section id="arcade" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.arcade">街机游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('arcade'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Run 3D -->
+                <div class="game-card">
+                    <a href="games/categories/arcade/run-3d.html">
+                        <img src="assets/images/games/arcade/run-3d.jpg" alt="Run 3D" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.run3d.title">Run 3D</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.run3d.description">3D跑酷游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.4</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded" data-i18n="games.run3d.tag1">街机</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded" data-i18n="games.run3d.tag2">跑酷</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Geometry Dash -->
+                <div class="game-card">
+                    <a href="games/categories/arcade/geometry-dash.html">
+                        <img src="assets/images/games/arcade/geometry-dash.jpg" alt="Geometry Dash" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.geometryDash.title">Geometry Dash</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.geometryDash.description">几何冲刺挑战</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.6</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded" data-i18n="games.geometryDash.tag1">街机</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.geometryDash.tag2">平台</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Car Games Section -->
+        <div id="car-anchor" class="scroll-anchor"></div>
+        <section id="car" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.car">汽车游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('car'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Burnout City -->
+                <div class="game-card">
+                    <a href="games/categories/car/burnout-city.html">
+                        <img src="assets/images/games/car/burnout-city.jpg" alt="Burnout City" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.burnoutCity.title">Burnout City</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.burnoutCity.description">城市驾驶与漂移</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.5</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded" data-i18n="games.burnoutCity.tag1">汽车</span>
+                                <span class="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded" data-i18n="games.burnoutCity.tag2">驾驶</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Girl Games Section -->
+        <div id="girl-anchor" class="scroll-anchor"></div>
+        <section id="girl" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.girl">女孩游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('girl'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Fun Party Makeup -->
+                <div class="game-card">
+                    <a href="games/categories/girl/fun-party-makeup.html">
+                        <img src="assets/images/games/girl/fun-party-makeup.jpg" alt="Fun Party Makeup" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.funPartyMakeup.title">Fun Party Makeup</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.funPartyMakeup.description">趣味派对化妆</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.2</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded" data-i18n="games.funPartyMakeup.tag1">女孩</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.funPartyMakeup.tag2">化妆</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kids Games Section -->
+        <div id="kids-anchor" class="scroll-anchor"></div>
+        <section id="kids" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.kids">儿童游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('kids'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Poptropica -->
+                <div class="game-card">
+                    <a href="games/categories/kids/poptropica.html">
+                        <img src="assets/images/games/kids/poptropica.jpg" alt="Poptropica" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.poptropica.title">Poptropica</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.poptropica.description">虚拟世界冒险</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.1</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded" data-i18n="games.poptropica.tag1">儿童</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded" data-i18n="games.poptropica.tag2">冒险</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multiplayer Games Section -->
+        <div id="multiplayer-anchor" class="scroll-anchor"></div>
+        <section id="multiplayer" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.multiplayer">多人游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('multiplayer'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- World Guesser -->
+                <div class="game-card">
+                    <a href="games/categories/multiplayer/world-guesser.html">
+                        <img src="assets/images/games/multiplayer/world-guesser.jpg" alt="World Guesser" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.worldGuesser.title">World Guesser</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.worldGuesser.description">猜地理位置游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.7</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.worldGuesser.tag1">多人</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.worldGuesser.tag2">益智</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Puzzle Games Section -->
+        <div id="puzzle-anchor" class="scroll-anchor"></div>
+        <section id="puzzle" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.puzzle">益智游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('puzzle'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Google Feud -->
+                <div class="game-card">
+                    <a href="games/categories/puzzle/google-feud.html">
+                        <img src="assets/images/games/puzzle/google-feud.jpg" alt="Google Feud" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.googleFeud.title">Google Feud</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.googleFeud.description">猜谷歌搜索结果</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.8</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.googleFeud.tag1">益智</span>
+                                <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded" data-i18n="games.googleFeud.tag2">问答</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Racing Games Section -->
+        <div id="racing-anchor" class="scroll-anchor"></div>
+        <section id="racing" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.racing">竞速游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('racing'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Duck Life Adventure -->
+                <div class="game-card">
+                    <a href="games/categories/racing/duck-life-adventure.html">
+                        <img src="assets/images/games/racing/duck-life-adventure.jpg" alt="Duck Life Adventure" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.duckLifeAdventure.title">Duck Life Adventure</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.duckLifeAdventure.description">小鸭子竞速冒险</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.3</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded" data-i18n="games.duckLifeAdventure.tag1">竞速</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded" data-i18n="games.duckLifeAdventure.tag2">冒险</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shooting Games Section -->
+        <div id="shooting-anchor" class="scroll-anchor"></div>
+        <section id="shooting" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.shooting">射击游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('shooting'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Alien Sky Invasion -->
+                <div class="game-card">
+                    <a href="games/categories/shooting/alien-sky-invasion.html">
+                        <img src="assets/images/games/shooting/alien-sky-invasion.jpg" alt="Alien Sky Invasion" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.alienSkyInvasion.title">Alien Sky Invasion</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.alienSkyInvasion.description">外星人入侵空战</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.2</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded" data-i18n="games.alienSkyInvasion.tag1">射击</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.alienSkyInvasion.tag2">空战</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sports Games Section -->
+        <div id="sports-anchor" class="scroll-anchor"></div>
+        <section id="sports" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.sports">体育游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('sports'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Hoop World 3D -->
+                <div class="game-card">
+                    <a href="games/categories/sports/hoop-world-3d.html">
+                        <img src="assets/images/games/sports/hoop-world-3d.jpg" alt="Hoop World 3D" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.hoopWorld3d.title">Hoop World 3D</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.hoopWorld3d.description">3D篮球游戏</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.4</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded" data-i18n="games.hoopWorld3d.tag1">体育</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.hoopWorld3d.tag2">3D</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy Games Section -->
+        <div id="strategy-anchor" class="scroll-anchor"></div>
+        <section id="strategy" class="category-section">
+            <div class="category-header flex justify-between items-center">
+                <h2 data-i18n="sidebar.strategy">策略游戏</h2>
+                <a href="#" onclick="window.parent.navigateToSection('strategy'); return false;" data-i18n="main.viewAll">查看全部</a>
+            </div>
+            <div class="game-grid">
+                <!-- Hero Tower -->
+                <div class="game-card">
+                    <a href="games/categories/strategy/hero-tower.html">
+                        <img src="assets/images/games/strategy/hero-tower.jpg" alt="Hero Tower" class="w-full h-48 object-cover rounded-t-lg">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold mb-2" data-i18n="games.heroTower.title">Hero Tower</h3>
+                            <p class="text-gray-600 text-sm mb-2" data-i18n="games.heroTower.description">英雄塔防策略</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                                <span class="text-gray-600 text-sm ml-2">4.3</span>
+                                </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded" data-i18n="games.heroTower.tag1">策略</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded" data-i18n="games.heroTower.tag2">塔防</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Sections will be added here -->
+
+    </main>
+    <script>
+                            // I18N Key - MUST match the key in assets/js/core/language.js
+        const I18N_KEY = 'xgame_lang';
+
+        // 语言包定义
+        const translations = {
+            en: {
+                sidebar: {
+                    action: "Action Games",
+                    adventure: "Adventure Games",
+                    arcade: "Arcade Games",
+                    car: "Car Games",
+                    girl: "Girl Games",
+                    kids: "Kids Games",
+                    multiplayer: "Multiplayer Games",
+                    puzzle: "Puzzle Games",
+                    racing: "Racing Games",
+                    shooting: "Shooting Games",
+                    sports: "Sports Games",
+                    strategy: "Strategy Games"
+                },
+                main: {
+                    viewAll: "View All"
+                },
+                games: {
+                    // Action
+                    monsterSurvivors: { title: "Monster Survivors", description: "Survive endless waves of monsters", tag1: "Action" },
+                    crazyShooters: { title: "Crazy Shooters", description: "Crazy shooting game", tag1: "Action", tag2: "Shooting" },
+                    stickmanGtaCity: { title: "Stickman GTA City", description: "Stickman version of GTA", tag1: "Action", tag2: "Open World" },
+                    rainbowSurvival: { title: "Rainbow Survival", description: "Rainbow survival adventure", tag1: "Action", tag2: "Survival" },
+                    pixelSurvival: { title: "Pixel Survival", description: "Pixel style survival game", tag1: "Action", tag2: "Survival" },
+                    tankArena: { title: "Tank Arena", description: "Tank arena", tag1: "Action", tag2: "Tank" },
+                    crazyCattle3d: { title: "Crazy Cattle 3D", description: "3D crazy cattle", tag1: "Action", tag2: "3D" },
+                    tankWarSimulator: { title: "Tank War Simulator", description: "Tank war simulator", tag1: "Action", tag2: "Tank" },
+                    fiveNightsAtFreddys4: { title: "Five Nights at Freddy's 4", description: "Five Nights at Freddy's 4", tag1: "Action", tag2: "Horror" },
+                    warOfTanksPaperNote: { title: "War of Tanks Paper Note", description: "Paper tank war", tag1: "Action", tag2: "Tank" },
+                    squadShooter: { title: "Squad Shooter", description: "Squad shooting game", tag1: "Action", tag2: "Shooting" },
+                    fiveNightsAtFreddys3: { title: "Five Nights at Freddy's 3", description: "Five Nights at Freddy's 3", tag1: "Action", tag2: "Horror" },
+                    stickFighter3d: { title: "Stick Fighter 3D", description: "3D stickman fighting", tag1: "Action", tag2: "3D" },
+                    kingdomBattle3d: { title: "Kingdom Battle 3D", description: "3D kingdom battle", tag1: "Action", tag2: "3D" },
+                    warstrike: { title: "Warstrike", description: "War strike", tag1: "Action", tag2: "Shooting" },
+                    maskedSpecialForces: { title: "Masked Special Forces", description: "Special forces game", tag1: "Action", tag2: "Shooting" },
+
+                    // Adventure
+                    stickmanParkour: { title: "Stickman Parkour", description: "Stickman parkour game", tag1: "Action", tag2: "Parkour" },
+                    vex7: { title: "Vex 7", description: "Challenging platform adventure", tag1: "Adventure", tag2: "Platform" },
+                    // Arcade
+                    run3d: { title: "Run 3D", description: "3D parkour game", tag1: "Arcade" },
+                    geometryDash: { title: "Geometry Dash", description: "Geometry dash challenge", tag1: "Arcade", tag2: "Platform" },
+                    // Car
+                    burnoutCity: { title: "Burnout City", description: "City driving and drifting", tag1: "Car", tag2: "Driving" },
+                    // Girl
+                    funPartyMakeup: { title: "Fun Party Makeup", description: "Fun party makeup game", tag1: "Girl", tag2: "Makeup" },
+                    // Kids
+                    poptropica: { title: "Poptropica", description: "Virtual world adventure", tag1: "Kids", tag2: "Adventure" },
+                    // Multiplayer
+                    worldGuesser: { title: "World Guesser", description: "Geography guessing game", tag1: "Multiplayer", tag2: "Puzzle" },
+                    // Puzzle
+                    googleFeud: { title: "Google Feud", description: "Guess Google search results", tag1: "Puzzle", tag2: "Trivia" },
+                    // Racing
+                    duckLifeAdventure: { title: "Duck Life Adventure", description: "Duck racing adventure", tag1: "Racing", tag2: "Adventure" },
+                    // Shooting
+                    alienSkyInvasion: { title: "Alien Sky Invasion", description: "Alien invasion air combat", tag1: "Shooting", tag2: "Air Combat" },
+                    // Sports
+                    hoopWorld3d: { title: "Hoop World 3D", description: "3D basketball game", tag1: "Sports", tag2: "3D" },
+                    // Strategy
+                    heroTower: { title: "Hero Tower", description: "Hero tower defense strategy", tag1: "Strategy", tag2: "Tower Defense" },
+                }
+            },
+            cn: {
+                sidebar: {
+                    action: "动作游戏",
+                    adventure: "冒险游戏",
+                    arcade: "街机游戏",
+                    car: "汽车游戏",
+                    girl: "女孩游戏",
+                    kids: "儿童游戏",
+                    multiplayer: "多人游戏",
+                    puzzle: "益智游戏",
+                    racing: "竞速游戏",
+                    shooting: "射击游戏",
+                    sports: "体育游戏",
+                    strategy: "策略游戏"
+                },
+                main: {
+                    viewAll: "查看全部"
+                },
+                games: {
+                     // Action
+                     monsterSurvivors: { title: "Monster Survivors", description: "在无尽的怪物浪潮中生存下来", tag1: "动作" },
+                    crazyShooters: { title: "Crazy Shooters", description: "疯狂射击游戏", tag1: "动作", tag2: "射击" },
+                    stickmanGtaCity: { title: "火柴人GTA城市", description: "火柴人版GTA游戏", tag1: "动作", tag2: "开放世界" },
+                    rainbowSurvival: { title: "彩虹生存", description: "彩虹生存冒险", tag1: "动作", tag2: "生存" },
+                    pixelSurvival: { title: "像素生存", description: "像素风格生存游戏", tag1: "动作", tag2: "生存" },
+                    tankArena: { title: "坦克竞技场", description: "坦克竞技场", tag1: "动作", tag2: "坦克" },
+                    crazyCattle3d: { title: "疯狂的牛3D", description: "3D疯狂牛群", tag1: "动作", tag2: "3D" },
+                    tankWarSimulator: { title: "坦克战争模拟器", description: "坦克战争模拟器", tag1: "动作", tag2: "坦克" },
+                    fiveNightsAtFreddys4: { title: "玩具熊的五夜后宫4", description: "玩具熊的五夜后宫4", tag1: "动作", tag2: "恐怖" },
+                    warOfTanksPaperNote: { title: "纸片坦克战争", description: "纸片坦克战争", tag1: "动作", tag2: "坦克" },
+                    squadShooter: { title: "小队射击", description: "小队射击游戏", tag1: "动作", tag2: "射击" },
+                    fiveNightsAtFreddys3: { title: "玩具熊的五夜后宫3", description: "玩具熊的五夜后宫3", tag1: "动作", tag2: "恐怖" },
+                    stickFighter3d: { title: "火柴人快打3D", description: "3D火柴人格斗", tag1: "动作", tag2: "3D" },
+                    kingdomBattle3d: { title: "王国之战3D", description: "3D王国战争", tag1: "动作", tag2: "3D" },
+                    warstrike: { title: "战争打击", description: "战争打击", tag1: "动作", tag2: "射击" },
+                    maskedSpecialForces: { title: "蒙面特种部队", description: "特种部队游戏", tag1: "动作", tag2: "射击" },
+                    
+                    // Adventure
+                    stickmanParkour: { title: "火柴人跑酷", description: "火柴人跑酷游戏", tag1: "动作", tag2: "跑酷" },
+                    vex7: { title: "Vex 7", description: "挑战重重的平台冒险", tag1: "冒险", tag2: "平台" },
+                    // Arcade
+                    run3d: { title: "Run 3D", description: "3D跑酷游戏", tag1: "街机" },
+                    geometryDash: { title: "Geometry Dash", description: "几何冲刺挑战", tag1: "街机", tag2: "平台" },
+                    // Car
+                    burnoutCity: { title: "燃尽都市", description: "城市驾驶与漂移", tag1: "汽车", tag2: "驾驶" },
+                    // Girl
+                    funPartyMakeup: { title: "趣味派对化妆", description: "趣味派对化妆游戏", tag1: "女孩", tag2: "化妆" },
+                    // Kids
+                    poptropica: { title: "Poptropica", description: "虚拟世界冒险", tag1: "儿童", tag2: "冒险" },
+                    // Multiplayer
+                    worldGuesser: { title: "世界猜谜者", description: "猜地理位置游戏", tag1: "多人", tag2: "益智" },
+                    // Puzzle
+                    googleFeud: { title: "谷歌问答", description: "猜谷歌搜索结果", tag1: "益智", tag2: "问答" },
+                    // Racing
+                    duckLifeAdventure: { title: "小鸭子冒险", description: "小鸭子竞速冒险", tag1: "竞速", tag2: "冒险" },
+                    // Shooting
+                    alienSkyInvasion: { title: "外星人入侵", description: "外星人入侵空战", tag1: "射击", tag2: "空战" },
+                    // Sports
+                    hoopWorld3d: { title: "篮球世界3D", description: "3D篮球游戏", tag1: "体育", tag2: "3D" },
+                    // Strategy
+                    heroTower: { title: "英雄塔", description: "英雄塔防策略", tag1: "策略", tag2: "塔防" },
+                }
+            }
+        };
+
+        /**
+         * 应用翻译到页面
+         * @param {string} lang - 语言代码 ('en' 或 'cn')
+         */
+        function applyTranslations(lang) {
+            if (!lang || !translations || !translations[lang]) {
+                return;
+            }
+            const langData = translations[lang];
+
+            // 翻译带有 data-i18n 属性的元素
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                const translation = key.split('.').reduce((obj, i) => obj?.[i], langData);
+
+                if (translation) {
+                    // 对于按钮中的SVG，只更新 'title' 属性
+                    if (element.tagName === 'BUTTON' && element.querySelector('svg')) {
+                        element.setAttribute('title', translation);
+                    } else {
+                        // 对于其他元素，安全地更新文本内容
+                        const textNode = Array.from(element.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+                        if (textNode) {
+                            textNode.textContent = translation;
+                        } else {
+                            element.textContent = translation;
+                        }
+                    }
+                }
+            });
+
+            // 更新文档的 lang 属性
+            document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
+        }
+
+        /**
+         * 同步语言设置
+         */
+        function syncLanguage() {
+            const currentLang = localStorage.getItem(I18N_KEY) || 'en';
+            applyTranslations(currentLang);
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始同步语言
+            syncLanguage();
+            
+            // 检查URL参数，如果有section参数则自动滚动到对应分类
+            checkAndScrollToSection();
+        });
+        
+        /**
+         * 检查URL参数并滚动到指定分类
+         */
+        function checkAndScrollToSection() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sectionParam = urlParams.get('section');
+            
+            if (sectionParam) {
+                console.log('🎯 检测到URL参数section:', sectionParam);
+                
+                // 延迟一点确保页面完全加载
+                setTimeout(() => {
+                    const anchorId = sectionParam + '-anchor';
+                    let targetElement = document.getElementById(anchorId);
+                    
+                    if (!targetElement) {
+                        targetElement = document.getElementById(sectionParam);
+                    }
+                    
+                    if (targetElement) {
+                        console.log('✅ 找到目标元素，开始滚动');
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } else {
+                        console.error('❌ 未找到对应的分类元素:', sectionParam);
+                    }
+                }, 300);
+            }
+        }
+
+        // 监听来自父页面的消息
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'scrollToSection') {
+                console.log('📨 收到滚动请求:', event.data.sectionId);
+                
+                // 首先尝试找到对应的锚点
+                const anchorId = event.data.sectionId + '-anchor';
+                let targetElement = document.getElementById(anchorId);
+                
+                // 如果没有找到锚点，则使用原来的section
+                if (!targetElement) {
+                    targetElement = document.getElementById(event.data.sectionId);
+                }
+                
+                if (targetElement) {
+                    console.log('✅ 找到目标元素，开始滚动');
+                    // 使用原生scrollIntoView，现在锚点已经有正确的位置
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // 发送滚动完成确认消息
+                    window.parent.postMessage({ 
+                        type: 'scrollCompleted', 
+                        sectionId: event.data.sectionId 
+                    }, '*');
+                    console.log('📤 发送滚动完成确认');
+                } else {
+                    console.error('❌ 未找到目标元素:', event.data.sectionId);
+                }
+            } else if (event.data.type === 'languageChange' && event.data.lang) {
+                // 处理来自父页面的语言变更消息
+                applyTranslations(event.data.lang);
+            }
+        });
+
+        // 监听 localStorage 变化（主要同步方式）
+        window.addEventListener('storage', (event) => {
+            if (event.key === I18N_KEY && event.newValue) {
+                applyTranslations(event.newValue);
+            }
+        });
+    </script>
+</body>
+</html> 

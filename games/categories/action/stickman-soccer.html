@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman Soccer - 火柴人足球</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B6B',
+                        'secondary': '#4ECDC4',
+                        'dark': '#2D3436',
+                        'light': '#F7F7F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .main-content {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .game-container {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .controls-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .controls-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .controls-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4B5563;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- 主要内容 -->
+    <main class="flex-1 p-8">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-primary to-secondary py-12 rounded-xl mb-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Stickman Soccer</h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto">成为一名火柴人足球运动员，在球场上展现你的球技！</p>
+            </div>
+        </div>
+
+        <!-- 游戏主体 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 游戏主体 -->
+            <div class="lg:col-span-2">
+                <!-- 游戏窗口 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://cloud.onlinegames.io/games/2025/unity3/stickman-soccer/index-og.html" 
+                                class="w-full h-[600px] md:h-[700px]"
+                                frameborder="0" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- 游戏说明 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">游戏说明</h2>
+                    <p class="text-gray-600 mb-6">
+                        在Stickman Soccer中，你将扮演一名火柴人足球运动员，在球场上展现你的球技。游戏提供了多种比赛模式和球场，包括室内、室外、沙滩等，你需要灵活运用传球、射门、防守等技巧来赢得比赛。游戏采用了流畅的物理引擎和精美的视觉效果，让每一场比赛都充满激情。你需要在比赛中不断练习，提升自己的球技，成为最强的火柴人足球运动员！
+                    </p>
+                </div>
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="lg:col-span-1">
+                <!-- 游戏信息 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <img src="../../../assets/images/games/action/stickman-soccer.jpg" 
+                             alt="Stickman Soccer" 
+                             class="w-32 h-32 object-cover rounded-lg shadow-md">
+                        <div class="ml-4">
+                            <h2 class="text-xl font-bold text-gray-900">Stickman Soccer</h2>
+                            <div class="flex items-center mt-2">
+                                <span class="text-yellow-400">★★★★★</span>
+                                <span class="text-gray-600 ml-2">4.1</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">动作</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">足球</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">火柴人</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">体育</span>
+                    </div>
+                    <div class="text-sm text-gray-500">
+                        <p>开发者: Stickman Games</p>
+                        <p>更新于: 2025年3月3日</p>
+                    </div>
+                </div>
+
+                <!-- 操作说明 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">操作说明</h2>
+                    <ul class="controls-list text-gray-600">
+                        <li>WASD：控制方向</li>
+                        <li>空格键：射门</li>
+                        <li>Shift键：加速</li>
+                        <li>F键：传球</li>
+                        <li>J键：铲球</li>
+                        <li>K键：切换视角</li>
+                        <li>L键：庆祝</li>
+                        <li>I键：特殊技能</li>
+                        <li>Q键：切换球员</li>
+                        <li>E键：互动</li>
+                        <li>R键：重置位置</li>
+                        <li>Esc键：暂停游戏</li>
+                    </ul>
+                </div>
+
+                <!-- 相关游戏 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">相关游戏</h2>
+                    <div class="space-y-4">
+                        <a href="stickman-racing.html" class="block">
+                            <div class="flex items-center space-x-4">
+                                <img src="../../../assets/images/games/action/stickman-racing.jpg" 
+                                     alt="Stickman Racing" 
+                                     class="w-20 h-20 object-cover rounded-lg">
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Stickman Racing</h3>
+                                    <p class="text-sm text-gray-600">火柴人赛车</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="stickman-parkour.html" class="block">
+                            <div class="flex items-center space-x-4">
+                                <img src="../../../assets/images/games/action/stickman-parkour.jpg" 
+                                     alt="Stickman Parkour" 
+                                     class="w-20 h-20 object-cover rounded-lg">
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Stickman Parkour</h3>
+                                    <p class="text-sm text-gray-600">火柴人跑酷</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

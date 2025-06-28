@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="suroi.title">生存大逃杀 - 在线玩 Suroi | xGame.best</title>
+    <meta name="description" data-i18n="suroi.description" content="在xGame.best上免费在线玩生存大逃杀(Suroi)。一款紧张刺激的多人在线生存游戏，在广阔的战场上展开激烈对决。">
+    <link rel="canonical" href="https://xGame.best/games/suroi.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B6B',
+                        'secondary': '#4ECDC4',
+                        'dark': '#2D3436',
+                        'light': '#F7F7F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8f9fa; }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <main class="flex-1 p-8">
+        <div class="bg-gradient-to-r from-yellow-500 to-red-500 py-12 rounded-xl mb-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="suroi.heroTitle">生存大逃杀 (Suroi)</h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto" data-i18n="suroi.heroDescription">在广阔的战场上搜集武器，成为最后的胜利者！</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="aspect-w-16 aspect-h-9 relative">
+                        <iframe id="gameFrame" src="https://www.onlinegames.io/suroi/"
+                                class="w-full h-[600px] md:h-[700px]"
+                                frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+                        <div class="absolute top-4 right-4 flex space-x-2 z-10">
+                            <button id="reloadBtn" class="bg-white/90 hover:bg-white text-gray-700 p-2 rounded-lg shadow-lg" data-i18n="suroi.reloadTooltip" title="重新加载游戏" onclick="reloadGame()"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></button>
+                            <button id="fullscreenBtn" class="bg-white/90 hover:bg-white text-gray-700 p-2 rounded-lg shadow-lg" data-i18n="suroi.fullscreenTooltip" title="全屏游戏" onclick="toggleFullscreen()"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg></button>
+                        </div>
+                        <button id="exitFullscreenBtn" class="hidden fixed top-4 right-4 bg-red-500 text-white p-3 rounded-full shadow-lg" data-i18n="suroi.exitFullscreenTooltip" title="退出全屏" onclick="exitFullscreen()"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="suroi.gameDescriptionTitle">游戏说明</h2>
+                    <p class="text-gray-600 mb-6" data-i18n="suroi.gameDescription">
+                        生存大逃杀是一款刺激的多人在线生存游戏。在这个广阔的战场上，你需要搜集武器和资源，与其他玩家展开激烈的对决。游戏采用俯视角视角，简洁的画面风格让你更容易掌握战场局势，成为最后的胜利者。
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <img src="../../../assets/images/games/action/suroi.jpg" alt="Suroi" class="w-32 h-32 object-cover rounded-lg shadow-md">
+                        <div class="ml-4">
+                            <h2 class="text-xl font-bold text-gray-900" data-i18n="suroi.gameName">生存大逃杀</h2>
+                            <div class="flex items-center mt-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                        <span class="text-gray-600 ml-2">4.4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm" data-i18n="sidebar.action">动作</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm" data-i18n="suroi.tagBattleRoyale">大逃杀</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4" data-i18n="suroi.featuresTitle">游戏特点</h2>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li data-i18n="suroi.feature1">紧张刺激的多人对战</li>
+                        <li data-i18n="suroi.feature2">丰富的武器和装备系统</li>
+                        <li data-i18n="suroi.feature3">策略性的资源管理</li>
+                        <li data-i18n="suroi.feature4">简洁清晰的游戏画面</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const translations = {
+            en: {
+                suroi: {
+                    title: "Suroi - Battle Royale - Play Online | xGame.best",
+                    description: "Play Suroi for free on xGame.best. A thrilling multiplayer online survival game with intense battles on a vast battlefield.",
+                    heroTitle: "Suroi - Battle Royale",
+                    heroDescription: "Collect weapons on a vast battlefield and be the last one standing!",
+                    gameDescriptionTitle: "Game Description",
+                    gameDescription: "Suroi is an exciting multiplayer online survival game. On this vast battlefield, you need to collect weapons and resources to engage in fierce duels with other players. The game uses a top-down perspective and a clean visual style, making it easier to grasp the battlefield situation and become the final victor.",
+                    gameName: "Suroi",
+                    tagBattleRoyale: "Battle Royale",
+                    featuresTitle: "Game Features",
+                    feature1: "Tense and exciting multiplayer battles",
+                    feature2: "Rich weapon and equipment system",
+                    feature3: "Strategic resource management",
+                    feature4: "Simple and clear game graphics",
+                    reloadTooltip: "Reload Game",
+                    fullscreenTooltip: "Fullscreen Game",
+                    exitFullscreenTooltip: "Exit Fullscreen"
+                },
+                sidebar: { action: "Action" }
+            },
+            cn: {
+                suroi: {
+                    title: "生存大逃杀 - 在线玩 Suroi | xGame.best",
+                    description: "在xGame.best上免费在线玩生存大逃杀(Suroi)。一款紧张刺激的多人在线生存游戏，在广阔的战场上展开激烈对决。",
+                    heroTitle: "生存大逃杀 (Suroi)",
+                    heroDescription: "在广阔的战场上搜集武器，成为最后的胜利者！",
+                    gameDescriptionTitle: "游戏说明",
+                    gameDescription: "生存大逃杀是一款刺激的多人在线生存游戏。在这个广阔的战场上，你需要搜集武器和资源，与其他玩家展开激烈的对决。游戏采用俯视角视角，简洁的画面风格让你更容易掌握战场局势，成为最后的胜利者。",
+                    gameName: "生存大逃杀",
+                    tagBattleRoyale: "大逃杀",
+                    featuresTitle: "游戏特点",
+                    feature1: "紧张刺激的多人对战",
+                    feature2: "丰富的武器和装备系统",
+                    feature3: "策略性的资源管理",
+                    feature4: "简洁清晰的游戏画面",
+                    reloadTooltip: "重新加载游戏",
+                    fullscreenTooltip: "全屏游戏",
+                    exitFullscreenTooltip: "退出全屏"
+                },
+                sidebar: { action: "动作" }
+            }
+        };
+
+        function getCurrentLanguage() { return localStorage.getItem('language') || 'cn'; }
+
+        function updatePageLanguage(lang) {
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let val = translations[lang];
+                for (const k of keys) { val = val?.[k]; }
+                if (val) {
+                    if (el.hasAttribute('title')) el.setAttribute('title', val);
+                    else if (el.tagName === 'META' && el.hasAttribute('content')) el.setAttribute('content', val);
+                    else el.textContent = val;
+                }
+            });
+        }
+
+        function reloadGame() {
+            const frame = document.getElementById('gameFrame');
+            frame.src = frame.src;
+            showToast(getCurrentLanguage() === 'en' ? 'Reloading game...' : '游戏正在重新加载...');
+        }
+
+        function toggleFullscreen() {
+            const frame = document.getElementById('gameFrame');
+            if (!document.fullscreenElement) {
+                frame.requestFullscreen?.();
+            } else {
+                document.exitFullscreen?.();
+            }
+        }
+        
+        function exitFullscreen() {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            }
+        }
+
+        document.addEventListener('fullscreenchange', () => {
+            const isFullscreen = !!document.fullscreenElement;
+            document.getElementById('fullscreenBtn').style.display = isFullscreen ? 'none' : 'block';
+            document.getElementById('exitFullscreenBtn').classList.toggle('hidden', !isFullscreen);
+            if(isFullscreen){
+                showToast(getCurrentLanguage() === 'en' ? 'Entered fullscreen' : '已进入全屏');
+            } else {
+                showToast(getCurrentLanguage() === 'en' ? 'Exited fullscreen' : '已退出全屏');
+            }
+        });
+        
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-20 right-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lang = getCurrentLanguage();
+            updatePageLanguage(lang);
+            window.addEventListener('storage', e => e.key === 'language' && updatePageLanguage(e.newValue));
+            window.addEventListener('message', e => e.data?.type === 'languageChange' && updatePageLanguage(e.data.language));
+        });
+    </script>
+</body>
+</html> 

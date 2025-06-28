@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="crazy-cattle-3d.title">Crazy Cattle 3D | xGame.best</title>
+    <meta name="description" data-i18n="crazy-cattle-3d.description" content="Crazy Cattle 3D is a one-player battle royale game where you control a bouncy sheep and try to knock other sheep in the herd. The physics are strange. And the movement of other sheep is absolute comedy. With a third-person perspective, you'll try to be the last sheep standing in the herd, all while the sheep slides and bounces uncontrollably. And if you die... The sheep explodes. In the funniest way.">
+    <link rel="canonical" href="https://xGame.best/games/crazy-cattle-3d.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B6B',
+                        'secondary': '#4ECDC4',
+                        'dark': '#2D3436',
+                        'light': '#F7F7F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 游戏推荐卡片样式 - 完全匹配main.html */
+        .game-card-recommendation {
+            transition: all 0.3s cubic-bezier(.4,2,.3,1);
+            width: 190px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .game-card-recommendation:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.2);
+            border-color: #14B8A6;
+        }
+        
+        .game-card-recommendation img {
+            width: 190px;
+            height: 170px;
+            object-fit: contain;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            margin: 0 auto;
+            display: block;
+            border-radius: 16px 16px 0 0;
+            transition: transform 0.35s cubic-bezier(.4,2,.3,1);
+        }
+        
+        .game-card-recommendation:hover img {
+            transform: scale(1.05);
+        }
+        
+        .game-card-recommendation .p-4 {
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+        }
+        
+        .game-card-recommendation h3 {
+            font-size: 1rem;
+            line-height: 1.35rem;
+            margin-bottom: 0.25rem;
+            color: #22223b;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+        
+        .game-card-recommendation p {
+            font-size: 0.8rem;
+            line-height: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        
+        .game-card-recommendation .rating-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            background: rgba(20, 184, 166, 0.05);
+            border-radius: 8px;
+        }
+
+        .game-card-recommendation .stars {
+            color: #fbbf24;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+
+        .game-card-recommendation .rating-score {
+            font-weight: 600;
+            color: #14B8A6;
+            font-size: 0.875rem;
+        }
+
+        .game-card-recommendation .game-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .game-card-recommendation .category-pill {
+            font-size: 0.75rem;
+            font-weight: 500;
+            font-family: Arial, sans-serif;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            white-space: nowrap;
+            text-align: center;
+            background: linear-gradient(135deg, #bfdbfe, #e0f2fe);
+            color: #1e40af;
+            border: none;
+            box-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .game-card-recommendation .category-pill:hover {
+            background: linear-gradient(135deg, #93c5fd, #bfdbfe);
+            color: #1d4ed8;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
+        }
+        
+        /* 水平卡片样式 - 用于相关游戏 */
+        .game-card-horizontal {
+            flex: 0 0 190px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(.4,2,.3,1);
+        }
+
+        .game-card-horizontal:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.2);
+            border-color: #14B8A6;
+        }
+
+        .game-card-horizontal img {
+            width: 190px;
+            height: 170px;
+            object-fit: contain;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            margin: 0 auto;
+            display: block;
+            border-radius: 16px 16px 0 0;
+            transition: transform 0.35s cubic-bezier(.4,2,.3,1);
+        }
+
+        .game-card-horizontal:hover img {
+            transform: scale(1.05);
+        }
+
+        .game-card-horizontal .p-4 {
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+        }
+
+        .game-card-horizontal h3 {
+            font-size: 1rem;
+            line-height: 1.35rem;
+            margin-bottom: 0.25rem;
+            color: #22223b;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .game-card-horizontal p {
+            font-size: 0.8rem;
+            line-height: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .game-card-horizontal .rating-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            background: rgba(20, 184, 166, 0.05);
+            border-radius: 8px;
+        }
+
+        .game-card-horizontal .stars {
+            color: #fbbf24;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+
+        .game-card-horizontal .rating-score {
+            font-weight: 600;
+            color: #14B8A6;
+            font-size: 0.875rem;
+        }
+
+        .game-card-horizontal .game-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .game-card-horizontal .horizontal-tag {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(139, 92, 246, 0.1));
+            color: #14B8A6;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .game-card-horizontal .horizontal-tag:hover {
+            background: linear-gradient(135deg, #14B8A6, #8B5CF6);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+        }
+        
+        /* 右侧边栏推荐游戏卡片样式 */
+        .game-card-sidebar {
+            transition: all 0.3s ease;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            padding: 0;
+            margin-bottom: 1rem;
+            position: relative;
+            min-height: 100px;
+        }
+        
+        .game-card-sidebar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #14B8A6;
+        }
+        
+        .game-card-sidebar img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px 0 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex-shrink: 0;
+        }
+        
+        .game-card-sidebar .game-info {
+            margin-left: 110px;
+            height: calc(100% - 2rem);
+            position: relative;
+            padding: 1rem 1rem 1rem 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-card-sidebar h3 {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+            font-weight: 600;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .game-card-sidebar .game-description {
+            font-size: 0.875rem;
+            color: #6b7280;
+            line-height: 1.25rem;
+            margin-bottom: 0.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .game-card-sidebar .rating-mini {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .game-card-sidebar .stars-mini {
+            color: #fbbf24;
+            font-size: 0.875rem;
+        }
+        
+        .game-card-sidebar .rating-score-mini {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.875rem;
+        }
+        
+        .game-card-sidebar .rating-tags-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+        
+        .game-card-sidebar .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .game-card-sidebar .category-pill-mini {
+            font-size: 0.75rem;
+            font-weight: 500;
+            font-family: Arial, sans-serif;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            white-space: nowrap;
+            text-align: center;
+            background: linear-gradient(135deg, #bfdbfe, #e0f2fe);
+            color: #1e40af;
+            border: none;
+            box-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .game-card-sidebar .category-pill-mini:hover {
+            background: linear-gradient(135deg, #93c5fd, #bfdbfe);
+            color: #1d4ed8;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .game-card-recommendation {
+                width: 160px;
+            }
+            .game-card-recommendation img {
+                width: 160px;
+                height: 143px;
+            }
+            .game-card-horizontal {
+                width: 160px;
+                flex: 0 0 160px;
+            }
+            .game-card-horizontal img {
+                width: 160px;
+                height: 143px;
+            }
+            .game-card-sidebar .category-tags {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../../assets/css/game-detail-common.css">
+</head>
+<body class="bg-light text-dark no-select">
+    <main class="flex-1 p-8">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-primary to-secondary py-12 rounded-xl mb-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="crazy-cattle-3d.heroTitle">Crazy Cattle 3D</h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto" data-i18n="crazy-cattle-3d.heroDescription">Crazy Cattle 3D是一款单人战斗royale游戏，你可以控制一只有弹性的羊，并试图撞倒群中的其他羊。</p>
+            </div>
+        </div>
+
+        <!-- Game Body -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Game Main Area -->
+            <div class="lg:col-span-2">
+                <!-- Game Window -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 anti-crawl">
+                    <div class="aspect-w-16 aspect-h-9 relative">
+                        <iframe id="gameFrame" src="https://cloud.onlinegames.io/games/2025/unity3/crazy-cattle-3d/index-og.html" class="w-full h-[600px] md:h-[700px]" frameborder="0" scrolling="no" style="overflow: hidden;" allowfullscreen></iframe>
+                        <div class="absolute top-4 right-4 flex space-x-2 z-10">
+                            <button id="reloadBtn" class="bg-white/90 hover:bg-white text-gray-700 p-2 rounded-lg shadow-lg" data-i18n="crazy-cattle-3d.reloadTooltip" title="重新加载游戏"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></button>
+                            <button id="fullscreenBtn" class="bg-white/90 hover:bg-white text-gray-700 p-2 rounded-lg shadow-lg" data-i18n="crazy-cattle-3d.fullscreenTooltip" title="全屏游戏"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg></button>
+                        </div>
+                        <button id="exitFullscreenBtn" class="hidden fixed top-4 right-4 bg-red-500 text-white p-3 rounded-full shadow-lg z-50" data-i18n="crazy-cattle-3d.exitFullscreenTooltip" title="退出全屏"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                    </div>
+                </div>
+
+                <!-- Game Description -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="crazy-cattle-3d.gameDescriptionTitle">游戏说明</h2>
+                    <p class="text-gray-600 mb-6" data-i18n="crazy-cattle-3d.gameDescription">物理学很奇怪。而其他绵羊的动作绝对是喜剧。从第三人称的角度来看，你会试图成为群中最后一只羊，而羊会不受控制地滑动和弹跳。如果你死了。..羊爆炸了。以最有趣的方式。</p>
+                </div>
+
+                <!-- Related Games - 紧跟游戏说明 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6 relative">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6" data-i18n="common.relatedGames">相关游戏</h2>
+                    <!-- 水平滚动容器 -->
+                    <div class="overflow-x-auto pb-4 mb-4">
+                        <div id="relatedGamesContainer" class="flex gap-4 min-w-max">
+                            <!-- Related games will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <!-- 查看更多游戏按钮 - 右下角位置 -->
+                    <div class="flex justify-end">
+                        <a href="../../../main.html" class="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-2.5 px-5 rounded-lg text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-decoration-none">
+                            <span data-i18n="common.viewMoreGames">查看更多游戏</span>
+                            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <!-- Game Info -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <img src="../../../assets/images/games/action/crazy-cattle-3d.jpg" alt="Crazy Cattle 3D" class="w-32 h-32 object-cover rounded-lg shadow-md" onerror="this.src='https://via.placeholder.com/128x128?text=Crazy Cattle 3D'">
+                        <div class="ml-4">
+                            <h2 class="text-xl font-bold text-gray-900" data-i18n="crazy-cattle-3d.gameName">Crazy Cattle 3D</h2>
+                            <div class="flex items-center mt-2">
+                                <span class="text-yellow-400">★★★★☆</span>
+                                <span class="text-gray-600 ml-2">4.2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6" id="gameTagsContainer">
+                        <!-- 标签将通过JavaScript动态生成，支持国际化 -->
+                    </div>
+                    <div class="text-sm text-gray-500">
+                        <p data-i18n="crazy-cattle-3d.developer">《疯狂的牛3D》由Anna Mayberry开发。她精心设计了这款游戏，使其在任何台式机或笔记本电脑浏览器上都能流畅运行；在OnlineGames.io上玩Crazy Cattle 3D无需下载。只需打开浏览器并开始充电！</p>
+                        <p data-i18n="crazy-cattle-3d.updateDate">2025年6月6日</p>
+                    </div>
+                </div>
+
+                <!-- How To Play -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4" data-i18n="crazy-cattle-3d.howToPlayTitle">玩法说明</h2>
+                    <div class="text-gray-600" data-i18n="crazy-cattle-3d.howToPlay">Crazy Cattle 3D于2025年4月12日出现在itch.io上，一周内，它无处不在。Anna Mayberry的羊大战royale远非花哨，但其疯狂的物理和快速的回合吸引了全世界的玩家，以至于TikTokers和YouTuber开始发布羊冲进围栏和飞离悬崖的片段。标签#CrazyCattle3D在一个月内在社交媒体平台上获得了数百万的浏览量。甚至游戏博客也注意到了，称赞其简单的魅力和不间断的乐趣。</div>
+                </div>
+
+                <!-- Controls -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4" data-i18n="crazy-cattle-3d.controlsTitle">操作说明</h2>
+                    <ul class="controls-list text-gray-600" id="controlsList"><li>W A S D：移动你的羊</li><li>空间：重新启动</li><li>Esc：暂停并打开菜单</li></ul>
+                </div>
+
+                <!-- Recommended Games - 放在操作说明下面 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-bold text-gray-900" data-i18n="common.recommendedGames">推荐游戏</h2>
+                        <button id="refreshRecommendations" class="flex items-center gap-2 text-blue-500 hover:text-blue-600 text-sm font-medium transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            <span data-i18n="common.refreshRecommendations">换一批</span>
+                        </button>
+                    </div>
+                    <div id="recommendedGamesContainer">
+                        <!-- Recommended games will be populated by JavaScript -->
+                    </div>
+                    <div class="mt-6">
+                        <a href="../../../main.html" class="block w-full bg-gradient-to-r from-teal-500 to-purple-600 text-white py-3 px-6 rounded-lg font-medium hover:from-teal-600 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 text-decoration-none">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                            </svg>
+                            <span data-i18n="common.viewAllGames">查看全部游戏</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- I18n Script -->
+    <script>
+        // I18N Key - MUST match the key in js/language.js
+        const I18N_KEY = 'xgame_lang';
+
+        // 标签翻译映射（通用标签词典）
+        window.tagTranslations = {"1 Player": {"en": "1 Player", "cn": "单人"}, "2D": {"en": "2D", "cn": "2D"}, "2 Player": {"en": "2 Player", "cn": "双人"}, "3D": {"en": "3D", "cn": "3D"}, "Action": {"en": "Action", "cn": "动作"}, "Adventure": {"en": "Adventure", "cn": "冒险"}, "Arcade": {"en": "Arcade", "cn": "街机"}, "Armor": {"en": "Armor", "cn": "装甲"}, "Army": {"en": "Army", "cn": "军队"}, "Avoid": {"en": "Avoid", "cn": "躲避"}, "Battle": {"en": "Battle", "cn": "战斗"}, "Car": {"en": "Car", "cn": "汽车"}, "Clicker": {"en": "Clicker", "cn": "点击"}, "Combat": {"en": "Combat", "cn": "格斗"}, "Crazy": {"en": "Crazy", "cn": "疯狂"}, "Driving": {"en": "Driving", "cn": "驾驶"}, "Embeddable": {"en": "Embeddable", "cn": "可嵌入"}, "Fantasy": {"en": "Fantasy", "cn": "奇幻"}, "Free": {"en": "Free", "cn": "免费"}, "Girl": {"en": "Girl", "cn": "女孩"}, "Girls": {"en": "Girls", "cn": "女孩们"}, "Horror": {"en": "Horror", "cn": "恐怖"}, "IO Games": {"en": "IO Games", "cn": "IO游戏"}, "Kids": {"en": "Kids", "cn": "儿童"}, "Minecraft": {"en": "Minecraft", "cn": "我的世界"}, "Mobile": {"en": "Mobile", "cn": "手机"}, "Multiplayer": {"en": "Multiplayer", "cn": "多人"}, "New Games": {"en": "New Games", "cn": "新游戏"}, "Pixel": {"en": "Pixel", "cn": "像素"}, "Puzzle": {"en": "Puzzle", "cn": "益智"}, "Racing": {"en": "Racing", "cn": "赛车"}, "RPG": {"en": "RPG", "cn": "角色扮演"}, "Shooting": {"en": "Shooting", "cn": "射击"}, "Simulator": {"en": "Simulator", "cn": "模拟"}, "Sniper": {"en": "Sniper", "cn": "狙击"}, "Sports": {"en": "Sports", "cn": "体育"}, "Strategy": {"en": "Strategy", "cn": "策略"}, "Survival": {"en": "Survival", "cn": "生存"}, "Tank": {"en": "Tank", "cn": "坦克"}, "Unity": {"en": "Unity", "cn": "Unity"}, "War": {"en": "War", "cn": "战争"}, "Weapon": {"en": "Weapon", "cn": "武器"}};
+
+        // 游戏标签数据（从游戏数据中提取）
+        window.gameTags = ["1 Player", "Action", "Animal", "Arena", "Battle Royale", "Free", "Fun", "Funny"];
+
+        // 将翻译对象设置为全局变量，供 game-detail-common.js 使用
+        window.translations = {
+            en: {
+                "common": {
+                    "relatedGames": "Related Games",
+                    "recommendedGames": "Recommended Games",
+                    "playNow": "Play Now",
+                    "refreshRecommendations": "Refresh",
+                    "viewAllGames": "View All Games",
+                    "viewMoreGames": "View More Games"
+                },
+                "crazy-cattle-3d": {"title": "Crazy Cattle 3D", "description": "Crazy Cattle 3D is a one-player battle royale game where you control a bouncy sheep and try to knock other sheep in the herd. The physics are strange. And the movement of other sheep is absolute comedy. With a third-person perspective, you'll try to be the last sheep standing in the herd, all while the sheep slides and bounces uncontrollably. And if you die... The sheep explodes. In the funniest way.", "categories": ["1 Player", "Action", "Animal", "Arena", "Battle Royale", "Free", "Fun", "Funny"], "developer": "Crazy Cattle 3D is developed by Anna Mayberry. She crafted the game to run smoothly on any desktop or laptop browser; no download is needed to play Crazy Cattle 3D on OnlineGames.io. Just open your browser and start charging!", "controls": "W A S D: Move your sheep\nSpace: Restart\nEsc: Pause and open menu", "howToPlay": "Crazy Cattle 3D showed up on itch.io on April 12, 2025, and within a week, it was everywhere. Anna Mayberry's sheep battle royale is far from fancy, but its crazy physics and fast rounds hooked players worldwide so much that TikTokers and YouTubers started posting clips of sheep rocketing into fences and flying off cliffs. The hashtag #CrazyCattle3D racked up millions of views on social media platforms within one month. Even gaming blogs took notice, praising its simple charm and nonstop fun.", "powerUps": "", "soloCampaign": "", "gameDescriptionTitle": "Game Description", "gameDescription": " The physics are strange. And the movement of other sheep is absolute comedy. With a third-person perspective, you'll try to be the last sheep standing in the herd, all while the sheep slides and bounces uncontrollably. And if you die... The sheep explodes. In the funniest way.", "gameName": "Crazy Cattle 3D", "updateDate": "Updated: June 6, 2025", "controlsTitle": "Controls", "howToPlayTitle": "How To Play", "powerUpsTitle": "Power-Ups", "soloCampaignTitle": "Solo Campaign", "relatedGamesTitle": "Related Games", "reloadTooltip": "Reload Game", "fullscreenTooltip": "Fullscreen Game", "exitFullscreenTooltip": "Exit Fullscreen", "controlsListHtml": "<li>W A S D: Move your sheep</li><li>Space: Restart</li><li>Esc: Pause and open menu</li>", "heroTitle": "Crazy Cattle 3D", "heroDescription": "Crazy Cattle 3D is a one-player battle royale game where you control a bouncy sheep and try to knock other sheep in the herd.", "control1": "W A S D: Move your sheep", "control2": "Space: Restart", "control3": "Esc: Pause and open menu"},
+                "sidebar": { "action": "Action" },
+                "controlsListHtml": "<li>W A S D: Move your sheep</li><li>Space: Restart</li><li>Esc: Pause and open menu</li>"
+            },
+            cn: {
+                "common": {
+                    "relatedGames": "相关游戏",
+                    "recommendedGames": "推荐游戏", 
+                    "playNow": "立即游戏",
+                    "refreshRecommendations": "换一批",
+                    "viewAllGames": "查看全部游戏",
+                    "viewMoreGames": "查看更多游戏"
+                },
+                "crazy-cattle-3d": {"title": "疯狂牛3D", "description": "Crazy Cattle 3D是一款单人战斗royale游戏，你可以控制一只有弹性的羊，并试图撞倒群中的其他羊。物理学很奇怪。而其他绵羊的动作绝对是喜剧。从第三人称的角度来看，你会试图成为群中最后一只羊，而羊会不受控制地滑动和弹跳。如果你死了。..羊爆炸了。以最有趣的方式。", "categories": ["1 Player", "Action", "Animal", "Arena", "Battle Royale", "Free", "Fun", "Funny"], "developer": "《疯狂的牛3D》由Anna Mayberry开发。她精心设计了这款游戏，使其在任何台式机或笔记本电脑浏览器上都能流畅运行；在OnlineGames.io上玩Crazy Cattle 3D无需下载。只需打开浏览器并开始充电！", "controls": "W A S D：移动你的羊\n空间：重新启动\nEsc：暂停并打开菜单", "howToPlay": "Crazy Cattle 3D于2025年4月12日出现在itch.io上，一周内，它无处不在。Anna Mayberry的羊大战royale远非花哨，但其疯狂的物理和快速的回合吸引了全世界的玩家，以至于TikTokers和YouTuber开始发布羊冲进围栏和飞离悬崖的片段。标签#CrazyCattle3D在一个月内在社交媒体平台上获得了数百万的浏览量。甚至游戏博客也注意到了，称赞其简单的魅力和不间断的乐趣。", "powerUps": "", "soloCampaign": "", "gameDescriptionTitle": "游戏说明", "gameDescription": "物理学很奇怪。而其他绵羊的动作绝对是喜剧。从第三人称的角度来看，你会试图成为群中最后一只羊，而羊会不受控制地滑动和弹跳。如果你死了。..羊爆炸了。以最有趣的方式。", "gameName": "疯狂牛3D", "updateDate": "更新于: 2025年6月6日", "controlsTitle": "操作说明", "howToPlayTitle": "玩法说明", "powerUpsTitle": "道具说明", "soloCampaignTitle": "单人模式", "relatedGamesTitle": "相关游戏", "reloadTooltip": "重新加载游戏", "fullscreenTooltip": "全屏游戏", "exitFullscreenTooltip": "退出全屏", "controlsListHtml": "<li>W A S D：移动你的羊</li><li>空间：重新启动</li><li>Esc：暂停并打开菜单</li>", "heroTitle": "疯狂牛3D", "heroDescription": "Crazy Cattle 3D是一款单人战斗royale游戏，你可以控制一只有弹性的羊，并试图撞倒群中的其他羊。", "control1": "W A S D：移动你的羊", "control2": "空间：重新启动", "control3": "Esc：暂停并打开菜单"},
+                "sidebar": { "action": "动作" },
+                "controlsListHtml": "<li>W A S D：移动你的羊</li><li>空间：重新启动</li><li>Esc：暂停并打开菜单</li>"
+            }
+        };
+        
+        /**
+         * 渲染游戏标签（支持国际化）
+         * @param {string} lang - 语言代码 ('en' 或 'cn')
+         */
+        function renderGameTags(lang) {
+            const container = document.getElementById('gameTagsContainer');
+            if (!container || !window.gameTags || !window.tagTranslations) {
+                console.warn('⚠️ 标签容器或翻译数据未找到');
+                return;
+            }
+
+            // 清空容器
+            container.innerHTML = '';
+
+            // 遍历标签并渲染
+            window.gameTags.forEach(tagKey => {
+                const tagTranslation = window.tagTranslations[tagKey];
+                if (tagTranslation) {
+                    const tagText = tagTranslation[lang] || tagTranslation['en'] || tagKey;
+                    
+                    // 创建标签元素
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1';
+                    tagElement.textContent = tagText;
+                    tagElement.setAttribute('data-tag-key', tagKey); // 方便调试
+                    
+                    container.appendChild(tagElement);
+                }
+            });
+
+            console.log(`✅ 已渲染 ${window.gameTags.length} 个标签 (语言: ${lang})`);
+        }
+
+        /**
+         * 应用翻译到页面
+         * @param {string} lang - 语言代码 ('en' 或 'cn')
+         */
+        function applyTranslations(lang) {
+            if (!lang || !window.translations) {
+                return;
+            }
+
+            const targetLangData = window.translations[lang];
+            const fallbackLang = lang === 'en' ? 'cn' : 'en';
+            const fallbackLangData = window.translations[fallbackLang];
+
+            if (!targetLangData) {
+                return;
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                
+                const findTranslation = (data, k) => k.split('.').reduce((obj, i) => obj?.[i], data);
+
+                // 1. Try target language. An empty string is not a valid translation.
+                let translation = findTranslation(targetLangData, key);
+
+                // 2. If not found or empty, try fallback language
+                if (!translation && fallbackLangData) {
+                    translation = findTranslation(fallbackLangData, key);
+                }
+
+                if (translation) {
+                    // For buttons with SVG, only update the 'title'
+                    if (element.tagName === 'BUTTON' && element.querySelector('svg')) {
+                        element.setAttribute('title', translation);
+                    } else {
+                        // For other elements, safely update text content
+                        const textNode = Array.from(element.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+                        if (textNode) {
+                            textNode.textContent = translation;
+                        } else {
+                            element.textContent = translation;
+                        }
+                    }
+                }
+            });
+
+            // Update document's lang attribute
+            document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
+
+            // Controls 列表特殊处理
+            const controlsList = document.getElementById('controlsList');
+            if (controlsList && window.translations && window.translations[lang] && window.translations[lang]["crazy-cattle-3d"] && window.translations[lang]["crazy-cattle-3d"].controlsListHtml) {
+                controlsList.innerHTML = window.translations[lang]["crazy-cattle-3d"].controlsListHtml;
+            }
+
+            // 渲染国际化标签
+            renderGameTags(lang);
+        }
+
+        /**
+         * 同步语言设置
+         */
+        function syncLanguage() {
+            const currentLang = localStorage.getItem(I18N_KEY) || 'en';
+            applyTranslations(currentLang);
+            // 重新渲染游戏推荐以支持国际化
+            renderGameRecommendations(currentLang);
+            renderGameTags(currentLang);
+            console.log(`🌐 语言同步完成，当前语言: ${currentLang}`);
+        }
+
+        // 监听来自父页面的消息
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'languageChange' && event.data.lang) {
+                // 处理来自父页面的语言变更消息
+                applyTranslations(event.data.lang);
+                // 重新渲染游戏推荐以支持国际化
+                renderGameRecommendations(event.data.lang);
+                renderGameTags(event.data.lang);
+                console.log(`🌐 收到语言切换消息，已切换到: ${event.data.lang}`);
+            } else if (event.data.type === 'scrollToSection') {
+                // 游戏详情页无法处理滚动请求，不发送确认消息
+                // 父页面会因为没收到确认而重新加载main.html
+                console.log('⚠️ 游戏详情页收到滚动请求，但无法处理:', event.data.sectionId);
+            }
+        });
+
+        // 监听 localStorage 变化（主要同步方式）
+        window.addEventListener('storage', (event) => {
+            if (event.key === I18N_KEY && event.newValue) {
+                applyTranslations(event.newValue);
+                // 重新渲染游戏推荐以支持国际化
+                renderGameRecommendations(event.newValue);
+                renderGameTags(event.newValue);
+                console.log(`🌐 检测到语言变化，已切换到: ${event.newValue}`);
+            }
+        });
+
+        // ========== 游戏推荐功能 ==========
+
+        // 游戏数据库（动态生成）
+        const gameDatabase = {"monster-survivors": {"title": {"en": "Monster Survivors", "cn": "Monster Survivors"}, "description": {"en": "Survive endless waves of monsters", "cn": "在无尽的怪物浪潮中生存下来"}, "image": "assets/images/games/action/monster-survivors.jpg", "url": "games/categories/action/monster-survivors.html", "tags": ["Action", "Survival", "RPG"], "rating": 4.5, "category": "action"}, "crazy-shooters": {"title": {"en": "Crazy Shooters", "cn": "Crazy Shooters"}, "description": {"en": "Crazy shooting game", "cn": "疯狂射击游戏"}, "image": "assets/images/games/action/crazy-shooters.jpg", "url": "games/categories/action/crazy-shooters.html", "tags": ["Action", "Shooting"], "rating": 4.3, "category": "action"}, "stickman-parkour": {"title": {"en": "Stickman Parkour", "cn": "火柴人跑酷"}, "description": {"en": "Stickman parkour game", "cn": "火柴人跑酷游戏"}, "image": "assets/images/games/adventure/stickman-parkour.jpg", "url": "games/categories/adventure/stickman-parkour.html", "tags": ["Adventure", "Platform"], "rating": 4.2, "category": "adventure"}, "vex-7": {"title": {"en": "Vex 7", "cn": "Vex 7"}, "description": {"en": "Challenging platform adventure", "cn": "挑战重重的平台冒险"}, "image": "assets/images/games/adventure/vex-7.jpg", "url": "games/categories/adventure/vex-7.html", "tags": ["Adventure", "Platform"], "rating": 4.5, "category": "adventure"}, "run-3d": {"title": {"en": "Run 3D", "cn": "Run 3D"}, "description": {"en": "3D parkour game", "cn": "3D跑酷游戏"}, "image": "assets/images/games/arcade/run-3d.jpg", "url": "games/categories/arcade/run-3d.html", "tags": ["Arcade"], "rating": 4.1, "category": "arcade"}, "geometry-dash": {"title": {"en": "Geometry Dash", "cn": "Geometry Dash"}, "description": {"en": "Geometry dash challenge", "cn": "几何冲刺挑战"}, "image": "assets/images/games/arcade/geometry-dash.jpg", "url": "games/categories/arcade/geometry-dash.html", "tags": ["Arcade", "Platform"], "rating": 4.4, "category": "arcade"}, "burnout-city": {"title": {"en": "Burnout City", "cn": "燃尽都市"}, "description": {"en": "City driving and drifting", "cn": "城市驾驶与漂移"}, "image": "assets/images/games/car/burnout-city.jpg", "url": "games/categories/car/burnout-city.html", "tags": ["Car", "Driving"], "rating": 4.3, "category": "car"}, "fun-party-makeup": {"title": {"en": "Fun Party Makeup", "cn": "趣味派对化妆"}, "description": {"en": "Fun party makeup game", "cn": "趣味派对化妆游戏"}, "image": "assets/images/games/girl/fun-party-makeup.jpg", "url": "games/categories/girl/fun-party-makeup.html", "tags": ["Girl", "Makeup"], "rating": 4.0, "category": "girl"}, "poptropica": {"title": {"en": "Poptropica", "cn": "Poptropica"}, "description": {"en": "Virtual world adventure", "cn": "虚拟世界冒险"}, "image": "assets/images/games/kids/poptropica.jpg", "url": "games/categories/kids/poptropica.html", "tags": ["Kids", "Adventure"], "rating": 4.2, "category": "kids"}, "world-guesser": {"title": {"en": "World Guesser", "cn": "世界猜谜者"}, "description": {"en": "Geography guessing game", "cn": "猜地理位置游戏"}, "image": "assets/images/games/multiplayer/world-guesser.jpg", "url": "games/categories/multiplayer/world-guesser.html", "tags": ["Multiplayer", "Puzzle"], "rating": 4.1, "category": "multiplayer"}, "google-feud": {"title": {"en": "Google Feud", "cn": "谷歌问答"}, "description": {"en": "Guess Google search results", "cn": "猜谷歌搜索结果"}, "image": "assets/images/games/puzzle/google-feud.jpg", "url": "games/categories/puzzle/google-feud.html", "tags": ["Puzzle", "Trivia"], "rating": 4.3, "category": "puzzle"}, "duck-life-adventure": {"title": {"en": "Duck Life Adventure", "cn": "小鸭子冒险"}, "description": {"en": "Duck racing adventure", "cn": "小鸭子竞速冒险"}, "image": "assets/images/games/racing/duck-life-adventure.jpg", "url": "games/categories/racing/duck-life-adventure.html", "tags": ["Racing", "Adventure"], "rating": 4.2, "category": "racing"}, "alien-sky-invasion": {"title": {"en": "Alien Sky Invasion", "cn": "外星人入侵"}, "description": {"en": "Alien invasion air combat", "cn": "外星人入侵空战"}, "image": "assets/images/games/shooting/alien-sky-invasion.jpg", "url": "games/categories/shooting/alien-sky-invasion.html", "tags": ["Shooting", "Air Combat"], "rating": 4.1, "category": "shooting"}, "hoop-world-3d": {"title": {"en": "Hoop World 3D", "cn": "篮球世界3D"}, "description": {"en": "3D basketball game", "cn": "3D篮球游戏"}, "image": "assets/images/games/sports/hoop-world-3d.jpg", "url": "games/categories/sports/hoop-world-3d.html", "tags": ["Sports", "3D"], "rating": 4.0, "category": "sports"}, "hero-tower": {"title": {"en": "Hero Tower", "cn": "英雄塔"}, "description": {"en": "Hero tower defense strategy", "cn": "英雄塔防策略"}, "image": "assets/images/games/strategy/hero-tower.jpg", "url": "games/categories/strategy/hero-tower.html", "tags": ["Strategy", "Tower Defense"], "rating": 4.3, "category": "strategy"}};
+
+        /**
+         * 获取相关游戏（基于标签匹配）
+         * @param {string} currentGameId - 当前游戏ID
+         * @param {number} count - 返回游戏数量
+         * @returns {Array} 相关游戏列表
+         */
+        function getRelatedGames(currentGameId, count = 5) {
+            const currentGame = gameDatabase[currentGameId];
+            if (!currentGame) return [];
+
+            const currentTags = currentGame.tags;
+            const otherGames = Object.entries(gameDatabase).filter(([id]) => id !== currentGameId);
+            
+            // 计算标签匹配度并排序
+            const gamesWithScore = otherGames.map(([id, game]) => {
+                const matchingTags = game.tags.filter(tag => currentTags.includes(tag));
+                return {
+                    id,
+                    game,
+                    score: matchingTags.length,
+                    matchingTags
+                };
+            });
+
+            // 按匹配度排序，匹配度相同的按评分排序
+            gamesWithScore.sort((a, b) => {
+                if (a.score !== b.score) return b.score - a.score;
+                return b.game.rating - a.game.rating;
+            });
+
+            return gamesWithScore.slice(0, count).map(item => ({
+                id: item.id,
+                ...item.game,
+                matchingTags: item.matchingTags
+            }));
+        }
+
+        /**
+         * 获取推荐游戏（随机推荐）
+         * @param {string} currentGameId - 当前游戏ID
+         * @param {Array} excludeIds - 要排除的游戏ID列表
+         * @param {number} count - 返回游戏数量
+         * @returns {Array} 推荐游戏列表
+         */
+        function getRecommendedGames(currentGameId, excludeIds = [], count = 4) {
+            const allExcludeIds = [currentGameId, ...excludeIds];
+            const availableGames = Object.entries(gameDatabase)
+                .filter(([id]) => !allExcludeIds.includes(id))
+                .map(([id, game]) => ({ id, ...game }));
+
+            // 随机打乱数组
+            for (let i = availableGames.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [availableGames[i], availableGames[j]] = [availableGames[j], availableGames[i]];
+            }
+
+            return availableGames.slice(0, count);
+        }
+
+        /**
+         * 渲染游戏卡片（完全匹配main.html风格）
+         * @param {Object} game - 游戏对象
+         * @param {string} lang - 当前语言
+         * @param {boolean} isSidebar - 是否为侧边栏样式
+         * @param {boolean} isHorizontal - 是否为水平布局
+         * @returns {string} HTML字符串
+         */
+        function renderGameCard(game, lang = 'cn', isSidebar = false, isHorizontal = false) {
+            const title = game.title[lang] || game.title.en || game.title.cn;
+            const description = game.description[lang] || game.description.en || game.description.cn;
+            
+            // 生成星级评分
+            const fullStars = Math.floor(game.rating);
+            const totalStars = 5;
+            let starsHtml = '';
+            for (let i = 0; i < totalStars; i++) {
+                starsHtml += i < fullStars ? '★' : '★';
+            }
+
+            if (isHorizontal) {
+                // 水平布局样式 - 完全匹配main.html的游戏卡片结构
+                const categoryTags = game.tags.slice(0, 2).map(tag => {
+                    const tagTranslation = window.tagTranslations[tag];
+                    const tagText = tagTranslation ? (tagTranslation[lang] || tagTranslation['en'] || tag) : tag;
+                    return `<span class="horizontal-tag">${tagText}</span>`;
+                }).join('');
+
+                return `
+                    <div class="game-card-horizontal">
+                                    <a href="../../../${game.url}">
+                <img src="../../../${game.image}" alt="${title}" onerror="this.src='https://via.placeholder.com/190x170/f8fafc/666?text=${encodeURIComponent(title.slice(0, 3))}'">
+                            <div class="p-4">
+                                <h3>${title}</h3>
+                                <p>${description}</p>
+                                <div class="rating-container">
+                                    <div class="stars">${starsHtml}</div>
+                                    <span class="rating-score">${game.rating}</span>
+                                </div>
+                                <div class="game-tags">
+                                    ${categoryTags}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+            } else if (isSidebar) {
+                // 侧边栏样式
+                const categoryTags = game.tags.slice(0, 2).map(tag => {
+                    return `<span class="category-pill-mini">${tag}</span>`;
+                }).join('');
+
+                return `
+                    <div class="game-card-sidebar">
+                                    <a href="../../../${game.url}" class="w-full h-full block">
+                <img src="../../../${game.image}" alt="${title}" onerror="this.src='https://via.placeholder.com/100x100/f8fafc/666?text=${encodeURIComponent(title.slice(0, 3))}'">
+                            <div class="game-info">
+                                <h3>${title}</h3>
+                                <p class="game-description">${description}</p>
+                                <div class="rating-tags-container">
+                                    <div class="rating-mini">
+                                        <span class="stars-mini">${starsHtml}</span>
+                                        <span class="rating-score-mini">${game.rating}</span>
+                                    </div>
+                                    <div class="category-tags">
+                                        ${categoryTags}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+            } else {
+                // 标准网格样式
+                return `
+                    <div class="game-card-recommendation">
+                                <a href="../../../${game.url}">
+            <img src="../../../${game.image}" alt="${title}" onerror="this.src='https://via.placeholder.com/190x170/f8fafc/666?text=${encodeURIComponent(title)}'">
+                            <div class="p-4">
+                                <h3>${title}</h3>
+                                <p>${description}</p>
+                                <div class="rating-container">
+                                    <div class="stars">${starsHtml}</div>
+                                    <span class="rating-score">${game.rating}</span>
+                                </div>
+                                <div class="game-tags">
+                                    <span class="category-pill">${game.tags[0]}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
+        /**
+         * 渲染游戏推荐区域
+         * @param {string} lang - 当前语言
+         */
+        function renderGameRecommendations(lang = 'cn') {
+            const currentGameId = 'crazy-cattle-3d'; // 动态替换为当前游戏ID
+            
+            // 获取相关游戏（左侧主要区域）
+            const relatedGames = getRelatedGames(currentGameId, 5);
+            const relatedContainer = document.getElementById('relatedGamesContainer');
+            
+            if (relatedContainer) {
+                if (relatedGames.length > 0) {
+                    relatedContainer.innerHTML = relatedGames
+                        .map(game => renderGameCard(game, lang, false, true)) // 使用水平布局样式
+                        .join('');
+                } else {
+                    relatedContainer.innerHTML = `
+                        <div class="text-center text-gray-500 py-8 min-w-full">
+                            ${lang === 'en' ? 'No related games found' : '暂无相关游戏'}
+                        </div>
+                    `;
+                }
+            }
+            
+            // 获取推荐游戏（右侧边栏）
+            const relatedGameIds = relatedGames.map(game => game.id);
+            const recommendedGames = getRecommendedGames(currentGameId, relatedGameIds, 4);
+            const recommendedContainer = document.getElementById('recommendedGamesContainer');
+            
+            if (recommendedContainer) {
+                if (recommendedGames.length > 0) {
+                    recommendedContainer.innerHTML = recommendedGames
+                        .map(game => renderGameCard(game, lang, true)) // 使用侧边栏样式
+                        .join('');
+                } else {
+                    recommendedContainer.innerHTML = `
+                        <div class="text-center text-gray-500 py-4">
+                            ${lang === 'en' ? 'No recommended games found' : '暂无推荐游戏'}
+                        </div>
+                    `;
+                }
+            }
+
+            console.log(`✅ 游戏推荐渲染完成 - 相关游戏: ${relatedGames.length}, 推荐游戏: ${recommendedGames.length}`);
+        }
+
+        /**
+         * 刷新推荐游戏
+         * @param {string} lang - 当前语言
+         */
+        function refreshRecommendations(lang = 'cn') {
+            const currentGameId = 'crazy-cattle-3d';
+            const relatedGames = getRelatedGames(currentGameId, 5);
+            const relatedGameIds = relatedGames.map(game => game.id);
+            
+            // 重新随机获取推荐游戏
+            const newRecommendedGames = getRecommendedGames(currentGameId, relatedGameIds, 4);
+            const recommendedContainer = document.getElementById('recommendedGamesContainer');
+            
+            if (recommendedContainer && newRecommendedGames.length > 0) {
+                // 添加刷新动画效果
+                recommendedContainer.style.opacity = '0.5';
+                recommendedContainer.style.transform = 'translateY(10px)';
+                
+                setTimeout(() => {
+                    recommendedContainer.innerHTML = newRecommendedGames
+                        .map(game => renderGameCard(game, lang, true))
+                        .join('');
+                    recommendedContainer.style.opacity = '1';
+                    recommendedContainer.style.transform = 'translateY(0)';
+                }, 300);
+            }
+            
+            console.log(`🔄 推荐游戏已刷新 - 新推荐: ${newRecommendedGames.length}`);
+        }
+
+        // ========== 按钮功能实现 ==========
+        
+        // 重载游戏功能
+        function reloadGame() {
+            console.log('🔄 重载游戏按钮被点击');
+            const gameFrame = document.getElementById('gameFrame');
+            if (gameFrame) {
+                const currentSrc = gameFrame.src;
+                console.log('📍 当前游戏URL:', currentSrc);
+                gameFrame.src = '';
+                setTimeout(() => {
+                    gameFrame.src = currentSrc;
+                    console.log('✅ 游戏重载完成');
+                }, 100);
+            } else {
+                console.error('❌ 未找到游戏iframe');
+            }
+        }
+
+        // 全屏功能
+        function toggleFullscreen() {
+            console.log('🖥️ 全屏按钮被点击');
+            const gameFrame = document.getElementById('gameFrame');
+            const exitBtn = document.getElementById('exitFullscreenBtn');
+            
+            if (gameFrame) {
+                try {
+                    if (gameFrame.requestFullscreen) {
+                        gameFrame.requestFullscreen();
+                    } else if (gameFrame.mozRequestFullScreen) { /* Firefox */
+                        gameFrame.mozRequestFullScreen();
+                    } else if (gameFrame.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                        gameFrame.webkitRequestFullscreen();
+                    } else if (gameFrame.msRequestFullscreen) { /* IE/Edge */
+                        gameFrame.msRequestFullscreen();
+                    }
+                    
+                    if (exitBtn) {
+                        exitBtn.classList.remove('hidden');
+                        console.log('👁️ 退出全屏按钮已显示');
+                    }
+                    console.log('✅ 全屏模式已激活');
+                } catch (error) {
+                    console.error('❌ 全屏模式激活失败:', error);
+                }
+            } else {
+                console.error('❌ 未找到游戏iframe');
+            }
+        }
+
+        // 退出全屏功能
+        function exitFullscreen() {
+            console.log('🚪 退出全屏按钮被点击');
+            const exitBtn = document.getElementById('exitFullscreenBtn');
+            
+            try {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { /* Firefox */
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE/Edge */
+                    document.msExitFullscreen();
+                }
+                
+                if (exitBtn) {
+                    exitBtn.classList.add('hidden');
+                    console.log('👁️ 退出全屏按钮已隐藏');
+                }
+                console.log('✅ 已退出全屏模式');
+            } catch (error) {
+                console.error('❌ 退出全屏失败:', error);
+            }
+        }
+
+        // 绑定按钮事件
+        function bindButtonEvents() {
+            console.log('🔗 开始绑定按钮事件');
+            
+            const reloadBtn = document.getElementById('reloadBtn');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
+            
+            if (reloadBtn) {
+                console.log('✅ 找到重载按钮，绑定点击事件');
+                reloadBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    reloadGame();
+                });
+            } else {
+                console.error('❌ 未找到重载按钮 (id: reloadBtn)');
+            }
+            
+            if (fullscreenBtn) {
+                console.log('✅ 找到全屏按钮，绑定点击事件');
+                fullscreenBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleFullscreen();
+                });
+            } else {
+                console.error('❌ 未找到全屏按钮 (id: fullscreenBtn)');
+            }
+            
+            if (exitFullscreenBtn) {
+                console.log('✅ 找到退出全屏按钮，绑定点击事件');
+                exitFullscreenBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    exitFullscreen();
+                });
+            } else {
+                console.error('❌ 未找到退出全屏按钮 (id: exitFullscreenBtn)');
+            }
+            
+            // 监听全屏状态变化
+            document.addEventListener('fullscreenchange', () => {
+                const exitBtn = document.getElementById('exitFullscreenBtn');
+                if (!document.fullscreenElement && exitBtn) {
+                    exitBtn.classList.add('hidden');
+                    console.log('📱 检测到退出全屏，隐藏退出按钮');
+                }
+            });
+            
+            // 兼容不同浏览器的全屏事件
+            document.addEventListener('webkitfullscreenchange', () => {
+                const exitBtn = document.getElementById('exitFullscreenBtn');
+                if (!document.webkitFullscreenElement && exitBtn) {
+                    exitBtn.classList.add('hidden');
+                }
+            });
+            
+            document.addEventListener('mozfullscreenchange', () => {
+                const exitBtn = document.getElementById('exitFullscreenBtn');
+                if (!document.mozFullScreenElement && exitBtn) {
+                    exitBtn.classList.add('hidden');
+                }
+            });
+            
+            document.addEventListener('MSFullscreenChange', () => {
+                const exitBtn = document.getElementById('exitFullscreenBtn');
+                if (!document.msFullscreenElement && exitBtn) {
+                    exitBtn.classList.add('hidden');
+                }
+            });
+            
+            console.log('🎉 按钮事件绑定完成');
+        }
+
+        // DOMContentLoaded 时初始化所有功能
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 页面DOM加载完成，开始初始化');
+            
+            // 初始同步语言
+            syncLanguage();
+            
+            // 绑定按钮事件
+            bindButtonEvents();
+            
+            // 初始化游戏推荐
+            const currentLang = localStorage.getItem(I18N_KEY) || 'cn';
+            renderGameRecommendations(currentLang);
+            
+            // 添加"换一批"按钮事件监听器（支持国际化）
+            const refreshBtn = document.getElementById('refreshRecommendations');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', function() {
+                    const currentLang = localStorage.getItem(I18N_KEY) || 'cn';
+                    refreshRecommendations(currentLang);
+                    console.log(`🔄 "换一批"按钮被点击，当前语言: ${currentLang}`);
+                });
+                console.log('✅ "换一批"按钮事件已绑定（支持国际化）');
+            } else {
+                console.error('❌ 未找到"换一批"按钮 (id: refreshRecommendations)');
+            }
+            
+            console.log('🎯 页面初始化完成');
+        });
+        
+        // 确保函数在全局作用域中可用（向后兼容）
+        window.reloadGame = reloadGame;
+        window.toggleFullscreen = toggleFullscreen;
+        window.exitFullscreen = exitFullscreen;
+    </script>
+</body>
+</html>

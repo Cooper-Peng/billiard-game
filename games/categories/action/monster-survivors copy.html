@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="monster-survivors.title">Monster Survivors | xGame.best</title>
+    <meta name="description" data-i18n="monster-survivors.description" content="Monster Survivors is an free online survival game with a minimalistic design and roguelite elements. The monsters are here, and you must survive!  Aggressive crabs, eerie pumpkins, flesh-eating plants and yes, even evil bees!  But on a vast open land, there's no place to run or hide. All you can do is survive as long as you can until waves of monsters end your struggles. Gather loot in each run to buy upgrades, strengthen your survivor and help the next survivor stand longer.">
+    <link rel="canonical" href="https://xGame.best/games/monster-survivors.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B6B',
+                        'secondary': '#4ECDC4',
+                        'dark': '#2D3436',
+                        'light': '#F7F7F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/game-detail-common.css">
+</head>
+<body class="bg-light text-dark no-select">
+    <main class="flex-1 p-8">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-primary to-secondary py-12 rounded-xl mb-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="monster-survivors.heroTitle">Monster Survivors</h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto" data-i18n="monster-survivors.heroDescription">《怪物幸存者》是一款免费的在线生存游戏，采用极简主义设计和roguelite元素。</p>
+            </div>
+        </div>
+
+        <!-- Game Body -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Game Main Area -->
+            <div class="lg:col-span-2">
+                <!-- Game Window -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 anti-crawl">
+                    <div class="aspect-w-16 aspect-h-9 relative">
+                        <iframe id="gameFrame" src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html" class="w-full h-[600px] md:h-[700px]" frameborder="0" allowfullscreen></iframe>
+                        <div class="absolute top-4 right-4 flex space-x-2 z-10">
+                            <button id="reloadBtn" class="bg-white/90 hover:bg-white text-gray-700 p-2 rounded-lg shadow-lg" data-i18n="monster-survivors.reloadTooltip" title="重新加载游戏"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></button>
+                            <button id="fullscreenBtn" class="bg-white/90 hover:bg-white text-gray-700 p-2 rounded-lg shadow-lg" data-i18n="monster-survivors.fullscreenTooltip" title="全屏游戏"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg></button>
+                        </div>
+                        <button id="exitFullscreenBtn" class="hidden fixed top-4 right-4 bg-red-500 text-white p-3 rounded-full shadow-lg z-50" data-i18n="monster-survivors.exitFullscreenTooltip" title="退出全屏"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                    </div>
+                </div>
+
+                <!-- Game Description -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="monster-survivors.gameDescriptionTitle">游戏说明</h2>
+                    <p class="text-gray-600 mb-6" data-i18n="monster-survivors.gameDescription">怪物来了，你必须活下来！好斗的螃蟹、怪异的南瓜、食肉植物，是的，甚至还有邪恶的蜜蜂！但在广阔的开阔地上，没有地方可以奔跑或躲藏。你所能做的就是尽可能长时间地生存下去，直到怪物的浪潮结束你的挣扎。在每次跑步中收集战利品以购买升级，增强你的幸存者，并帮助下一个幸存者站得更久。</p>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <!-- Game Info -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <img src="../../../assets/images/games/action/monster-survivors.jpg" alt="Monster Survivors" class="w-32 h-32 object-cover rounded-lg shadow-md" onerror="this.src='https://via.placeholder.com/128x128?text=Monster Survivors'">
+                        <div class="ml-4">
+                            <h2 class="text-xl font-bold text-gray-900" data-i18n="monster-survivors.gameName">Monster Survivors</h2>
+                            <div class="flex items-center mt-2">
+                                <span class="text-yellow-400">★★★★☆</span>
+                                <span class="text-gray-600 ml-2">4.2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">1 Player</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">2D</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">Action</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">Battle</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">Combat</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">Embeddable</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">Fantasy</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">Free</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">RPG</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">Survival</span><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mr-1">Weapon</span>
+                    </div>
+                    <div class="text-sm text-gray-500">
+                        <p data-i18n="monster-survivors.developer">怪物幸存者是由FreezeNova带给你的。</p>
+                        <p data-i18n="monster-survivors.updateDate">2025年2月19日</p>
+                    </div>
+                </div>
+
+                <!-- How To Play -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4" data-i18n="monster-survivors.howToPlayTitle">玩法说明</h2>
+                    <div class="text-gray-600" data-i18n="monster-survivors.howToPlay">当你被击败时，不要担心，并非一切都会浪费。拿起你的金币，在主菜单中升级幸存者的护甲、治疗、伤害和健康等级。这些升级将在会话之间保持不变。升级后的技能传递给下一个幸存者，以强势开始游戏。您还可以在主菜单中解锁新角色，例如生命值和伤害比更高的法师和战士。</div>
+                </div>
+
+                <!-- Controls -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4" data-i18n="monster-survivors.controlsTitle">操作说明</h2>
+                    <ul class="controls-list text-gray-600" id="controlsList"><li>在《怪物幸存者》开始时，根据你喜欢的游戏风格选择你的武器：</li><li>钢剑：非常适合那些喜欢在激烈的战斗中，近距离切开敌人的人。</li><li>木棒：非常适合喜欢用魔法爆炸从远处攻击的玩家。</li><li>生存不仅仅涉及战斗；你还必须收集被击败的敌人掉落的战利品，以获得经验和力量。</li><li>站着不动不是一种选择，因为你需要不断地移动以获取宝贵的经验值，避免不知所措。</li><li>你可以选择在大圈子里奔跑，以阻挡敌人，同时让你高效地收集经验值。</li><li>当boss敌人出现时，游戏区域会缩小。准备好在更狭小的空间内躲避和战斗。</li><li>《怪物幸存者》有两张不同的地图，每张地图上都有独特的怪物：</li><li>梦幻森林：在令人难忘的美丽而危险的道路上开始你的生存之旅。</li><li>阴影宫：在梦幻森林中前进足够远，解锁这张地图，那里有更大的威胁等待着你。</li></ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- I18n Script -->
+    <script>
+        // I18N Key - MUST match the key in js/language.js
+        const I18N_KEY = 'xgame_lang';
+
+        // 将翻译对象设置为全局变量，供 game-detail-common.js 使用
+        window.translations = {
+            en: {
+                "monster-survivors": {"title": "Monster Survivors", "description": "Monster Survivors is an free online survival game with a minimalistic design and roguelite elements. The monsters are here, and you must survive!  Aggressive crabs, eerie pumpkins, flesh-eating plants and yes, even evil bees!  But on a vast open land, there's no place to run or hide. All you can do is survive as long as you can until waves of monsters end your struggles. Gather loot in each run to buy upgrades, strengthen your survivor and help the next survivor stand longer.", "categories": ["1 Player", "2D", "Action", "Battle", "Combat", "Embeddable", "Fantasy", "Free", "RPG", "Survival", "Weapon"], "developer": "Monster Survivors is brought to you by FreezeNova.", "controls": "At the beginning of Monster Survivors, choose your weapon based on your preferred playstyle:\nSteel Sword: Ideal for those who like to be in the thick of the action, slashing through enemies up close.\nWooden Wand: Perfect for players who prefer to attack from a distance with magical blasts.\nSurvival involves more than just fighting; you must also collect loot dropped by defeated enemies to gain experience and power up.\nStanding still isn't an option, as you need to continuously move to scoop up valuable XP and avoid getting overwhelmed.\nYou can choose to run in big circles to keep enemies at bay while allowing you to collect XP efficiently.\nWhen boss enemies appear, the play area will shrink. Be ready to dodge and fight in tighter spaces.\nMonster Survivors features two distinct maps, each populated with unique monsters:\nDreamy Woods: Start your survival quest among hauntingly beautiful yet dangerous paths.\nShade Palace: Unlock this map by advancing far enough in Dreamy Woods, where even greater threats await.", "howToPlay": "When you get defeated, don’t worry, not everything goes to waste. Grab your gold coins and upgrade the survivors' armor, healing, damage and health levels in the main menu. These upgrades will stay persistent between sessions. The upgraded skills pass the next survivor to start a game strong. You can also unlock new characters, such as mages and warriors with higher health and damage ratios in the main menu.", "powerUps": "", "soloCampaign": "", "gameDescriptionTitle": "Game Description", "gameDescription": " The monsters are here, and you must survive!  Aggressive crabs, eerie pumpkins, flesh-eating plants and yes, even evil bees!  But on a vast open land, there's no place to run or hide. All you can do is survive as long as you can until waves of monsters end your struggles. Gather loot in each run to buy upgrades, strengthen your survivor and help the next survivor stand longer.", "gameName": "Monster Survivors", "updateDate": "Updated: February 19, 2025", "controlsTitle": "Controls", "howToPlayTitle": "How To Play", "powerUpsTitle": "Power-Ups", "soloCampaignTitle": "Solo Campaign", "relatedGamesTitle": "Related Games", "reloadTooltip": "Reload Game", "fullscreenTooltip": "Fullscreen Game", "exitFullscreenTooltip": "Exit Fullscreen", "controlsListHtml": "<li>At the beginning of Monster Survivors, choose your weapon based on your preferred playstyle:</li><li>Steel Sword: Ideal for those who like to be in the thick of the action, slashing through enemies up close.</li><li>Wooden Wand: Perfect for players who prefer to attack from a distance with magical blasts.</li><li>Survival involves more than just fighting; you must also collect loot dropped by defeated enemies to gain experience and power up.</li><li>Standing still isn't an option, as you need to continuously move to scoop up valuable XP and avoid getting overwhelmed.</li><li>You can choose to run in big circles to keep enemies at bay while allowing you to collect XP efficiently.</li><li>When boss enemies appear, the play area will shrink. Be ready to dodge and fight in tighter spaces.</li><li>Monster Survivors features two distinct maps, each populated with unique monsters:</li><li>Dreamy Woods: Start your survival quest among hauntingly beautiful yet dangerous paths.</li><li>Shade Palace: Unlock this map by advancing far enough in Dreamy Woods, where even greater threats await.</li>", "heroTitle": "Monster Survivors", "heroDescription": "Monster Survivors is an free online survival game with a minimalistic design and roguelite elements.", "control1": "At the beginning of Monster Survivors, choose your weapon based on your preferred playstyle:", "control2": "Steel Sword: Ideal for those who like to be in the thick of the action, slashing through enemies up close.", "control3": "Wooden Wand: Perfect for players who prefer to attack from a distance with magical blasts.", "control4": "Survival involves more than just fighting; you must also collect loot dropped by defeated enemies to gain experience and power up.", "control5": "Standing still isn't an option, as you need to continuously move to scoop up valuable XP and avoid getting overwhelmed.", "control6": "You can choose to run in big circles to keep enemies at bay while allowing you to collect XP efficiently.", "control7": "When boss enemies appear, the play area will shrink. Be ready to dodge and fight in tighter spaces.", "control8": "Monster Survivors features two distinct maps, each populated with unique monsters:", "control9": "Dreamy Woods: Start your survival quest among hauntingly beautiful yet dangerous paths.", "control10": "Shade Palace: Unlock this map by advancing far enough in Dreamy Woods, where even greater threats await."},
+                "sidebar": { "action": "Action" },
+                "controlsListHtml": "<li>At the beginning of Monster Survivors, choose your weapon based on your preferred playstyle:</li><li>Steel Sword: Ideal for those who like to be in the thick of the action, slashing through enemies up close.</li><li>Wooden Wand: Perfect for players who prefer to attack from a distance with magical blasts.</li><li>Survival involves more than just fighting; you must also collect loot dropped by defeated enemies to gain experience and power up.</li><li>Standing still isn't an option, as you need to continuously move to scoop up valuable XP and avoid getting overwhelmed.</li><li>You can choose to run in big circles to keep enemies at bay while allowing you to collect XP efficiently.</li><li>When boss enemies appear, the play area will shrink. Be ready to dodge and fight in tighter spaces.</li><li>Monster Survivors features two distinct maps, each populated with unique monsters:</li><li>Dreamy Woods: Start your survival quest among hauntingly beautiful yet dangerous paths.</li><li>Shade Palace: Unlock this map by advancing far enough in Dreamy Woods, where even greater threats await.</li>"
+            },
+            cn: {
+                "monster-survivors": {"title": "怪物幸存者", "description": "《怪物幸存者》是一款免费的在线生存游戏，采用极简主义设计和roguelite元素。怪物来了，你必须活下来！好斗的螃蟹、怪异的南瓜、食肉植物，是的，甚至还有邪恶的蜜蜂！但在广阔的开阔地上，没有地方可以奔跑或躲藏。你所能做的就是尽可能长时间地生存下去，直到怪物的浪潮结束你的挣扎。在每次跑步中收集战利品以购买升级，增强你的幸存者，并帮助下一个幸存者站得更久。", "categories": ["1 Player", "2D", "Action", "Battle", "Combat", "Embeddable", "Fantasy", "Free", "RPG", "Survival", "Weapon"], "developer": "怪物幸存者是由FreezeNova带给你的。", "controls": "在《怪物幸存者》开始时，根据你喜欢的游戏风格选择你的武器：\n钢剑：非常适合那些喜欢在激烈的战斗中，近距离切开敌人的人。\n木棒：非常适合喜欢用魔法爆炸从远处攻击的玩家。\n生存不仅仅涉及战斗；你还必须收集被击败的敌人掉落的战利品，以获得经验和力量。\n站着不动不是一种选择，因为你需要不断地移动以获取宝贵的经验值，避免不知所措。\n你可以选择在大圈子里奔跑，以阻挡敌人，同时让你高效地收集经验值。\n当boss敌人出现时，游戏区域会缩小。准备好在更狭小的空间内躲避和战斗。\n《怪物幸存者》有两张不同的地图，每张地图上都有独特的怪物：\n梦幻森林：在令人难忘的美丽而危险的道路上开始你的生存之旅。\n阴影宫：在梦幻森林中前进足够远，解锁这张地图，那里有更大的威胁等待着你。", "howToPlay": "当你被击败时，不要担心，并非一切都会浪费。拿起你的金币，在主菜单中升级幸存者的护甲、治疗、伤害和健康等级。这些升级将在会话之间保持不变。升级后的技能传递给下一个幸存者，以强势开始游戏。您还可以在主菜单中解锁新角色，例如生命值和伤害比更高的法师和战士。", "powerUps": "", "soloCampaign": "", "gameDescriptionTitle": "游戏说明", "gameDescription": "怪物来了，你必须活下来！好斗的螃蟹、怪异的南瓜、食肉植物，是的，甚至还有邪恶的蜜蜂！但在广阔的开阔地上，没有地方可以奔跑或躲藏。你所能做的就是尽可能长时间地生存下去，直到怪物的浪潮结束你的挣扎。在每次跑步中收集战利品以购买升级，增强你的幸存者，并帮助下一个幸存者站得更久。", "gameName": "怪物幸存者", "updateDate": "更新于: 2025年2月19日", "controlsTitle": "操作说明", "howToPlayTitle": "玩法说明", "powerUpsTitle": "道具说明", "soloCampaignTitle": "单人模式", "relatedGamesTitle": "相关游戏", "reloadTooltip": "重新加载游戏", "fullscreenTooltip": "全屏游戏", "exitFullscreenTooltip": "退出全屏", "controlsListHtml": "<li>在《怪物幸存者》开始时，根据你喜欢的游戏风格选择你的武器：</li><li>钢剑：非常适合那些喜欢在激烈的战斗中，近距离切开敌人的人。</li><li>木棒：非常适合喜欢用魔法爆炸从远处攻击的玩家。</li><li>生存不仅仅涉及战斗；你还必须收集被击败的敌人掉落的战利品，以获得经验和力量。</li><li>站着不动不是一种选择，因为你需要不断地移动以获取宝贵的经验值，避免不知所措。</li><li>你可以选择在大圈子里奔跑，以阻挡敌人，同时让你高效地收集经验值。</li><li>当boss敌人出现时，游戏区域会缩小。准备好在更狭小的空间内躲避和战斗。</li><li>《怪物幸存者》有两张不同的地图，每张地图上都有独特的怪物：</li><li>梦幻森林：在令人难忘的美丽而危险的道路上开始你的生存之旅。</li><li>阴影宫：在梦幻森林中前进足够远，解锁这张地图，那里有更大的威胁等待着你。</li>", "heroTitle": "怪物幸存者", "heroDescription": "《怪物幸存者》是一款免费的在线生存游戏，采用极简主义设计和roguelite元素。", "control1": "在《怪物幸存者》开始时，根据你喜欢的游戏风格选择你的武器：", "control2": "钢剑：非常适合那些喜欢在激烈的战斗中，近距离切开敌人的人。", "control3": "木棒：非常适合喜欢用魔法爆炸从远处攻击的玩家。", "control4": "生存不仅仅涉及战斗；你还必须收集被击败的敌人掉落的战利品，以获得经验和力量。", "control5": "站着不动不是一种选择，因为你需要不断地移动以获取宝贵的经验值，避免不知所措。", "control6": "你可以选择在大圈子里奔跑，以阻挡敌人，同时让你高效地收集经验值。", "control7": "当boss敌人出现时，游戏区域会缩小。准备好在更狭小的空间内躲避和战斗。", "control8": "《怪物幸存者》有两张不同的地图，每张地图上都有独特的怪物：", "control9": "梦幻森林：在令人难忘的美丽而危险的道路上开始你的生存之旅。", "control10": "阴影宫：在梦幻森林中前进足够远，解锁这张地图，那里有更大的威胁等待着你。"},
+                "sidebar": { "action": "动作" },
+                "controlsListHtml": "<li>在《怪物幸存者》开始时，根据你喜欢的游戏风格选择你的武器：</li><li>钢剑：非常适合那些喜欢在激烈的战斗中，近距离切开敌人的人。</li><li>木棒：非常适合喜欢用魔法爆炸从远处攻击的玩家。</li><li>生存不仅仅涉及战斗；你还必须收集被击败的敌人掉落的战利品，以获得经验和力量。</li><li>站着不动不是一种选择，因为你需要不断地移动以获取宝贵的经验值，避免不知所措。</li><li>你可以选择在大圈子里奔跑，以阻挡敌人，同时让你高效地收集经验值。</li><li>当boss敌人出现时，游戏区域会缩小。准备好在更狭小的空间内躲避和战斗。</li><li>《怪物幸存者》有两张不同的地图，每张地图上都有独特的怪物：</li><li>梦幻森林：在令人难忘的美丽而危险的道路上开始你的生存之旅。</li><li>阴影宫：在梦幻森林中前进足够远，解锁这张地图，那里有更大的威胁等待着你。</li>"
+            }
+        };
+        
+        /**
+         * 应用翻译到页面
+         * @param {string} lang - 语言代码 ('en' 或 'cn')
+         */
+        function applyTranslations(lang) {
+            if (!lang || !window.translations) {
+                return;
+            }
+
+            const targetLangData = window.translations[lang];
+            const fallbackLang = lang === 'en' ? 'cn' : 'en';
+            const fallbackLangData = window.translations[fallbackLang];
+
+            if (!targetLangData) {
+                return;
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                
+                const findTranslation = (data, k) => k.split('.').reduce((obj, i) => obj?.[i], data);
+
+                // 1. Try target language. An empty string is not a valid translation.
+                let translation = findTranslation(targetLangData, key);
+
+                // 2. If not found or empty, try fallback language
+                if (!translation && fallbackLangData) {
+                    translation = findTranslation(fallbackLangData, key);
+                }
+
+                if (translation) {
+                    // For buttons with SVG, only update the 'title'
+                    if (element.tagName === 'BUTTON' && element.querySelector('svg')) {
+                        element.setAttribute('title', translation);
+                    } else {
+                        // For other elements, safely update text content
+                        const textNode = Array.from(element.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+                        if (textNode) {
+                            textNode.textContent = translation;
+                        } else {
+                            element.textContent = translation;
+                        }
+                    }
+                }
+            });
+
+            // Update document's lang attribute
+            document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
+
+            // Controls 列表特殊处理
+            const controlsList = document.getElementById('controlsList');
+            if (controlsList && window.translations && window.translations[lang] && window.translations[lang]["monster-survivors"] && window.translations[lang]["monster-survivors"].controlsListHtml) {
+                controlsList.innerHTML = window.translations[lang]["monster-survivors"].controlsListHtml;
+            }
+        }
+
+        /**
+         * 同步语言设置
+         */
+        function syncLanguage() {
+            const currentLang = localStorage.getItem(I18N_KEY) || 'en';
+            applyTranslations(currentLang);
+        }
+
+        // 监听来自父页面的消息
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'languageChange' && event.data.lang) {
+                // 处理来自父页面的语言变更消息
+                applyTranslations(event.data.lang);
+            } else if (event.data.type === 'scrollToSection') {
+                // 游戏详情页无法处理滚动请求，不发送确认消息
+                // 父页面会因为没收到确认而重新加载main.html
+                console.log('⚠️ 游戏详情页收到滚动请求，但无法处理:', event.data.sectionId);
+            }
+        });
+
+        // 监听 localStorage 变化（主要同步方式）
+        window.addEventListener('storage', (event) => {
+            if (event.key === I18N_KEY && event.newValue) {
+                applyTranslations(event.newValue);
+            }
+        });
+
+        // ========== 按钮功能实现 ==========
+        
+        // 重载游戏功能
+        function reloadGame() {
+            console.log('🔄 重载游戏按钮被点击');
+            const gameFrame = document.getElementById('gameFrame');
+            if (gameFrame) {
+                const currentSrc = gameFrame.src;
+                console.log('📍 当前游戏URL:', currentSrc);
+                gameFrame.src = '';
+                setTimeout(() => {
+                    gameFrame.src = currentSrc;
+                    console.log('✅ 游戏重载完成');
+                }, 100);
+            } else {
+                console.error('❌ 未找到游戏iframe');
+            }
+        }
+
+        // 全屏功能
+        function toggleFullscreen() {
+            console.log('🖥️ 全屏按钮被点击');
+            const gameFrame = document.getElementById('gameFrame');
+            const exitBtn = document.getElementById('exitFullscreenBtn');
+            
+            if (gameFrame) {
+                try {
+                    if (gameFrame.requestFullscreen) {
+                        gameFrame.requestFullscreen();
+                    } else if (gameFrame.mozRequestFullScreen) { /* Firefox */
+                        gameFrame.mozRequestFullScreen();
+                    } else if (gameFrame.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                        gameFrame.webkitRequestFullscreen();
+                    } else if (gameFrame.msRequestFullscreen) { /* IE/Edge */
+                        gameFrame.msRequestFullscreen();
+                    }
+                    
+                    if (exitBtn) {
+                        exitBtn.classList.remove('hidden');
+                        console.log('👁️ 退出全屏按钮已显示');
+                    }
+                    console.log('✅ 全屏模式已激活');
+                } catch (error) {
+                    console.error('❌ 全屏模式激活失败:', error);
+                }
+            } else {
+                console.error('❌ 未找到游戏iframe');
+            }
+        }
+
+        // 退出全屏功能
+        function exitFullscreen() {
+            console.log('🚪 退出全屏按钮被点击');
+            const exitBtn = document.getElementById('exitFullscreenBtn');
+            
+            try {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { /* Firefox */
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE/Edge */
+                    document.msExitFullscreen();
+                }
+                
+                if (exitBtn) {
+                    exitBtn.classList.add('hidden');
+                    console.log('👁️ 退出全屏按钮已隐藏');
+                }
+                console.log('✅ 已退出全屏模式');
+            } catch (error) {
+                console.error('❌ 退出全屏失败:', error);
+            }
+        }
+
+        // 绑定按钮事件
+        function bindButtonEvents() {
+            console.log('🔗 开始绑定按钮事件');
+            
+            const reloadBtn = document.getElementById('reloadBtn');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
+            
+            if (reloadBtn) {
+                console.log('✅ 找到重载按钮，绑定点击事件');
+                reloadBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    reloadGame();
+                });
+            } else {
+                console.error('❌ 未找到重载按钮 (id: reloadBtn)');
+            }
+            
+            if (fullscreenBtn) {
+                console.log('✅ 找到全屏按钮，绑定点击事件');
+                fullscreenBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleFullscreen();
+                });
+            } else {
+                console.error('❌ 未找到全屏按钮 (id: fullscreenBtn)');
+            }
+            
+            if (exitFullscreenBtn) {
+                console.log('✅ 找到退出全屏按钮，绑定点击事件');
+                exitFullscreenBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    exitFullscreen();
+                });
+            } else {
+                console.error('❌ 未找到退出全屏按钮 (id: exitFullscreenBtn)');
+            }
+            
+            // 监听全屏状态变化
+            document.addEventListener('fullscreenchange', () => {
+                const exitBtn = document.getElementById('exitFullscreenBtn');
+                if (!document.fullscreenElement && exitBtn) {
+                    exitBtn.classList.add('hidden');
+                    console.log('📱 检测到退出全屏，隐藏退出按钮');
+                }
+            });
+            
+            // 兼容不同浏览器的全屏事件
+            document.addEventListener('webkitfullscreenchange', () => {
+                const exitBtn = document.getElementById('exitFullscreenBtn');
+                if (!document.webkitFullscreenElement && exitBtn) {
+                    exitBtn.classList.add('hidden');
+                }
+            });
+            
+            document.addEventListener('mozfullscreenchange', () => {
+                const exitBtn = document.getElementById('exitFullscreenBtn');
+                if (!document.mozFullScreenElement && exitBtn) {
+                    exitBtn.classList.add('hidden');
+                }
+            });
+            
+            document.addEventListener('MSFullscreenChange', () => {
+                const exitBtn = document.getElementById('exitFullscreenBtn');
+                if (!document.msFullscreenElement && exitBtn) {
+                    exitBtn.classList.add('hidden');
+                }
+            });
+            
+            console.log('🎉 按钮事件绑定完成');
+        }
+
+        // DOMContentLoaded 时初始化所有功能
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 页面DOM加载完成，开始初始化');
+            
+            // 初始同步语言
+            syncLanguage();
+            
+            // 绑定按钮事件
+            bindButtonEvents();
+            
+            console.log('🎯 页面初始化完成');
+        });
+        
+        // 确保函数在全局作用域中可用（向后兼容）
+        window.reloadGame = reloadGame;
+        window.toggleFullscreen = toggleFullscreen;
+        window.exitFullscreen = exitFullscreen;
+    </script>
+</body>
+</html>

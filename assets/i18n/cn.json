@@ -1,0 +1,417 @@
+{
+    "nav": {
+        "home": "首页",
+        "newGames": "新游戏",
+        "popular": "热门",
+        "categories": "分类"
+    },
+    "sidebar": {
+        "fixedMode": "固定",
+        "action": "动作",
+        "adventure": "冒险",
+        "arcade": "街机",
+        "board": "棋牌",
+        "card": "卡牌",
+        "casino": "赌场",
+        "educational": "教育",
+        "girl": "女生",
+        "kids": "儿童",
+        "multiplayer": "多人",
+        "puzzle": "益智",
+        "racing": "赛车",
+        "shooting": "射击",
+        "sports": "体育",
+        "strategy": "策略",
+        "car": "赛车"
+    },
+    "common": {
+        "search": "搜索游戏...",
+        "login": "登录",
+        "register": "注册",
+        "popularCategories": "热门分类",
+        "newGames": "新游戏",
+        "popularGames": "热门游戏",
+        "viewAll": "查看全部",
+        "playFreeGames": "免费在线游戏",
+        "relatedGames": "相关游戏",
+        "recommendedGames": "推荐游戏",
+        "playNow": "立即游戏",
+        "refreshRecommendations": "换一批",
+        "viewAllGames": "查看全部游戏"
+    },
+    "search": {
+        "noResults": "未找到游戏",
+        "searching": "搜索中...",
+        "placeholder": "搜索游戏..."
+    },
+    "footer": {
+        "about": "关于GameSpace",
+        "aboutText": "您的终极免费在线游戏目的地。畅玩多个类别的最佳游戏！",
+        "quickLinks": "快速链接",
+        "aboutUs": "关于我们",
+        "contact": "联系我们",
+        "privacy": "隐私政策",
+        "terms": "服务条款",
+        "connect": "关注我们",
+        "copyright": "© 2024 GameSpace. 保留所有权利。"
+    },
+    "games": {
+        "worldGuesser": {
+            "title": "世界探索家",
+            "subtitle": "在线玩 World Guesser",
+            "description": "通过街景图像测试你的地理知识，探索世界各地的神秘地点！",
+            "gameDescription": "根据街景图像猜测位置，越接近实际位置得分越高。可以使用地标、道路标志、建筑风格等线索来确定位置。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用鼠标在地图上选择位置，滚轮缩放地图。",
+            "developer": "开发者",
+            "updateDate": "更新于",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "multiplayer": "多人",
+                "geography": "地理",
+                "guessing": "猜谜"
+            }
+        },
+        "monsterSurvivors": {
+            "title": "怪物生存者",
+            "subtitle": "在线玩 Monster Survivors",
+            "description": "在无尽的怪物浪潮中生存下来，升级你的角色，解锁强大的技能！",
+            "gameDescription": "怪物生存者是一款充满挑战的生存游戏。你需要在不断涌来的怪物中生存，通过收集经验值升级角色，解锁新的技能和武器。游戏采用roguelike元素，每次游戏体验都不同。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD或方向键移动角色，鼠标点击攻击敌人。",
+            "developer": "开发者: Survival Games Studio",
+            "updateDate": "更新于: 2025年1月15日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "survival": "生存",
+                "roguelike": "肉鸽"
+            }
+        },
+        "crazyShooters": {
+            "title": "疯狂射手",
+            "subtitle": "在线玩 Crazy Shooters",
+            "description": "疯狂的射击游戏，消灭所有敌人，成为最强射手！",
+            "gameDescription": "疯狂射手是一款快节奏的射击游戏。你需要快速反应，准确射击，消灭所有敌人。游戏包含多种武器和道具，通过升级可以获得更强大的装备。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用鼠标瞄准和射击，WASD移动角色。",
+            "developer": "开发者: Shooter Games Studio",
+            "updateDate": "更新于: 2025年1月10日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "shooting": "射击",
+                "fastPaced": "快节奏"
+            }
+        },
+        "stickmanGtaCity": {
+            "title": "火柴人GTA城市",
+            "subtitle": "在线玩 Stickman GTA City",
+            "description": "在火柴人风格的城市中自由探索，完成各种任务！",
+            "gameDescription": "火柴人GTA城市是一款开放世界游戏。你可以在城市中自由探索，驾驶各种车辆，完成各种任务。游戏采用火柴人风格，画面简洁有趣。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，空格跳跃，E键进入车辆。",
+            "developer": "开发者: Stickman Games",
+            "updateDate": "更新于: 2025年1月8日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "openWorld": "开放世界",
+                "stickman": "火柴人"
+            }
+        },
+        "rainbowSurvival": {
+            "title": "彩虹生存",
+            "subtitle": "在线玩 Rainbow Survival",
+            "description": "在彩虹世界中生存，收集彩虹能量，解锁特殊能力！",
+            "gameDescription": "彩虹生存是一款色彩缤纷的生存游戏。你需要在充满彩虹的世界中生存，收集彩虹能量来解锁特殊能力。游戏画面美丽，玩法有趣。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，收集彩虹能量。",
+            "developer": "开发者: Rainbow Games",
+            "updateDate": "更新于: 2025年1月12日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "survival": "生存",
+                "colorful": "彩色"
+            }
+        },
+        "pixelSurvival": {
+            "title": "像素生存",
+            "subtitle": "在线玩 Pixel Survival",
+            "description": "像素风格的生存游戏，在复古世界中冒险！",
+            "gameDescription": "像素生存是一款复古像素风格的生存游戏。你需要在像素世界中收集资源，建造庇护所，对抗敌人。游戏具有经典的像素艺术风格。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，鼠标点击收集和建造。",
+            "developer": "开发者: Pixel Games Studio",
+            "updateDate": "更新于: 2025年1月5日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "survival": "生存",
+                "pixel": "像素"
+            }
+        },
+        "tankArena": {
+            "title": "坦克竞技场",
+            "subtitle": "在线玩 Tank Arena",
+            "description": "在竞技场中驾驶坦克，与其他玩家展开激烈战斗！",
+            "gameDescription": "坦克竞技场是一款多人在线坦克战斗游戏。你需要在竞技场中驾驶坦克，与其他玩家展开激烈的战斗。游戏包含多种坦克类型和武器系统。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动坦克，鼠标瞄准和射击。",
+            "developer": "开发者: Tank Games Studio",
+            "updateDate": "更新于: 2025年1月3日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "tank": "坦克",
+                "multiplayer": "多人"
+            }
+        },
+        "crazyCattle3d": {
+            "title": "疯狂牛群3D",
+            "subtitle": "在线玩 Crazy Cattle 3D",
+            "description": "3D疯狂牛群游戏，控制牛群完成各种挑战！",
+            "gameDescription": "疯狂牛群3D是一款3D物理游戏。你需要控制一群疯狂的牛，完成各种挑战和任务。游戏采用3D图形，物理效果真实。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD控制牛群移动，空格跳跃。",
+            "developer": "开发者: 3D Games Studio",
+            "updateDate": "更新于: 2025年1月7日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "3d": "3D",
+                "physics": "物理"
+            }
+        },
+        "tankWarSimulator": {
+            "title": "坦克战争模拟器",
+            "subtitle": "在线玩 Tank War Simulator",
+            "description": "真实的坦克战争模拟，体验激烈的战场战斗！",
+            "gameDescription": "坦克战争模拟器是一款真实的坦克战争模拟游戏。你需要在战场上驾驶坦克，与敌人展开激烈的战斗。游戏模拟真实的战争环境。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动坦克，鼠标瞄准和射击。",
+            "developer": "开发者: War Games Studio",
+            "updateDate": "更新于: 2025年1月9日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "tank": "坦克",
+                "simulation": "模拟"
+            }
+        },
+        "fiveNightsAtFreddys4": {
+            "title": "玩具熊的五夜后宫4",
+            "subtitle": "在线玩 Five Nights at Freddy's 4",
+            "description": "恐怖生存游戏，在黑暗中生存五个夜晚！",
+            "gameDescription": "玩具熊的五夜后宫4是一款恐怖生存游戏。你需要在黑暗中生存五个夜晚，躲避可怕的玩具熊。游戏氛围恐怖，需要策略思维。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用鼠标点击监控摄像头，关闭门和灯。",
+            "developer": "开发者: Horror Games Studio",
+            "updateDate": "更新于: 2025年1月11日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "horror": "恐怖",
+                "survival": "生存"
+            }
+        },
+        "warOfTanksPaperNote": {
+            "title": "纸片坦克战争",
+            "subtitle": "在线玩 War of Tanks Paper Note",
+            "description": "纸片风格的坦克战争游戏，独特的艺术风格！",
+            "gameDescription": "纸片坦克战争是一款纸片风格的坦克战争游戏。游戏采用独特的纸片艺术风格，画面简洁有趣。你需要在战场上驾驶纸片坦克战斗。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动坦克，鼠标瞄准和射击。",
+            "developer": "开发者: Paper Games Studio",
+            "updateDate": "更新于: 2025年1月6日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "tank": "坦克",
+                "paper": "纸片"
+            }
+        },
+        "squadShooter": {
+            "title": "小队射击",
+            "subtitle": "在线玩 Squad Shooter",
+            "description": "小队射击游戏，与队友合作消灭敌人！",
+            "gameDescription": "小队射击是一款团队合作射击游戏。你需要与队友合作，制定战术，消灭敌人。游戏强调团队合作和战术配合。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，鼠标瞄准和射击，与队友配合。",
+            "developer": "开发者: Squad Games Studio",
+            "updateDate": "更新于: 2025年1月4日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "shooting": "射击",
+                "teamwork": "团队合作"
+            }
+        },
+        "fiveNightsAtFreddys3": {
+            "title": "玩具熊的五夜后宫3",
+            "subtitle": "在线玩 Five Nights at Freddy's 3",
+            "description": "经典恐怖游戏，在废弃的披萨店中生存！",
+            "gameDescription": "玩具熊的五夜后宫3是一款经典恐怖游戏。你需要在废弃的披萨店中生存，躲避可怕的玩具熊。游戏氛围紧张刺激。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用鼠标点击监控摄像头，管理电力系统。",
+            "developer": "开发者: Horror Games Studio",
+            "updateDate": "更新于: 2025年1月2日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "horror": "恐怖",
+                "survival": "生存"
+            }
+        },
+        "stickFighter3d": {
+            "title": "3D火柴人格斗",
+            "subtitle": "在线玩 Stick Fighter 3D",
+            "description": "3D火柴人格斗游戏，展现你的格斗技巧！",
+            "gameDescription": "3D火柴人格斗是一款3D格斗游戏。你可以在3D环境中控制火柴人进行格斗，使用各种格斗技巧击败对手。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，鼠标点击攻击，组合键使用特殊技能。",
+            "developer": "开发者: 3D Fighter Games",
+            "updateDate": "更新于: 2025年1月13日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "fighting": "格斗",
+                "3d": "3D"
+            }
+        },
+        "kingdomBattle3d": {
+            "title": "3D王国战争",
+            "subtitle": "在线玩 Kingdom Battle 3D",
+            "description": "3D王国战争游戏，建立你的王国，征服世界！",
+            "gameDescription": "3D王国战争是一款3D策略战争游戏。你需要建立自己的王国，训练军队，征服其他王国。游戏采用3D图形，策略性强。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用鼠标点击建造和管理，WASD移动视角。",
+            "developer": "开发者: Kingdom Games Studio",
+            "updateDate": "更新于: 2025年1月14日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "strategy": "策略",
+                "3d": "3D"
+            }
+        },
+        "warstrike": {
+            "title": "战争打击",
+            "subtitle": "在线玩 Warstrike",
+            "description": "激烈的战争射击游戏，消灭所有敌人！",
+            "gameDescription": "战争打击是一款激烈的战争射击游戏。你需要在战场上消灭所有敌人，完成各种任务。游戏节奏快，战斗激烈。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，鼠标瞄准和射击。",
+            "developer": "开发者: War Games Studio",
+            "updateDate": "更新于: 2025年1月16日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "shooting": "射击",
+                "war": "战争"
+            }
+        },
+        "maskedSpecialForces": {
+            "title": "特种部队",
+            "subtitle": "在线玩 Masked Special Forces",
+            "description": "特种部队射击游戏，执行秘密任务！",
+            "gameDescription": "特种部队是一款特种部队射击游戏。你需要执行各种秘密任务，消灭敌人，完成任务目标。游戏强调战术和策略。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，鼠标瞄准和射击，制定战术。",
+            "developer": "开发者: Special Forces Games",
+            "updateDate": "更新于: 2025年1月17日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "action": "动作",
+                "shooting": "射击",
+                "tactical": "战术"
+            }
+        },
+        "stickmanParkour": {
+            "title": "火柴人跑酷",
+            "subtitle": "在线玩 Stickman Parkour",
+            "description": "火柴人跑酷游戏，展现你的跑酷技巧！",
+            "gameDescription": "火柴人跑酷是一款跑酷游戏。你控制火柴人在各种障碍物中跑酷，展现你的技巧和反应能力。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，空格跳跃，Shift加速。",
+            "developer": "开发者: Parkour Games Studio",
+            "updateDate": "更新于: 2025年1月18日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "adventure": "冒险",
+                "parkour": "跑酷",
+                "stickman": "火柴人"
+            }
+        },
+        "run3d": {
+            "title": "3D跑酷",
+            "subtitle": "在线玩 Run 3D",
+            "description": "3D跑酷冒险游戏，在太空中奔跑！",
+            "gameDescription": "3D跑酷是一款3D跑酷游戏。你需要在3D空间中奔跑，躲避障碍物，收集能量。游戏采用3D图形，视角独特。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD移动，空格跳跃，收集能量。",
+            "developer": "开发者: 3D Runner Games",
+            "updateDate": "更新于: 2025年1月19日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "arcade": "街机",
+                "parkour": "跑酷",
+                "3d": "3D"
+            }
+        },
+        "burnoutCity": {
+            "title": "极速城市",
+            "subtitle": "在线玩 Burnout City",
+            "description": "城市街头极速漂移，体验速度与激情！",
+            "gameDescription": "极速城市是一款赛车漂移游戏。你需要在城市街道中进行极速漂移，体验速度与激情。游戏画面精美，操作流畅。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用WASD控制车辆，空格手刹漂移。",
+            "developer": "开发者: Racing Games Studio",
+            "updateDate": "更新于: 2025年1月20日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "car": "赛车",
+                "drift": "漂移",
+                "racing": "竞速"
+            }
+        },
+        "funPartyMakeup": {
+            "title": "Fun Party Makeup - 派对化妆游戏",
+            "subtitle": "在线玩 Fun Party Makeup",
+            "description": "为派对打造完美妆容，展现你的化妆技巧！",
+            "gameDescription": "在Fun Party Makeup中，你将扮演一位专业的化妆师，为参加派对的女孩们打造完美的妆容。游戏提供了丰富的化妆品和工具，包括粉底、眼影、腮红、口红、睫毛膏等。",
+            "howToPlay": "游戏说明",
+            "controls": "操作说明",
+            "controlsText": "使用鼠标选择化妆品，左键点击使用，拖拽涂抹。",
+            "developer": "开发者: Girl Games Studio",
+            "updateDate": "更新于: 2025年1月15日",
+            "relatedGames": "相关游戏",
+            "tags": {
+                "girl": "女生",
+                "makeup": "化妆",
+                "fashion": "时尚"
+            }
+        }
+    }
+} 

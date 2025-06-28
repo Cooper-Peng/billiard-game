@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="rainbowSurvival.title">Rainbow Survival - 彩虹生存游戏</title>
+    <meta name="description" data-i18n="rainbowSurvival.description" content="在xGame.best上免费在线玩Rainbow Survival。绚丽的彩虹生存游戏，在彩色世界中生存！">
+    <link rel="canonical" href="https://xGame.best/games/rainbow-survival.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B6B',
+                        'secondary': '#4ECDC4',
+                        'dark': '#2D3436',
+                        'light': '#F7F7F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+        }
+        .main-content {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .game-container {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .controls-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .controls-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .controls-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4B5563;
+        }
+        .no-select {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .anti-crawl {
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark no-select">
+    <!-- 主要内容 -->
+    <main class="flex-1 p-8">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-primary to-secondary py-12 rounded-xl mb-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="rainbowSurvival.heroTitle">Rainbow Survival</h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto" data-i18n="rainbowSurvival.heroDescription">绚丽的彩虹生存游戏，在彩色世界中生存！</p>
+            </div>
+        </div>
+
+        <!-- 游戏主体 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 游戏主体 -->
+            <div class="lg:col-span-2">
+                <!-- 游戏窗口 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 anti-crawl">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://cloud.onlinegames.io/games/2024/gm/games5/rainbow-survival/index.html"
+                                class="w-full h-[600px] md:h-[700px]"
+                                frameborder="0" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- 游戏说明 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="rainbowSurvival.gameDescriptionTitle">游戏说明</h2>
+                    <p class="text-gray-600 mb-6" data-i18n="rainbowSurvival.gameDescription">
+                        Rainbow Survival是一款绚丽的生存游戏。在充满彩虹色彩的世界中，你需要收集资源，建造庇护所，抵御各种威胁。游戏画面色彩丰富，玩法简单有趣。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="lg:col-span-1">
+                <!-- 游戏信息 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <img src="../../../assets/images/games/action/rainbow-survival.jpg" 
+                             alt="Rainbow Survival" 
+                             class="w-32 h-32 object-cover rounded-lg shadow-md"
+                             onerror="this.src='https://via.placeholder.com/128x128?text=Rainbow+Survival'">
+                        <div class="ml-4">
+                            <h2 class="text-xl font-bold text-gray-900" data-i18n="rainbowSurvival.gameName">Rainbow Survival</h2>
+                            <div class="flex items-center mt-2">
+                                <span class="text-yellow-400">★★★★☆</span>
+                                <span class="text-gray-600 ml-2">4.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm" data-i18n="sidebar.action">动作</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm" data-i18n="rainbowSurvival.categorySurvival">生存</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm" data-i18n="rainbowSurvival.categoryRainbow">彩虹</span>
+                    </div>
+                    <div class="text-sm text-gray-500">
+                        <p data-i18n="rainbowSurvival.developer">开发者: Rainbow Games</p>
+                        <p data-i18n="rainbowSurvival.updateDate">更新于: 2025年1月3日</p>
+                    </div>
+                </div>
+
+                <!-- 操作说明 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4" data-i18n="rainbowSurvival.controlsTitle">操作说明</h2>
+                    <ul class="controls-list text-gray-600">
+                        <li data-i18n="rainbowSurvival.controlMove">WASD：移动</li>
+                        <li data-i18n="rainbowSurvival.controlCollect">E键：收集资源</li>
+                        <li data-i18n="rainbowSurvival.controlBuild">B键：建造</li>
+                        <li data-i18n="rainbowSurvival.controlInventory">I键：打开背包</li>
+                        <li data-i18n="rainbowSurvival.controlCraft">C键：制作物品</li>
+                        <li data-i18n="rainbowSurvival.controlMap">M键：打开地图</li>
+                        <li data-i18n="rainbowSurvival.controlPause">Esc键：暂停游戏</li>
+                    </ul>
+                </div>
+
+                <!-- 相关游戏 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4" data-i18n="rainbowSurvival.relatedGamesTitle">相关游戏</h2>
+                    <div class="space-y-4">
+                        <a href="pixel-survival.html" class="block">
+                            <div class="flex items-center space-x-4">
+                                <img src="../../../assets/images/games/action/pixel-survival.jpg"
+                                     alt="Pixel Survival" 
+                                     class="w-20 h-20 object-cover rounded-lg"
+                                     onerror="this.src='https://via.placeholder.com/80x80?text=Pixel+Survival'">
+                                <div>
+                                    <h3 class="font-semibold text-gray-900" data-i18n="rainbowSurvival.relatedGame1Title">Pixel Survival</h3>
+                                    <p class="text-sm text-gray-600" data-i18n="rainbowSurvival.relatedGame1Desc">像素生存</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="monster-survivors.html" class="block">
+                            <div class="flex items-center space-x-4">
+                                <img src="../../../assets/images/games/action/monster-survivors.jpg"
+                                     alt="Monster Survivors" 
+                                     class="w-20 h-20 object-cover rounded-lg"
+                                     onerror="this.src='https://via.placeholder.com/80x80?text=Monster+Survivors'">
+                                <div>
+                                    <h3 class="font-semibold text-gray-900" data-i18n="rainbowSurvival.relatedGame2Title">Monster Survivors</h3>
+                                    <p class="text-sm text-gray-600" data-i18n="rainbowSurvival.relatedGame2Desc">怪物生存者</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 国际化脚本 -->
+    <script>
+        // 设置全局翻译对象，与game-detail-common.js兼容
+        window.translations = {
+            en: {
+                rainbowSurvival: {
+                    title: "Rainbow Survival - Rainbow Survival Game | xGame.best",
+                    description: "Play Rainbow Survival for free on xGame.best. Colorful rainbow survival game, survive in a colorful world!",
+                    heroTitle: "Rainbow Survival",
+                    heroDescription: "Colorful rainbow survival game, survive in a colorful world!",
+                    gameDescriptionTitle: "Game Description",
+                    gameDescription: "Rainbow Survival is a colorful survival game. In a world filled with rainbow colors, you need to collect resources, build shelters, and defend against various threats. The game features rich colors and simple, fun gameplay.",
+                    gameName: "Rainbow Survival",
+                    categorySurvival: "Survival",
+                    categoryRainbow: "Rainbow",
+                    developer: "Developer: Rainbow Games",
+                    updateDate: "Updated: January 3, 2025",
+                    controlsTitle: "Controls",
+                    controlMove: "WASD: Move",
+                    controlCollect: "E Key: Collect resources",
+                    controlBuild: "B Key: Build",
+                    controlInventory: "I Key: Open inventory",
+                    controlCraft: "C Key: Craft items",
+                    controlMap: "M Key: Open map",
+                    controlPause: "Esc Key: Pause game",
+                    relatedGamesTitle: "Related Games",
+                    relatedGame1Title: "Pixel Survival",
+                    relatedGame1Desc: "Pixel survival",
+                    relatedGame2Title: "Monster Survivors",
+                    relatedGame2Desc: "Monster survivors"
+                },
+                sidebar: {
+                    action: "Action"
+                }
+            },
+            cn: {
+                rainbowSurvival: {
+                    title: "Rainbow Survival - 彩虹生存游戏 | xGame.best",
+                    description: "在xGame.best上免费在线玩Rainbow Survival。绚丽的彩虹生存游戏，在彩色世界中生存！",
+                    heroTitle: "Rainbow Survival",
+                    heroDescription: "绚丽的彩虹生存游戏，在彩色世界中生存！",
+                    gameDescriptionTitle: "游戏说明",
+                    gameDescription: "Rainbow Survival是一款绚丽的生存游戏。在充满彩虹色彩的世界中，你需要收集资源，建造庇护所，抵御各种威胁。游戏画面色彩丰富，玩法简单有趣。",
+                    gameName: "Rainbow Survival",
+                    categorySurvival: "生存",
+                    categoryRainbow: "彩虹",
+                    developer: "开发者: Rainbow Games",
+                    updateDate: "更新于: 2025年1月3日",
+                    controlsTitle: "操作说明",
+                    controlMove: "WASD：移动",
+                    controlCollect: "E键：收集资源",
+                    controlBuild: "B键：建造",
+                    controlInventory: "I键：打开背包",
+                    controlCraft: "C键：制作物品",
+                    controlMap: "M键：打开地图",
+                    controlPause: "Esc键：暂停游戏",
+                    relatedGamesTitle: "相关游戏",
+                    relatedGame1Title: "Pixel Survival",
+                    relatedGame1Desc: "像素生存",
+                    relatedGame2Title: "Monster Survivors",
+                    relatedGame2Desc: "怪物生存者"
+                },
+                sidebar: {
+                    action: "动作"
+                }
+            }
+        };
+
+        function getCurrentLanguage() {
+            return localStorage.getItem('language') || 'cn';
+        }
+
+        function updatePageLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = window.translations[lang];
+                for (const k of keys) {
+                    if (value && value[k]) {
+                        value = value[k];
+                    } else {
+                        value = key;
+                        break;
+                    }
+                }
+                if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
+                    element.placeholder = value;
+                } else if (element.tagName === 'TITLE') {
+                    element.textContent = value;
+                } else if (element.tagName === 'META' && element.hasAttribute('content')) {
+                    element.setAttribute('content', value);
+                } else {
+                    element.textContent = value;
+                }
+            });
+        }
+
+        function initAntiCrawl() {
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || 
+                    (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                    (e.ctrlKey && e.key === 'u')) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLang = getCurrentLanguage();
+            updatePageLanguage(currentLang);
+            initAntiCrawl();
+            
+            // 监听localStorage变化
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'language') {
+                    updatePageLanguage(e.newValue);
+                }
+            });
+            
+            // 监听来自父窗口的消息
+            window.addEventListener('message', function(event) {
+                if (event.data && event.data.type === 'updateLanguage') {
+                    updatePageLanguage(event.data.language);
+                }
+            });
+        });
+    </script>
+    <script src="../../../assets/js/features/game-detail-common.js"></script>
+</body>
+</html> 

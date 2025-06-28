@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="redLightGreenLight.title">红绿灯 - 在线玩 Red Light Green Light | xGame.best</title>
+    <meta name="description" data-i18n="redLightGreenLight.description" content="在xGame.best上免费在线玩红绿灯(Red Light Green Light)。一款紧张刺激的生存游戏，考验你的反应能力和胆量。">
+    <link rel="canonical" href="https://xGame.best/games/red-light-green-light.html" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B6B',
+                        'secondary': '#4ECDC4',
+                        'dark': '#2D3436',
+                        'light': '#F7F7F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8f9fa; }
+        .main-content { background-color: rgba(255, 255, 255, 0.95); }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <main class="flex-1 p-8">
+        <div class="bg-gradient-to-r from-primary to-secondary py-12 rounded-xl mb-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-i18n="redLightGreenLight.heroTitle">红绿灯</h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto" data-i18n="redLightGreenLight.heroDescription">紧张刺激的生存游戏，考验你的反应和胆量！</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="aspect-w-16 aspect-h-9 relative">
+                        <iframe id="gameFrame" src="https://www.onlinegames.io/red-light-green-light/" 
+                                class="w-full h-[600px] md:h-[700px]"
+                                frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+                        <div class="absolute top-4 right-4 flex space-x-2 z-10">
+                            <button id="reloadBtn" class="bg-white/90 hover:bg-white text-gray-700 p-2 rounded-lg shadow-lg" data-i18n="redLightGreenLight.reloadTooltip" title="重新加载游戏" onclick="reloadGame()"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg></button>
+                            <button id="fullscreenBtn" class="bg-white/90 hover:bg-white text-gray-700 p-2 rounded-lg shadow-lg" data-i18n="redLightGreenLight.fullscreenTooltip" title="全屏游戏" onclick="toggleFullscreen()"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg></button>
+                        </div>
+                        <button id="exitFullscreenBtn" class="hidden fixed top-4 right-4 bg-red-500 text-white p-3 rounded-full shadow-lg" data-i18n="redLightGreenLight.exitFullscreenTooltip" title="退出全屏" onclick="exitFullscreen()"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="redLightGreenLight.gameDescriptionTitle">游戏说明</h2>
+                    <p class="text-gray-600 mb-6" data-i18n="redLightGreenLight.gameDescription">
+                        红绿灯是一款基于经典儿童游戏改编的动作游戏。在游戏中，你需要在绿灯亮时快速前进，在红灯亮时立即停止。任何在红灯时被发现移动的玩家都将被淘汰。游戏节奏紧张，需要极快的反应速度和精准的控制能力。
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <img src="../../../assets/images/games/action/red-light-green-light.jpg" alt="Red Light Green Light" class="w-32 h-32 object-cover rounded-lg shadow-md">
+                        <div class="ml-4">
+                            <h2 class="text-xl font-bold text-gray-900" data-i18n="redLightGreenLight.gameName">红绿灯</h2>
+                            <div class="flex items-center mt-2">
+                        <span class="text-yellow-400">★★★★★</span>
+                        <span class="text-gray-600 ml-2">4.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm" data-i18n="sidebar.action">动作</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm" data-i18n="redLightGreenLight.tagSurvival">生存</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4" data-i18n="redLightGreenLight.controlsTitle">操作说明</h2>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li data-i18n="redLightGreenLight.controlMove">鼠标点击并按住：前进</li>
+                        <li data-i18n="redLightGreenLight.controlStop">松开鼠标：停止</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const translations = {
+            en: {
+                redLightGreenLight: {
+                    title: "Red Light Green Light - Play Online | xGame.best",
+                    description: "Play Red Light Green Light for free on xGame.best. A thrilling survival game that tests your reflexes and courage.",
+                    heroTitle: "Red Light Green Light",
+                    heroDescription: "A thrilling survival game that tests your reflexes and courage!",
+                    gameDescriptionTitle: "Game Description",
+                    gameDescription: "Red Light Green Light is an action game based on the classic children's game. In the game, you must run forward quickly when the green light is on and stop immediately when the red light is on. Any player caught moving during the red light will be eliminated. The game is fast-paced and requires quick reflexes and precise control.",
+                    gameName: "Red Light Green Light",
+                    tagSurvival: "Survival",
+                    controlsTitle: "Controls",
+                    controlMove: "Click and hold mouse: Move forward",
+                    controlStop: "Release mouse: Stop",
+                    reloadTooltip: "Reload Game",
+                    fullscreenTooltip: "Fullscreen Game",
+                    exitFullscreenTooltip: "Exit Fullscreen"
+                },
+                sidebar: { action: "Action" }
+            },
+            cn: {
+                redLightGreenLight: {
+                    title: "红绿灯 - 在线玩 | xGame.best",
+                    description: "在xGame.best上免费在线玩红绿灯。一款紧张刺激的生存游戏，考验你的反应能力和胆量。",
+                    heroTitle: "红绿灯",
+                    heroDescription: "紧张刺激的生存游戏，考验你的反应和胆量！",
+                    gameDescriptionTitle: "游戏说明",
+                    gameDescription: "红绿灯是一款基于经典儿童游戏改编的动作游戏。在游戏中，你需要在绿灯亮时快速前进，在红灯亮时立即停止。任何在红灯时被发现移动的玩家都将被淘汰。游戏节奏紧张，需要极快的反应速度和精准的控制能力。",
+                    gameName: "红绿灯",
+                    tagSurvival: "生存",
+                    controlsTitle: "操作说明",
+                    controlMove: "鼠标点击并按住：前进",
+                    controlStop: "松开鼠标：停止",
+                    reloadTooltip: "重新加载游戏",
+                    fullscreenTooltip: "全屏游戏",
+                    exitFullscreenTooltip: "退出全屏"
+                },
+                sidebar: { action: "动作" }
+            }
+        };
+
+        function getCurrentLanguage() { return localStorage.getItem('language') || 'cn'; }
+
+        function updatePageLanguage(lang) {
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let val = translations[lang];
+                for (const k of keys) { val = val?.[k]; }
+                if (val) {
+                    if (el.hasAttribute('title')) el.setAttribute('title', val);
+                    else if (el.tagName === 'META' && el.hasAttribute('content')) el.setAttribute('content', val);
+                    else el.textContent = val;
+                }
+            });
+        }
+
+        function reloadGame() {
+            const frame = document.getElementById('gameFrame');
+            frame.src = frame.src;
+            showToast(getCurrentLanguage() === 'en' ? 'Reloading game...' : '游戏正在重新加载...');
+        }
+
+        function toggleFullscreen() {
+            const frame = document.getElementById('gameFrame');
+            if (!document.fullscreenElement) {
+                frame.requestFullscreen?.();
+                document.getElementById('fullscreenBtn').style.display = 'none';
+                document.getElementById('exitFullscreenBtn').classList.remove('hidden');
+                showToast(getCurrentLanguage() === 'en' ? 'Entered fullscreen' : '已进入全屏');
+            } else {
+                document.exitFullscreen?.();
+            }
+        }
+
+        function exitFullscreen() {
+            document.exitFullscreen?.();
+        }
+
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                document.getElementById('fullscreenBtn').style.display = 'block';
+                document.getElementById('exitFullscreenBtn').classList.add('hidden');
+            }
+        });
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-20 right-4 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lang = getCurrentLanguage();
+            updatePageLanguage(lang);
+            window.addEventListener('storage', e => e.key === 'language' && updatePageLanguage(e.newValue));
+            window.addEventListener('message', e => e.data?.type === 'languageChange' && updatePageLanguage(e.data.language));
+        });
+    </script>
+</body>
+</html> 
