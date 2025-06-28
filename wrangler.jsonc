@@ -2,6 +2,6 @@
   "name": "billiard-game",  // 替换为你的 Worker 名称
   "compatibility_date": "2025-06-11",
   "assets": {
-    "directory": "./"  // 静态资源目录
+    "directory": "./public"  // 静态资源目录
   }
 }
