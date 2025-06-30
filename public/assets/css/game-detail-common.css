@@ -242,3 +242,458 @@ body {
 #exitFullscreenBtn {
     z-index: 1000;
 } 
+
+/* 游戏详情页面通用样式 */
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+/* 游戏标签样式 */
+.horizontal-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4B5563;
+    background: #F3F4F6;
+    border-radius: 9999px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.horizontal-tag:hover {
+    background: #E5E7EB;
+    color: #1F2937;
+    transform: translateY(-1px);
+}
+
+/* 评分星级样式 */
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.stars {
+    color: #FBBF24;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+.rating-score {
+    font-weight: 600;
+    color: #14B8A6;
+    font-size: 0.875rem;
+}
+
+/* 游戏标签容器样式 */
+.game-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* 游戏卡片基础样式 */
+.game-card-base {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card-base:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-card-base img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.game-card-base h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 0.5rem;
+}
+
+.game-card-base p {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin-bottom: 1rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+    .game-card-base {
+        width: 100%;
+    }
+    
+    .game-card-base img {
+        height: 180px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* 游戏推荐卡片样式 - 完全匹配main.html */
+.game-card-recommendation {
+    transition: all 0.3s cubic-bezier(.4,2,.3,1);
+    width: 190px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.game-card-recommendation:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(20, 184, 166, 0.2);
+    border-color: #14B8A6;
+}
+
+.game-card-recommendation img {
+    width: 190px;
+    height: 170px;
+    object-fit: contain;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px 16px 0 0;
+    transition: transform 0.35s cubic-bezier(.4,2,.3,1);
+}
+
+.game-card-recommendation:hover img {
+    transform: scale(1.05);
+}
+
+.game-card-recommendation .p-4 {
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+}
+
+.game-card-recommendation h3 {
+    font-size: 1rem;
+    line-height: 1.35rem;
+    margin-bottom: 0.25rem;
+    color: #22223b;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.game-card-recommendation p {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.game-card-recommendation .rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: rgba(20, 184, 166, 0.05);
+    border-radius: 8px;
+}
+
+.game-card-recommendation .stars {
+    color: #fbbf24;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.game-card-recommendation .rating-score {
+    font-weight: 600;
+    color: #14B8A6;
+    font-size: 0.875rem;
+}
+
+.game-card-recommendation .game-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.game-card-recommendation .category-pill {
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    white-space: nowrap;
+    text-align: center;
+    background: linear-gradient(135deg, #bfdbfe, #e0f2fe);
+    color: #1e40af;
+    border: none;
+    box-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);
+    transition: all 0.3s ease;
+}
+
+.game-card-recommendation .category-pill:hover {
+    background: linear-gradient(135deg, #93c5fd, #bfdbfe);
+    color: #1d4ed8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
+}
+
+/* 水平卡片样式 - 用于相关游戏 */
+.game-card-horizontal {
+    flex: 0 0 190px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(.4,2,.3,1);
+}
+
+.game-card-horizontal:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(20, 184, 166, 0.2);
+    border-color: #14B8A6;
+}
+
+.game-card-horizontal img {
+    width: 190px;
+    height: 170px;
+    object-fit: contain;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px 16px 0 0;
+    transition: transform 0.35s cubic-bezier(.4,2,.3,1);
+}
+
+.game-card-horizontal:hover img {
+    transform: scale(1.05);
+}
+
+.game-card-horizontal .p-4 {
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+}
+
+.game-card-horizontal h3 {
+    font-size: 1rem;
+    line-height: 1.35rem;
+    margin-bottom: 0.25rem;
+    color: #22223b;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.game-card-horizontal p {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.game-card-horizontal .rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: rgba(20, 184, 166, 0.05);
+    border-radius: 8px;
+}
+
+.game-card-horizontal .stars {
+    color: #fbbf24;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.game-card-horizontal .rating-score {
+    font-weight: 600;
+    color: #14B8A6;
+    font-size: 0.875rem;
+}
+
+.game-card-horizontal .game-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.game-card-horizontal .horizontal-tag {
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(139, 92, 246, 0.1));
+    color: #14B8A6;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.game-card-horizontal .horizontal-tag:hover {
+    background: linear-gradient(135deg, #14B8A6, #8B5CF6);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+}
+
+/* 右侧边栏推荐游戏卡片样式 */
+.game-card-sidebar {
+    transition: all 0.3s ease;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    padding: 0;
+    margin-bottom: 1rem;
+    position: relative;
+    min-height: 100px;
+}
+
+.game-card-sidebar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #14B8A6;
+}
+
+.game-card-sidebar img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-shrink: 0;
+}
+
+.game-card-sidebar .game-info {
+    margin-left: 110px;
+    height: calc(100% - 2rem);
+    position: relative;
+    padding: 1rem 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-card-sidebar h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-card-sidebar .game-description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.25rem;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-card-sidebar .rating-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.game-card-sidebar .stars-mini {
+    color: #fbbf24;
+    font-size: 0.875rem;
+}
+
+.game-card-sidebar .rating-score-mini {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+.game-card-sidebar .rating-tags-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.game-card-sidebar .category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.game-card-sidebar .category-pill-mini {
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    white-space: nowrap;
+    text-align: center;
+    background: linear-gradient(135deg, #bfdbfe, #e0f2fe);
+    color: #1e40af;
+    border: none;
+    box-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);
+    transition: all 0.3s ease;
+}
+
+.game-card-sidebar .category-pill-mini:hover {
+    background: linear-gradient(135deg, #93c5fd, #bfdbfe);
+    color: #1d4ed8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .game-card-recommendation {
+        width: 160px;
+    }
+    .game-card-recommendation img {
+        width: 160px;
+        height: 143px;
+    }
+    .game-card-horizontal {
+        width: 160px;
+        flex: 0 0 160px;
+    }
+    .game-card-horizontal img {
+        width: 160px;
+        height: 143px;
+    }
+    .game-card-sidebar .category-tags {
+        justify-content: flex-start;
+    }
+} 

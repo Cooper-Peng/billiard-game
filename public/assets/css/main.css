@@ -36,7 +36,7 @@
     border-right: 2px solid rgba(255, 255, 255, 0.3);
     position: relative;
     transition: width 0.25s ease-in-out 0.1s, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    width: 320px;
+    width: 240px;
     transform-origin: left center;
     box-shadow: 8px 0 32px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -66,7 +66,7 @@
 
 /* 悬停时临时展开效果 */
 .sidebar.collapsed:hover {
-    width: 320px;
+    width: 240px;
     transition: width 0.2s ease-out;
 }
 
@@ -136,6 +136,7 @@
     transition: opacity 0.15s ease-in-out 0.1s;
 }
 
+/* 切换按钮样式 */
 .toggle_button {
     display: flex;
     align-items: center;
@@ -328,11 +329,31 @@ body::before {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* 响应式布局容器 */
+.responsive-layout {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 确保主内容区域不会被侧边栏覆盖 */
+.responsive-layout main {
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
 /* 响应式布局调整 */
 @media (max-width: 1024px) {
     .game-container {
         margin: 15px;
         padding: 15px;
+    }
+    
+    /* 中等屏幕：缩小侧边栏 */
+    .sidebar {
+        width: 200px;
+    }
+    
+    .sidebar.collapsed:hover {
+        width: 200px;
     }
 }
 
@@ -348,6 +369,149 @@ body::before {
     .game-actions button {
         padding: 8px 16px;
         font-size: 14px;
+    }
+    
+    /* 小屏幕：自动折叠侧边栏 */
+    .sidebar {
+        width: 70px;
+    }
+    
+    .sidebar .sidebar-text {
+        display: none;
+        opacity: 0;
+    }
+    
+    .sidebar .sidebar-link {
+        padding: 1rem 0.5rem;
+        justify-content: center;
+        margin: 0 0.25rem;
+    }
+    
+    .sidebar .sidebar-icon {
+        margin-right: 0;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    /* 悬停时展开 */
+    .sidebar:hover {
+        width: 200px;
+        transition: width 0.3s ease-out;
+        z-index: 1000;
+        box-shadow: 8px 0 32px rgba(0, 0, 0, 0.2);
+    }
+    
+    .sidebar:hover .sidebar-text {
+        display: block;
+        opacity: 1;
+        transition: opacity 0.2s ease-in 0.15s;
+    }
+    
+    .sidebar:hover .sidebar-link {
+        padding: 0.9375rem 1.25rem;
+        justify-content: flex-start;
+        margin: 0;
+        transition: all 0.2s ease-out 0.05s;
+    }
+    
+    .sidebar:hover .sidebar-icon {
+        margin-right: 1.25rem;
+        width: 1.875rem;
+        height: 1.875rem;
+        transition: all 0.2s ease-out 0.05s;
+    }
+    
+    /* 隐藏主导航菜单栏 */
+    .nav-bar-center {
+        display: none !important;
+    }
+    /* logo 居中 */
+    .logo {
+        margin: 0 auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* 搜索框自适应宽度 */
+    .search-container {
+        width: 100% !important;
+        min-width: 0 !important;
+        flex: 1 1 0%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .search-input, .search-container input[type="search"] {
+        width: 100% !important;
+        min-width: 0 !important;
+        font-size: 15px;
+        padding-left: 1.5rem;
+        padding-right: 2.5rem;
+    }
+    /* 顶部栏内元素间距优化 */
+    .top-bar, .nav-bar {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* 超小屏幕：进一步缩小侧边栏 */
+    .sidebar {
+        width: 60px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        height: 100vh;
+        padding-top: 140px; /* 为顶部导航预留空间 */
+    }
+    
+    .sidebar .sidebar-link {
+        padding: 0.8rem 0.3rem;
+        margin: 2px 4px;
+    }
+    
+    .sidebar .sidebar-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    /* 悬停展开效果 */
+    .sidebar:hover {
+        width: 180px;
+        box-shadow: 8px 0 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* 主内容区域适配 */
+    .flex {
+        display: block;
+    }
+    
+    main.flex-1 {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+    }
+}
+
+@media (max-width: 360px) {
+    /* 极小屏幕：最小化侧边栏 */
+    .sidebar {
+        width: 50px;
+    }
+    
+    .sidebar .sidebar-link {
+        padding: 0.6rem 0.2rem;
+        margin: 1px 2px;
+    }
+    
+    .sidebar .sidebar-icon {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+    
+    main.flex-1 {
+        margin-left: 50px;
+        width: calc(100% - 50px);
     }
 }
 
@@ -494,4 +658,50 @@ body::before {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #059669, #7C3AED);
+}
+
+/* 清理主内容区多余间距 */
+main.flex-1 {
+    margin-left: 0 !important;
+    width: auto !important;
+}
+
+/* 移除导航栏logo-search-wrap和search-container的响应式优化 */
+.logo-search-wrap { }
+.search-container { }
+
+/* 导航栏logo和搜索框响应式包裹 */
+.logo-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.search-container {
+    max-width: 400px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .search-container {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-search-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    width: 100%;
+    padding-left: 0 !important;
+  }
+  .search-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+  .logo {
+    justify-content: center !important;
+    margin: 0 auto !important;
+  }
 } 

@@ -1,4 +1,129 @@
-// 游戏详情页通用JavaScript功能
+/**
+ * 游戏详情页面通用功能
+ */
+
+// 防抖函数
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// 更新游戏评分显示
+function updateRating(rating) {
+    const stars = '★'.repeat(Math.floor(rating)) + '☆'.repeat(5 - Math.floor(rating));
+    document.querySelectorAll('.stars').forEach(el => {
+        el.textContent = stars;
+    });
+    document.querySelectorAll('.rating-score').forEach(el => {
+        el.textContent = rating.toFixed(1);
+    });
+}
+
+// 更新游戏标签显示
+function updateTags(tags) {
+    const tagsContainer = document.querySelector('.game-tags');
+    if (!tagsContainer) return;
+    
+    tagsContainer.innerHTML = tags.map(tag => `
+        <span class="horizontal-tag">${tag}</span>
+    `).join('');
+}
+
+// 更新相关游戏显示
+function updateRelatedGames(games) {
+    const container = document.getElementById('relatedGamesContainer');
+    if (!container) return;
+
+    container.innerHTML = games.map(game => `
+        <a href="${game.url}" class="game-card-horizontal text-decoration-none">
+            <img src="${game.image}" alt="${game.title}" loading="lazy">
+            <div class="p-4">
+                <h3>${game.title}</h3>
+                <p>${game.description}</p>
+                <div class="rating-container">
+                    <div class="stars">★★★★☆</div>
+                    <div class="rating-score">${game.rating.toFixed(1)}</div>
+                </div>
+                <div class="game-tags">
+                    ${game.tags.map(tag => `<span class="horizontal-tag">${tag}</span>`).join('')}
+                </div>
+            </div>
+        </a>
+    `).join('');
+
+    // 初始化滚动功能
+    initializeScrollArrows();
+}
+
+// 更新推荐游戏显示
+function updateRecommendedGames(games) {
+    const container = document.getElementById('recommendedGamesContainer');
+    if (!container) return;
+
+    container.innerHTML = games.map(game => `
+        <a href="${game.url}" class="game-card-recommendation text-decoration-none">
+            <img src="${game.image}" alt="${game.title}" loading="lazy">
+            <div class="p-4">
+                <h3>${game.title}</h3>
+                <p>${game.description}</p>
+                <div class="rating-container">
+                    <div class="stars">★★★★☆</div>
+                    <div class="rating-score">${game.rating.toFixed(1)}</div>
+                </div>
+                <div class="game-tags">
+                    ${game.tags.map(tag => `<span class="category-pill">${tag}</span>`).join('')}
+                </div>
+            </div>
+        </a>
+    `).join('');
+}
+
+// 更新侧边栏游戏显示
+function updateSidebarGames(games) {
+    const container = document.getElementById('sidebarGamesContainer');
+    if (!container) return;
+
+    container.innerHTML = games.map(game => `
+        <a href="${game.url}" class="game-card-sidebar text-decoration-none">
+            <img src="${game.image}" alt="${game.title}" loading="lazy">
+            <div class="game-info">
+                <h3>${game.title}</h3>
+                <p class="game-description">${game.description}</p>
+                <div class="rating-mini">
+                    <div class="stars-mini">★★★★☆</div>
+                    <div class="rating-score-mini">${game.rating.toFixed(1)}</div>
+                </div>
+                <div class="rating-tags-container">
+                    <div class="category-tags">
+                        ${game.tags.slice(0, 2).map(tag => `<span class="category-pill-mini">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        </a>
+    `).join('');
+}
+
+// 初始化页面功能
+document.addEventListener('DOMContentLoaded', () => {
+    // 初始化滚动功能
+    initializeScrollArrows();
+
+    // 监听窗口大小变化，更新滚动箭头状态
+    window.addEventListener('resize', debounce(() => {
+        const scrollContainer = document.getElementById('scrollContainer');
+        if (scrollContainer) {
+            const event = new Event('scroll');
+            scrollContainer.dispatchEvent(event);
+        }
+    }, 250));
+});
 
 class GameDetailBase {
     constructor() {

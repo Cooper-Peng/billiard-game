@@ -20,10 +20,48 @@ function toggleSidebar() {
     }
 }
 
+// 更新主内容区域的左边距，确保布局协调
+function updateMainContentMargin(sidebarWidth) {
+    if (mainContent) {
+        // 使用CSS变量来平滑过渡
+        document.documentElement.style.setProperty('--sidebar-width', `${sidebarWidth}px`);
+        
+        // 添加过渡效果
+        mainContent.style.transition = 'margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        // 在较小屏幕上不调整边距（响应式设计会处理）
+        if (window.innerWidth > 768) {
+            mainContent.style.marginLeft = `${sidebarWidth}px`;
+        }
+    }
+}
+
+// 响应窗口大小变化
+function handleWindowResize() {
+    if (window.innerWidth <= 768) {
+        // 小屏幕自动处理，不需要手动调整边距
+        if (mainContent) {
+            mainContent.style.marginLeft = '';
+        }
+    } else {
+        // 大屏幕根据当前状态调整边距
+        const currentWidth = isSidebarExpanded ? 240 : 70;
+        updateMainContentMargin(currentWidth);
+    }
+}
+
 // 为切换按钮添加点击事件
 if (sidebarFixedToggle) {
     sidebarFixedToggle.addEventListener('click', toggleSidebar);
 }
+
+// 监听窗口大小变化
+window.addEventListener('resize', handleWindowResize);
+
+// 初始化时设置正确的边距
+document.addEventListener('DOMContentLoaded', () => {
+    updateMainContentMargin(240); // 默认展开状态
+});
 
 // 处理侧边栏链接点击
 document.querySelectorAll('.sidebar-link').forEach(link => {

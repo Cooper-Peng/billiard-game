@@ -176,10 +176,10 @@
 </head>
 <body class="bg-gradient-main min-h-screen text-white">
     <!-- Top Bar -->
-    <div class="bg-black bg-opacity-20 backdrop-blur-sm text-white py-2">
+    <div class="bg-black bg-opacity-20 backdrop-blur-sm text-white py-2 top-bar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-5">
+                <div class="flex items-center space-x-5 logo">
                     <a href="/" class="text-white font-bold text-2xl drop-shadow-lg">xGame.best</a>
                     <span class="text-base text-white opacity-70">|</span>
                     <span class="text-base text-white opacity-90" data-i18n="common.playFreeGames">Play Free Online Games</span>
@@ -197,7 +197,7 @@
     </div>
 
     <!-- 主导航栏 -->
-    <nav class="bg-white bg-opacity-10 backdrop-blur-md shadow-xl border-b border-white border-opacity-20 sticky top-0 z-50">
+    <nav class="bg-white bg-opacity-10 backdrop-blur-md shadow-xl border-b border-white border-opacity-20 sticky top-0 z-50 nav-bar">
         <div class="max-w-full mx-auto pr-4 sm:pr-6 lg:pr-8">
             <div class="grid grid-cols-3 items-center h-16">
                 <!-- 左列：伸缩Icon + Logo，与侧边栏菜单左对齐 -->
@@ -217,13 +217,13 @@
                             <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L9.41421 12L15.7071 18.2929C16.0976 18.6834 16.0976 19.3166 15.7071 19.7071C15.3166 20.0976 14.6834 20.0976 14.2929 19.7071L7.29289 12.7071C6.90237 12.3166 6.90237 11.6834 7.29289 11.2929L14.2929 4.29289C14.6834 3.90237 15.3166 3.90237 15.7071 4.29289Z"></path>
                         </svg>
                     </button>
-                    <a href="/" class="inline-flex items-center">
+                    <a href="/" class="inline-flex items-center logo">
                         <img src="assets/images/logos/2-xGame.best.jpeg" alt="xGame.best logo" class="h-10 w-auto rounded-lg ring-2 ring-white ring-opacity-30">
                     </a>
                 </div>
                 
                 <!-- 中列：导航菜单，居中显示 -->
-                <div class="flex items-center justify-center space-x-10">
+                <div class="flex items-center justify-center space-x-10 nav-bar-center">
                     <a href="index.html" class="inline-flex items-center px-1 pt-1 text-white border-b-2 border-white text-lg font-medium drop-shadow-sm" data-i18n="nav.home">Home</a>
                     <a href="index.html" class="inline-flex items-center px-1 pt-1 text-white hover:text-yellow-300 text-lg font-medium transition-colors duration-200 drop-shadow-sm" data-i18n="nav.newGames">New Games</a>
                     <a href="index.html" class="inline-flex items-center px-1 pt-1 text-white hover:text-yellow-300 text-lg font-medium transition-colors duration-200 drop-shadow-sm" data-i18n="nav.popular">Popular</a>
@@ -231,13 +231,13 @@
                 </div>
                 
                 <!-- 右列：搜索框，与顶部栏右侧区域对齐 -->
-                <div class="flex items-center justify-end">
-                    <div class="relative search-container">
+                <div class="flex items-center justify-end search-container">
+                    <div class="relative search-container w-full">
                         <input 
                             type="search" 
                             id="searchInput"
                             placeholder="Search games..." 
-                            class="w-80 px-5 py-2.5 text-base rounded-full bg-white bg-opacity-90 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 focus:bg-white text-gray-800 placeholder-gray-500 backdrop-blur-sm" 
+                            class="w-full px-5 py-2.5 text-base rounded-full bg-white bg-opacity-90 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 focus:bg-white text-gray-800 placeholder-gray-500 backdrop-blur-sm search-input" 
                             data-i18n-placeholder="common.search"
                             autocomplete="off">
                         <button class="absolute right-4 top-3 search-btn" id="searchBtn">
@@ -267,9 +267,9 @@
     </nav>
 
     <!-- 主体布局区域 -->
-    <div class="flex min-h-screen">
+    <div class="flex min-h-screen responsive-layout">
         <!-- 左侧边栏区域 -->
-        <aside class="sidebar h-screen sticky top-16 overflow-y-auto" id="sidebar">
+        <aside class="sidebar h-screen sticky top-16 overflow-y-auto transition-all duration-300" id="sidebar">
             <div class="p-4">
                 <nav class="space-y-1">
                     <a href="#action" class="sidebar-link" onclick="navigateToSection('action');return false;">
@@ -398,8 +398,8 @@
         </aside>
 
         <!-- 右侧主内容区域 -->
-        <main class="flex-1 bg-white bg-opacity-5 backdrop-blur-sm">
-            <div class="p-4">
+        <main class="flex-1 bg-white bg-opacity-5 backdrop-blur-sm min-w-0">
+            <div class="p-2 sm:p-4">
                 <div class="bg-white bg-opacity-95 backdrop-blur-md rounded-2xl shadow-xl border border-white border-opacity-20 overflow-hidden">
                     <iframe id="mainFrame" src="main.html" class="w-full h-screen border-none block rounded-2xl"></iframe>
                 </div>
